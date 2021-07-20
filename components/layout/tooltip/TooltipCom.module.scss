@@ -1,18 +1,26 @@
+@import "../../../styles/vars.scss";
 .tooltip {
-  opacity: 0;
+  display: none;
   box-shadow: 0 0 10px 0px rgba($color: #000000, $alpha: 0.3);
-  background-color: #d8dff7;
+  color: $--clr-gray-2;
+  background-color: $--clr-black;
   font-weight: 500;
   padding: 10px;
   border-radius: 10px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   z-index: 100;
   transform: translateY(-50%);
   transition: all 0.3s;
 }
 
 .tooltip.active {
-  opacity: 1;
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  .tooltip.active {
+    display: block;
+  }
 }

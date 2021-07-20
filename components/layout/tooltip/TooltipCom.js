@@ -1,5 +1,5 @@
 // STYLES
-import styles from "./Tooltip.module.scss";
+import styles from "./TooltipCom.module.scss";
 // REACT HOOKS
 import { useContext, useEffect, useRef } from "react";
 // CONTEXT

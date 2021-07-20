@@ -29,7 +29,7 @@ const sidebarData = [
     link: "/blog",
   },
   {
-    text: "Coding tips",
+    text: "Coding",
     icon: <HiCode />,
     link: "/blog/codingtips",
   },
