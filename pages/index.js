@@ -1,6 +1,13 @@
-import Head from "next/head";
+// STYLES
 import styles from "../styles/Home.module.scss";
-
+// NEXT COMPONENTS
+import Head from "next/head";
+import Image from "next/image";
+// CUSTOM COMPONENTS
+import Button from "../components/layout/smallComponents/button/Button";
+import WhiteSpace from "../components/layout/whiteSpace/whiteSpace";
+// IMAGE SOURCES
+import codeThinkigSrc from "../public/codeThinking.svg";
 
 export default function Home() {
   return (
@@ -12,7 +19,22 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1>Home</h1>
+        <section className={styles.introSection}>
+          <div className={styles.introSectionTextWrapper}>
+            <h1>Dwave Code</h1>
+            <h2>Besplatna škola programiranja</h2>
+            <p>
+              Na našem sajtu naučićete sve od osnova do naprednih tehnologija
+              koje se koriste za programiranje web stranica. Takođe naučićete da
+              razmišljate kao programer i da rešavate realne probleme.
+            </p>
+            <Button text={"Počni sa učenjem"} link="/blog/html" />
+          </div>
+          <div className={styles.introSectionImageWrapper}>
+            <Image src={codeThinkigSrc} alt="Code Thinking" />
+          </div>
+        </section>
+        <WhiteSpace />
       </main>
     </div>
   );

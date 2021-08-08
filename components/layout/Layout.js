@@ -2,12 +2,12 @@
 import styles from "./Layout.module.scss";
 // ICONS
 import { HiMenu, HiHome, HiOutlineViewGrid, HiCode } from "react-icons/hi";
-import { FaHtml5, FaCss3 } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 // NEXT COMPONENTS
 import Link from "next/link";
 import Image from "next/image";
-// RECT HOOKS
+// REACT HOOKS
 import { useState, useContext } from "react";
 // NEXT HOOKS
 import { useRouter } from "next/router";
@@ -40,7 +40,7 @@ const sidebarData = [
   },
   {
     text: "CSS",
-    icon: <FaCss3 />,
+    icon: <FaCss3Alt />,
     link: "/blog/css",
   },
   {
