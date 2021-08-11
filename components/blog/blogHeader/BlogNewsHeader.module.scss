@@ -1,0 +1,32 @@
+@import "../../../styles/vars.scss";
+.header {
+  min-width: 100%;
+  border-bottom: 1px solid $--clr-gray-2;
+  color: $--clr-gray-3;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  h2 {
+    color: $--clr-black;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      color: $--clr-gray-3;
+      font-size: 20px;
+      min-height: 20px;
+      min-width: 20px;
+      margin-top: 4px;
+    }
+    &:hover {
+      filter: brightness(80%);
+    }
+  }
+}

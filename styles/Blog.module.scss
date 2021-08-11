@@ -1,0 +1,44 @@
+@import "../styles/vars.scss";
+.container {
+  min-height: 100vh;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 50px;
+  }
+  .introSection {
+    .introSectionText {
+      margin-top: 100px;
+
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .main {
+    section {
+      width: 95%;
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+  .main {
+    section {
+      width: 900px;
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .main {
+    section {
+      width: 1100px;
+    }
+  }
+}

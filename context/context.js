@@ -5,8 +5,8 @@ const AppContext = createContext();
 const AppProvider = ({ children }) => {
   const [tooltipActive, setTooltilActive] = useState(false);
   const [tooltipData, setTooltipData] = useState({
-    x: 0,
-    y: 0,
+    x: 70,
+    y: 76,
     text: "Tooltip",
   });
 

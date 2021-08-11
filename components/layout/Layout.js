@@ -2,7 +2,7 @@
 import styles from "./Layout.module.scss";
 // ICONS
 import { HiMenu, HiHome, HiOutlineViewGrid, HiCode } from "react-icons/hi";
-import { FaHtml5, FaCss3Alt } from "react-icons/fa";
+import { FaHtml5, FaCss3Alt } from "react-icons/fa"; 
 import { SiJavascript } from "react-icons/si";
 // NEXT COMPONENTS
 import Link from "next/link";
@@ -54,14 +54,9 @@ const Layout = ({ children }) => {
   const [isSidebarActive, setIsSidebarActive] = useState(false);
   const router = useRouter();
   const handleMouseEnter = (e, text) => {
-    // e.tagret.clientHeight
-    // e.tagret.clientWidth
-    // e.tagret.offsetTop
-    // e.tagret.offsetLeft
-
     const data = {
       x: e.target.offsetLeft + e.target.clientWidth + 20,
-      y: e.target.offsetTop + e.target.clientHeight / 2,
+      y: e.target.offsetTop + e.target.clientHeight / 2 + window.scrollY,
       text: text,
     };
     displayTooltip(data);

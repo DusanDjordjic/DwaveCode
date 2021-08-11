@@ -1,0 +1,35 @@
+@import "../../../styles/vars.scss";
+.header {
+  min-width: 100%;
+  border-bottom: 1px solid $--clr-gray-2;
+  color: $--clr-gray-3;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+
+  .links {
+    a {
+      margin-right: 20px;
+      &:hover {
+        filter: brightness(80%);
+      }
+    }
+    .active {
+      font-weight: 500;
+      color: $--clr-black;
+    }
+  }
+  .searchButton {
+    background-color: transparent;
+    cursor: pointer;
+    svg {
+      color: $--clr-gray-3;
+      font-size: 20px;
+      min-height: 20px;
+      min-width: 20px;
+    }
+  }
+}

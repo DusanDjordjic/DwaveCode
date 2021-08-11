@@ -16,6 +16,8 @@ import codeThinkigSrc from "../public/codeThinking.svg";
 import cardDesignSix from "../public/Cards/Card-Design-06.jpg";
 import cardDesignOne from "../public/Cards/Card-Design-01.jpg";
 import cardDesignTwo from "../public/Cards/Card-Design-02.jpg";
+import cardDesignThree from "../public/Cards/Card-Design-03.jpg";
+import cardDesignFour from "../public/Cards/Card-Design-04.jpg";
 import gridBlobSrc from "../public/blob.png";
 export default function Home() {
   return (
@@ -61,7 +63,25 @@ export default function Home() {
           </div>
 
           <div className={styles.introSectionImageWrapper}>
-            <Image src={codeThinkigSrc} alt="Code Thinking" />
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {
+                  scale: 0.8,
+                  opacity: 0,
+                },
+                visible: {
+                  scale: 1,
+                  opacity: 1,
+                  transition: {
+                    delay: 0.4,
+                  },
+                },
+              }}
+            >
+              <Image src={codeThinkigSrc} alt="Code Thinking" />
+            </motion.div>
           </div>
         </section>
         <WhiteSpace />
@@ -86,13 +106,17 @@ export default function Home() {
                 </Link>
               </div>
               <div className={`${styles.gridItem} ${styles.gridItemSmall}`}>
-                <Link href="/blog/css">
-                  <a>Uskoro!</a>
+                <Link href="/blog/html">
+                  <a>
+                    <Image src={cardDesignThree} />
+                  </a>
                 </Link>
               </div>
               <div className={`${styles.gridItem} ${styles.gridItemSmall}`}>
                 <Link href="/blog/html">
-                  <a>Uskoro!</a>
+                  <a>
+                    <Image src={cardDesignFour} />
+                  </a>
                 </Link>
               </div>
               <div className={`${styles.gridItem} ${styles.gridItemSmall}`}>

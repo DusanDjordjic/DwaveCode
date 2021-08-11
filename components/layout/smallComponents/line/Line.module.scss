@@ -1,0 +1,15 @@
+@import "../../../../styles/vars.scss";
+.line {
+  margin: 10px auto;
+  width: 100px;
+  height: 3px;
+}
+.green {
+  background-color: $--clr-green;
+}
+.black {
+  background-color: $--clr-black;
+}
+.default {
+  background-color: $--clr-gray-2;
+}
