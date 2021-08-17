@@ -63,15 +63,8 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
 export default Blog;
 
 export const getServerSideProps = async () => {
-  const data = await fetch(`${server}/api/getallposts`, {
-    headers: {
-      Accept: "application/json, text/plain, */*",
-      "User-Agent": "*",
-    },
-  });
-  console.log("***SERVER***", server);
+  const data = await fetch(`${server}/api/getallposts`);
   const { blogPosts } = await data.json();
-  console.log(blogPosts);
   const jsonBlogPosts = JSON.parse(blogPosts);
   jsonBlogPosts.sort((a, b) => b.date - a.date);
 

@@ -47,12 +47,7 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
 export default Blog;
 
 export const getServerSideProps = async () => {
-  const data = await fetch(`${server}/api/getallposts`, {
-    headers: {
-      Accept: "application/json, text/plain, */*",
-      "User-Agent": "*",
-    },
-  });
+  const data = await fetch(`${server}/api/getallposts`);
 
   const { blogPosts } = await data.json();
   const jsonBlogPosts = JSON.parse(blogPosts);
@@ -69,5 +64,6 @@ export const getServerSideProps = async () => {
         },
       },
     },
+
   };
 };
