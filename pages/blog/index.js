@@ -65,11 +65,12 @@ export default Blog;
 export const getStaticProps = async () => {
   const data = await fetch(`${server}/api/getAllPosts`);
   const { blogPosts } = await data.json();
+  console.log(blogPosts);
   blogPosts.sort((a, b) => b.date - a.date);
 
   return {
     props: {
-      blogPosts: blogPosts,
+      blogPosts: blogPosts || [],
       blogSubHeader: {
         text: "Najnovije",
         link: {
