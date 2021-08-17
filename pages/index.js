@@ -88,34 +88,34 @@ export default function Home() {
         <section className={styles.gridSection}>
           <div className={styles.gridWrapper}>
             <div className={styles.blob}>
-              <Image src={gridBlobSrc} />
+              <Image src={gridBlobSrc} alt="blob" />
             </div>
             <div className={styles.grid}>
               <div className={`${styles.gridItem} ${styles.gridItemSmall}`}>
                 <Link href="/blog/html">
                   <a>
-                    <Image src={cardDesignOne} />
+                    <Image src={cardDesignOne} alt="banner" />
                   </a>
                 </Link>
               </div>
               <div className={`${styles.gridItem} ${styles.gridItemSmall}`}>
                 <Link href="/blog/html">
                   <a>
-                    <Image src={cardDesignTwo} />
+                    <Image src={cardDesignTwo} alt="banner" />
                   </a>
                 </Link>
               </div>
               <div className={`${styles.gridItem} ${styles.gridItemSmall}`}>
                 <Link href="/blog/html">
                   <a>
-                    <Image src={cardDesignThree} />
+                    <Image src={cardDesignThree} alt="banner" />
                   </a>
                 </Link>
               </div>
               <div className={`${styles.gridItem} ${styles.gridItemSmall}`}>
                 <Link href="/blog/html">
                   <a>
-                    <Image src={cardDesignFour} />
+                    <Image src={cardDesignFour} alt="banner" />
                   </a>
                 </Link>
               </div>
@@ -129,7 +129,7 @@ export default function Home() {
               >
                 <Link href="/blog">
                   <a>
-                    <Image src={cardDesignSix} />
+                    <Image src={cardDesignSix} alt="banner" />
                   </a>
                 </Link>
               </div>

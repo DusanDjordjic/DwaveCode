@@ -14,7 +14,8 @@ import BlogButtons from "../../components/blog/blogButtons/BlogButtons";
 import BlogNewsHeader from "../../components/blog/blogHeader/BlogSubHeader";
 import BlogPost from "../../components/blog/blogPost/BlogPost";
 import FeedbackCard from "../../components/feedback/FeedbackCard";
-
+// URL CONFIG
+import { server } from "../../config";
 const Blog = ({ blogPosts, blogSubHeader }) => {
   return (
     <div className={styles.container}>
@@ -45,8 +46,8 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
 
 export default Blog;
 
-export const getStaticProps = async (context) => {
-  const data = await fetch("http://localhost:3000/api/getAllPosts");
+export const getStaticProps = async () => {
+  const data = await fetch(`${server}/api/getAllPosts`);
 
   const { blogPosts } = await data.json();
   //blogPosts.sort((a, b) => b.date - a.date);
