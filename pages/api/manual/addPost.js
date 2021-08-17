@@ -3,8 +3,8 @@ import { dbConnect } from "../../../middleware/db/dbConnect";
 export default async function (req, res) {
   dbConnect();
   const newPost = new BlogPost({
-    title: "CSS - Daj stila svom veb-sajtu!",
-    date: new Date(2021, 7, 13).getTime(),
+    title: "css - daj stila svom veb-sajtu!",
+    date: new Date(2021, 7, 16).getTime(),
     description: "Nakon HTML-a sledi CSS koji se koristi za stilizovanje.",
     coverImage: "/style.png",
     overlay: {

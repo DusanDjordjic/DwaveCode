@@ -50,7 +50,7 @@ export const getStaticProps = async () => {
   const data = await fetch(`${server}/api/getAllPosts`);
 
   const { blogPosts } = await data.json();
-  //blogPosts.sort((a, b) => b.date - a.date);
+  blogPosts.sort((a, b) => b.date - a.date);
 
   return {
     props: {
