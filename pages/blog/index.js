@@ -4,18 +4,18 @@ import styles from "../../styles/Blog.module.scss";
 
 // NEXT COMPONENTS
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+// import Image from "next/image";
+// import Link from "next/link";
 // CUSTOM COMPONENTS
-import Button from "../../components/layout/smallComponents/button/Button";
-import Line from "../../components/layout/smallComponents/line/Line";
+// import Button from "../../components/layout/smallComponents/button/Button";
+// import Line from "../../components/layout/smallComponents/line/Line";
 import BlogHeader from "../../components/blog/blogHeader/BlogHeader";
 import BlogButtons from "../../components/blog/blogButtons/BlogButtons";
 import BlogNewsHeader from "../../components/blog/blogHeader/BlogSubHeader";
 import BlogPost from "../../components/blog/blogPost/BlogPost";
 import FeedbackCard from "../../components/feedback/FeedbackCard";
 // MONGOOSE
-import BlogPost from "../../models/BlogPost";
+import BlogPostModel from "../../models/BlogPost";
 import { dbConnect } from "../../middleware/db/dbConnect";
 // URL CONFIG
 import { server } from "../../config";
@@ -68,7 +68,7 @@ export default Blog;
 export const getServerSideProps = async () => {
   try {
     dbConnect();
-    const blogPosts = await BlogPost.find({});
+    const blogPosts = await BlogPostModel.find({});
     return {
       props: {
         blogPosts: blogPosts,
