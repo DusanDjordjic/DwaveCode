@@ -2,17 +2,18 @@
 import styles from "./Layout.module.scss";
 // ICONS
 import { HiMenu, HiHome, HiOutlineViewGrid, HiCode } from "react-icons/hi";
-import { FaHtml5, FaCss3Alt } from "react-icons/fa"; 
+import { FaHtml5, FaCss3Alt } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
 // NEXT COMPONENTS
 import Link from "next/link";
 import Image from "next/image";
 // REACT HOOKS
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 // NEXT HOOKS
 import { useRouter } from "next/router";
 // CUSTOM COMPONENTS
 import Tooltip from "./tooltip/TooltipCom.js";
+import SearchOverlay from "./searchOverlay/SearchOverlay";
 // CONTEXT
 import { AppContext } from "../../context/context";
 // IMAGE SOURCES
@@ -50,7 +51,8 @@ const sidebarData = [
   },
 ];
 const Layout = ({ children }) => {
-  const { displayTooltip, hideTooltip } = useContext(AppContext);
+  const { displayTooltip, hideTooltip, isSearchOverlayActive } =
+    useContext(AppContext);
   const [isSidebarActive, setIsSidebarActive] = useState(false);
   const router = useRouter();
   const handleMouseEnter = (e, text) => {
@@ -59,16 +61,17 @@ const Layout = ({ children }) => {
       y: e.target.offsetTop + e.target.clientHeight / 2 + window.scrollY,
       text: text,
     };
+
     displayTooltip(data);
   };
   return (
     <div className={styles.container}>
       <div
-        className={
+        className={`${
           isSidebarActive
             ? `${styles.sidebar} ${styles.active}`
             : ` ${styles.sidebar}`
-        }
+        } ${isSearchOverlayActive && styles.blur}`}
       >
         {/* LOGO CONTAINER START */}
         <div className={styles.logoContainer}>
@@ -87,11 +90,11 @@ const Layout = ({ children }) => {
         </div>
         {/* LOGO CONTAINER END */}
         <ul className={styles.navList}>
-          {sidebarData.map((item, key) => {
+          {sidebarData.map((item, index) => {
             if (!isSidebarActive) {
               return (
                 <li
-                  index={key}
+                  key={index}
                   onMouseEnter={(e) => handleMouseEnter(e, item.text)}
                   onMouseLeave={() => hideTooltip()}
                 >
@@ -109,7 +112,7 @@ const Layout = ({ children }) => {
               );
             } else {
               return (
-                <li index={key} onClick={() => setIsSidebarActive(false)}>
+                <li key={index} onClick={() => setIsSidebarActive(false)}>
                   <Link href={item.link}>
                     <a
                       className={
@@ -127,15 +130,16 @@ const Layout = ({ children }) => {
         </ul>
       </div>
       <div
-        className={
+        className={`${
           isSidebarActive
             ? `${styles.main}`
-            : ` ${styles.main}  ${styles.active}`
-        }
+            : `${styles.main}  ${styles.active}`
+        } ${isSearchOverlayActive && styles.blur}`}
       >
         {children}
       </div>
       <Tooltip />
+      <SearchOverlay />
     </div>
   );
 };

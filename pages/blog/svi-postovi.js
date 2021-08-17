@@ -1,5 +1,5 @@
 // STYLES
-import styles from "../../styles/Blog.module.scss";
+import styles from "../../styles/AllPosts.module.scss";
 // ICONS
 
 // NEXT COMPONENTS
@@ -19,7 +19,7 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Dwave Code | Blog</title>
+        <title>Blog | Sve</title>
         <meta
           name="description"
           content="Dwavecode želi da pomogne ljudima da uđu u svet ved programiranja na najlaši mogući način"
@@ -29,30 +29,14 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
       <main className={styles.main}>
         <section className={styles.introSection}>
           <BlogHeader />
-          <div className={styles.introSectionText}>
-            <h1>Dwave Code Blog</h1>
-            <h2>Sve o web programiranju na jednom mestu</h2>
-          </div>
-          <BlogButtons />
         </section>
         <section className={styles.blogSection}>
           <BlogNewsHeader data={blogSubHeader} />
           <div className={styles.content}>
-            <div className={styles.contentMain}>
-              <BlogPost data={blogPosts[0]} type="big" />
-            </div>
-            <div className={styles.contentSidebar}>
-              {blogPosts.map((post, index) => {
-                if (index !== 0 && index < 3) {
-                  return <BlogPost key={index} data={post} />;
-                }
-              })}
-            </div>
+            {blogPosts.map((post, index) => {
+              return <BlogPost key={index} data={post} />;
+            })}
           </div>
-        </section>
-
-        <section className={styles.feedbackSection}>
-          <FeedbackCard />
         </section>
       </main>
     </div>
@@ -61,8 +45,9 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
 
 export default Blog;
 
-export const getStaticProps = async () => {
+export const getStaticProps = async (context) => {
   const data = await fetch("http://localhost:3000/api/getAllPosts");
+
   const { blogPosts } = await data.json();
   //blogPosts.sort((a, b) => b.date - a.date);
 
@@ -70,10 +55,10 @@ export const getStaticProps = async () => {
     props: {
       blogPosts: blogPosts,
       blogSubHeader: {
-        text: "Najnovije",
+        text: "Sve Objave",
         link: {
-          url: "/blog/svi-postovi",
-          text: "Pogledaj sve",
+          url: "/blog",
+          text: "Najnovije",
         },
       },
     },

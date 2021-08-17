@@ -9,6 +9,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
   section {
     display: flex;
     flex-wrap: wrap;
@@ -16,10 +17,6 @@
     padding: 0 10px;
   }
   .introSection {
-    .introSectionText {
-      margin-top: 100px;
-      width: 100%;
-    }
   }
   .blogSection {
     .content {
@@ -27,15 +24,7 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 30px;
-      .contentSidebar {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 30px;
-        margin: 0;
-      }
     }
-  }
-  .feedbackSection {
   }
 }
 
@@ -47,9 +36,7 @@
     }
     .blogSection {
       .content {
-        .contentSidebar {
-          grid-template-columns: 1fr 1fr;
-        }
+        grid-template-columns: 1fr 1fr;
       }
     }
   }
@@ -62,10 +49,7 @@
     }
     .blogSection {
       .content {
-        grid-template-columns: 2fr 1fr;
-        .contentSidebar {
-          grid-template-columns: 1fr;
-        }
+        grid-template-columns: 1fr 1fr 1fr;
       }
     }
   }

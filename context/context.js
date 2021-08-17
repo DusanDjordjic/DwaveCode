@@ -4,6 +4,7 @@ const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [tooltipActive, setTooltilActive] = useState(false);
+  const [isSearchOverlayActive, setIsSearchOverlayActive] = useState(false);
   const [tooltipData, setTooltipData] = useState({
     x: 70,
     y: 76,
@@ -17,9 +18,15 @@ const AppProvider = ({ children }) => {
   const hideTooltip = () => {
     setTooltilActive(false);
   };
+  const hideSearchOverlay = () => {
+    setIsSearchOverlayActive(false)
+  }
+  const displaySearchOverlay = () => {
+    setIsSearchOverlayActive(true)
+  }
   return (
     <AppContext.Provider
-      value={{ tooltipActive, tooltipData, displayTooltip, hideTooltip }}
+      value={{ tooltipActive, tooltipData, displayTooltip, hideTooltip, isSearchOverlayActive, hideSearchOverlay, displaySearchOverlay }}
     >
       {children}
     </AppContext.Provider>

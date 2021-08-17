@@ -1,7 +1,6 @@
 @import "../../../styles/vars.scss";
 .wrapper {
   margin-top: 50px;
-  margin-bottom: 100px;
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px 20px;
@@ -14,7 +13,7 @@
     cursor: pointer;
     color: $--clr-gray-3;
     display: flex;
-    min-width: 33%;
+
     padding: 8px;
     font-size: 16px;
     font-weight: 500;

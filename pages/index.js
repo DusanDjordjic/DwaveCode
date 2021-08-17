@@ -1,14 +1,14 @@
 // STYLES
 import styles from "../styles/Home.module.scss";
 // REACT HOOKS
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 // NEXT COMPONENTS
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 // CUSTOM COMPONENTS
 import Button from "../components/layout/smallComponents/button/Button";
-import WhiteSpace from "../components/layout/whiteSpace/whiteSpace";
+import WhiteSpace from "../components/layout/whiteSpace/WhiteSpace";
 // FRAMER MOTION
 import { motion } from "framer-motion";
 // IMAGE SOURCES
@@ -58,7 +58,7 @@ export default function Home() {
                 koje se koriste za programiranje web stranica. Takođe naučićete
                 da razmišljate kao programer i da rešavate realne probleme.
               </p>
-              <Button text={"Počni sa učenjem"} link="/blog/html" />
+              <Button text={"Počni sa učenjem"} link="/blog" />
             </motion.div>
           </div>
 
