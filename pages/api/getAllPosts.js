@@ -12,7 +12,7 @@ export default async function (req, res) {
         return;
       }
 
-      res.status(200).json({ blogPosts });
+      res.status(200).json({ blogPosts: JSON.stringify(blogPosts) });
     } catch (error) {
       console.log("***ERROR***", error);
       res.status(400).json({ error });
