@@ -46,7 +46,7 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
 
 export default Blog;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const data = await fetch(`${server}/api/getallposts`, {
     headers: {
       Accept: "application/json, text/plain, */*",
