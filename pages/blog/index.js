@@ -72,11 +72,12 @@ export const getStaticProps = async () => {
   console.log("***SERVER***", server);
   const { blogPosts } = await data.json();
   console.log(blogPosts);
-  blogPosts.sort((a, b) => b.date - a.date);
+  const jsonBlogPosts = JSON.parse(blogPosts)
+  jsonBlogPosts.sort((a, b) => b.date - a.date);
 
   return {
     props: {
-      blogPosts: JSON.parse(JSON.stringify(blogPosts)),
+      blogPosts: jsonBlogPosts,
       blogSubHeader: {
         text: "Najnovije",
         link: {
