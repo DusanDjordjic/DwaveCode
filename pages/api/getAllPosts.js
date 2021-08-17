@@ -8,7 +8,6 @@ export default async function (req, res) {
       const blogPosts = await BlogPost.find({});
       if (blogPosts.length < 1) {
         res.status(400).json({ error: "No Posts Found" });
-
         return;
       }
 

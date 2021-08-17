@@ -47,23 +47,34 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
 export default Blog;
 
 export const getServerSideProps = async () => {
-  const data = await fetch(`${server}/api/getallposts`);
-
-  const { blogPosts } = await data.json();
-  const jsonBlogPosts = JSON.parse(blogPosts);
-  jsonBlogPosts.sort((a, b) => b.date - a.date);
-
-  return {
-    props: {
-      blogPosts: jsonBlogPosts,
-      blogSubHeader: {
-        text: "Sve Objave",
-        link: {
-          url: "/blog",
-          text: "Najnovije",
+  try {
+    dbConnect();
+    const blogPosts = await BlogPost.find({});
+    return {
+      props: {
+        blogPosts: blogPosts,
+        blogSubHeader: {
+          text: "Sve Objave",
+          link: {
+            url: "/blog",
+            text: "Najnovije",
+          },
         },
       },
-    },
-
-  };
+    };
+  } catch (error) {
+    console.log("***ERROR***", error);
+    return {
+      props: {
+        blogPosts: [],
+        blogSubHeader: {
+          text: "Sve Objave",
+          link: {
+            url: "/blog",
+            text: "Najnovije",
+          },
+        },
+      },
+    };
+  }
 };

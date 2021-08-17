@@ -14,6 +14,9 @@ import BlogButtons from "../../components/blog/blogButtons/BlogButtons";
 import BlogNewsHeader from "../../components/blog/blogHeader/BlogSubHeader";
 import BlogPost from "../../components/blog/blogPost/BlogPost";
 import FeedbackCard from "../../components/feedback/FeedbackCard";
+// MONGOOSE
+import BlogPost from "../../models/BlogPost";
+import { dbConnect } from "../../middleware/db/dbConnect";
 // URL CONFIG
 import { server } from "../../config";
 const Blog = ({ blogPosts, blogSubHeader }) => {
@@ -63,21 +66,34 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
 export default Blog;
 
 export const getServerSideProps = async () => {
-  const data = await fetch(`${server}/api/getallposts`);
-  const { blogPosts } = await data.json();
-  const jsonBlogPosts = JSON.parse(blogPosts);
-  jsonBlogPosts.sort((a, b) => b.date - a.date);
-
-  return {
-    props: {
-      blogPosts: jsonBlogPosts,
-      blogSubHeader: {
-        text: "Najnovije",
-        link: {
-          url: "/blog/svi-postovi",
-          text: "Pogledaj sve",
+  try {
+    dbConnect();
+    const blogPosts = await BlogPost.find({});
+    return {
+      props: {
+        blogPosts: blogPosts,
+        blogSubHeader: {
+          text: "Najnovije",
+          link: {
+            url: "/blog/svi-postovi",
+            text: "Pogledaj sve",
+          },
         },
       },
-    },
-  };
+    };
+  } catch (error) {
+    console.log("***ERROR***", error);
+    return {
+      props: {
+        blogPosts: [],
+        blogSubHeader: {
+          text: "GRESKA",
+          link: {
+            url: "/blog/svi-postovi",
+            text: "Pogledaj sve",
+          },
+        },
+      },
+    };
+  }
 };
