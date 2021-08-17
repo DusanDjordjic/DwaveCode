@@ -70,7 +70,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      blogPosts: blogPosts || [],
+      blogPosts: JSON.parse(JSON.stringify(blogPosts)),
       blogSubHeader: {
         text: "Najnovije",
         link: {
