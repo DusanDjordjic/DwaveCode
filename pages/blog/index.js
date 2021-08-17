@@ -63,8 +63,8 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
 export default Blog;
 
 export const getStaticProps = async () => {
-  const data = await fetch(`${server}/api/getAllPosts`);
-  console.log("***SERVER***", server);
+  const data = await fetch(`${server}/api/getallposts`);
+  console.log("***SERVER***",server);
   const { blogPosts } = await data.json();
   console.log(blogPosts);
   blogPosts.sort((a, b) => b.date - a.date);
