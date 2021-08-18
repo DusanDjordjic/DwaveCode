@@ -1,0 +1,88 @@
+@import "../../../styles/vars.scss";
+.footer {
+  padding: 30px 0;
+  display: flex;
+  font-weight: 300;
+  justify-content: center;
+  background-color: $--clr-black;
+  color: rgba($color: $--clr-gray-1, $alpha: 1);
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 16px;
+
+    .linksSection {
+      display: grid;
+      gap: 50px;
+      grid-template-columns: repeat(2, 1fr);
+      min-width: 100%;
+      ul {
+        list-style: none;
+        li {
+          margin: 10px 0;
+          font-size: 14px;
+
+          &:first-of-type {
+            color: rgba($color: $--clr-gray-2, $alpha: 0.5);
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 16px;
+          }
+          a {
+            text-transform: capitalize;
+            transition: all 0.3s;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+          .inactive {
+            cursor: default;
+            color: rgba($color: $--clr-gray-2, $alpha: 0.5);
+            text-decoration: line-through;
+            &:hover {
+              text-decoration: line-through;
+            }
+          }
+        }
+      }
+    }
+    .copyRightSection {
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      p {
+        margin-left: 20px;
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .footer {
+    .container {
+      padding: 0 20px;
+      width: 95%;
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+  .footer {
+    .container {
+      padding: 0 30px;
+      width: 900px;
+      .linksSection {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .footer {
+    .container {
+      padding: 0 50px;
+      width: 1100px;
+    }
+  }
+}

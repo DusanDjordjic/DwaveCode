@@ -13,8 +13,8 @@ import BlogPost from "../../components/blog/blogPost/BlogPost";
 // MONGOOSE
 import BlogPostModel from "../../models/BlogPost";
 import { dbConnect } from "../../middleware/db/dbConnect";
-// URL CONFIG
-import { server } from "../../config";
+// LIB
+import { jsonify } from "../../lib/jsonify";
 const Blog = ({ blogPosts, blogSubHeader }) => {
   return (
     <div className={styles.container}>
@@ -51,7 +51,7 @@ export const getServerSideProps = async () => {
     const blogPosts = await BlogPostModel.find({});
     return {
       props: {
-        blogPosts: blogPosts,
+        blogPosts: jsonify(blogPosts),
         blogSubHeader: {
           text: "Sve Objave",
           link: {

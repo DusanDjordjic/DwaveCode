@@ -4,11 +4,11 @@ import Image from "next/image";
 import { FaStopwatch } from "react-icons/fa";
 import timeSince from "../../../lib/timeSince";
 const BlogPost = ({ data, type }) => {
-  const { title, date, description, coverImage, overlay } = data;
+  const { _id, title, date, description, coverImage, overlay } = data;
   return (
     <div className={`${styles.blogPost} ${styles.big}`}>
       <div className={styles.blogPostImage}>
-        <Link href="/">
+        <Link href={`/blog/post/${_id}`}>
           <a>
             <div className={styles.imageWrapper}>
               <Image

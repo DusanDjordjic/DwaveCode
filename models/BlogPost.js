@@ -31,6 +31,14 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  text: {
+    type: String,
+    required: true,
+  },
+  tags: {
+    type: [String],
+    required: true,
+  },
   date: {
     type: Number,
     required: true,

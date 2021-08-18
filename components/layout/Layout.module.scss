@@ -1,7 +1,6 @@
 @import "../../styles/vars.scss";
 .blur {
   filter: blur(3px);
-  
 }
 .container {
   min-height: 100vh;
@@ -104,6 +103,10 @@
   left: 50px;
   width: calc(100% - 50px);
   transition: all 0.3s;
+  .content {
+    padding-bottom: 100px;
+    background-color: $--clr-gray-1;
+  }
 }
 .main.active {
   left: 50px;

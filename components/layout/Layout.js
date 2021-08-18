@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 // CUSTOM COMPONENTS
 import Tooltip from "./tooltip/TooltipCom.js";
 import SearchOverlay from "./searchOverlay/SearchOverlay";
+import Footer from "./footer/Footer";
 // CONTEXT
 import { AppContext } from "../../context/context";
 // IMAGE SOURCES
@@ -136,8 +137,11 @@ const Layout = ({ children }) => {
             : `${styles.main}  ${styles.active}`
         } ${isSearchOverlayActive && styles.blur}`}
       >
-        {children}
+        <div className={styles.content}>{children}</div>
+
+        <Footer />
       </div>
+
       <Tooltip />
       <SearchOverlay />
     </div>

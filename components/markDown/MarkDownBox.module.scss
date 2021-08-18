@@ -1,0 +1,57 @@
+@import "../../styles/vars.scss";
+.container {
+  * {
+    line-height: 1.8;
+    letter-spacing: -0.005em;
+  }
+  p {
+    margin-bottom: 20px;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 1.8em 0px 0.8em;
+  }
+  blockquote {
+    padding: 10px 20px 10px 50px;
+    border-left: 5px solid $--clr-green;
+    background-color: rgba($color: $--clr-green, $alpha: 0.3);
+    p {
+      margin: 0;
+    }
+  }
+  code {
+    padding: 2px 4px;
+    background-color: rgba($color: $--clr-gray-2, $alpha: 0.5);
+    font-style: italic;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+  ul {
+    margin-left: 55px;
+    margin-bottom: 20px;
+    li {
+      margin-bottom: 0.8em;
+    }
+  }
+  em {
+  }
+  strong {
+    color: $--clr-black;
+    font-weight: 600;
+  }
+  a {
+    border-bottom: 1px solid rgba($color: $--clr-black, $alpha: 0.3);
+    background-color: rgba($color: $--clr-green, $alpha: 0.3);
+    line-height: 1;
+    display: inline-block;
+    transition: all 0.1s;
+    &:hover {
+      border-bottom: 1px solid rgba($color: $--clr-black, $alpha: 0.7);
+      background-color: rgba($color: $--clr-green, $alpha: 0.7);
+    }
+  }
+}

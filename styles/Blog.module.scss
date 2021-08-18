@@ -4,7 +4,6 @@
   min-height: 100vh;
   background-color: $--clr-gray-1;
 }
-
 .main {
   display: flex;
   justify-content: center;
@@ -13,7 +12,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    padding: 0 10px;
+    padding: 0 16px;
   }
   .introSection {
     .introSectionText {
@@ -34,8 +33,6 @@
         margin: 0;
       }
     }
-  }
-  .feedbackSection {
   }
 }
 

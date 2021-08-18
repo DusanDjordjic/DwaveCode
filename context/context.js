@@ -4,6 +4,7 @@ const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [tooltipActive, setTooltilActive] = useState(false);
+  const [searchTag, setSearchTag] = useState("sve");
   const [isSearchOverlayActive, setIsSearchOverlayActive] = useState(false);
   const [tooltipData, setTooltipData] = useState({
     x: 70,
@@ -19,14 +20,22 @@ const AppProvider = ({ children }) => {
     setTooltilActive(false);
   };
   const hideSearchOverlay = () => {
-    setIsSearchOverlayActive(false)
-  }
+    setIsSearchOverlayActive(false);
+  };
   const displaySearchOverlay = () => {
-    setIsSearchOverlayActive(true)
-  }
+    setIsSearchOverlayActive(true);
+  };
   return (
     <AppContext.Provider
-      value={{ tooltipActive, tooltipData, displayTooltip, hideTooltip, isSearchOverlayActive, hideSearchOverlay, displaySearchOverlay }}
+      value={{
+        tooltipActive,
+        tooltipData,
+        displayTooltip,
+        hideTooltip,
+        isSearchOverlayActive,
+        hideSearchOverlay,
+        displaySearchOverlay,
+      }}
     >
       {children}
     </AppContext.Provider>
