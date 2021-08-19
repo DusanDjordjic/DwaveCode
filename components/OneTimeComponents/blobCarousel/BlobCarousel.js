@@ -15,6 +15,7 @@ const BlobCarousel = ({ data }) => {
             {data.content.map((item, index) => {
               return (
                 <button
+                  key={index}
                   className={
                     activeIndex === index + 1 ? styles.buttonActive : ""
                   }
@@ -29,6 +30,7 @@ const BlobCarousel = ({ data }) => {
             {data.content.map((item, index) => {
               return (
                 <div
+                  key={index}
                   className={
                     activeIndex === index + 1
                       ? `${styles.text} ${styles.activeText}`
