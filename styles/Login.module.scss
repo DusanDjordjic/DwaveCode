@@ -1,0 +1,39 @@
+@import "./vars.scss";
+.container {
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  .main {
+    width: 100%;
+    padding: 0 10px;
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    .banner {
+      border: 1px solid blue;
+    }
+    .formWrapper {
+      border: 1px solid green;
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .main {
+    padding: 0 20px;
+    width: 95%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .main {
+    padding: 0 30px;
+    width: 900px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .main {
+    padding: 0 50px;
+    width: 1100px;
+  }
+}

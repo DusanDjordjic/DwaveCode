@@ -1,5 +1,6 @@
 @import "../../styles/vars.scss";
 .container {
+  overflow: hidden;
   * {
     line-height: 1.8;
     letter-spacing: -0.005em;
@@ -16,11 +17,23 @@
     margin: 1.8em 0px 0.8em;
   }
   blockquote {
+    margin: 1.8em 0px 1.8em;
     padding: 10px 20px 10px 50px;
     border-left: 5px solid $--clr-green;
     background-color: rgba($color: $--clr-green, $alpha: 0.3);
     p {
       margin: 0;
+    }
+  }
+  pre {
+    background-color: rgba($color: $--clr-black, $alpha: 1);
+    padding: 10px;
+    margin: 1.8em 0px 1.8em;
+    border-radius: 10px;
+    overflow: auto;
+    color: $--clr-gray-1;
+    code {
+      background-color: transparent;
     }
   }
   code {

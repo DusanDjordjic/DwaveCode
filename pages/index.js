@@ -1,5 +1,7 @@
 // STYLES
 import styles from "../styles/Home.module.scss";
+// DATA
+import { blobCarouselData } from "../data/blobCarousel";
 // REACT HOOKS
 // import { useState, useEffect } from "react";
 // NEXT COMPONENTS
@@ -9,8 +11,12 @@ import Link from "next/link";
 // CUSTOM COMPONENTS
 import Button from "../components/layout/smallComponents/button/Button";
 import WhiteSpace from "../components/layout/whiteSpace/WhiteSpace";
+import BlobCarousel from "../components/OneTimeComponents/blobCarousel/BlobCarousel";
 // FRAMER MOTION
 import { motion } from "framer-motion";
+// ICONS
+import { FaYoutube, FaDiscord, FaUserGraduate } from "react-icons/fa";
+import { BsChatFill } from "react-icons/bs";
 // IMAGE SOURCES
 import codeThinkigSrc from "../public/codeThinking.svg";
 import cardDesignSix from "../public/Cards/Card-Design-06.jpg";
@@ -52,7 +58,7 @@ export default function Home() {
               }}
             >
               <h1>Dwave Code</h1>
-              <h2>Besplatna škola programiranja</h2>
+              <h3>Besplatna škola programiranja</h3>
               <p>
                 Na našem sajtu naučićete sve od osnova do naprednih tehnologija
                 koje se koriste za programiranje web stranica. Takođe naučićete
@@ -84,8 +90,53 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
-        <WhiteSpace />
-        <section className={styles.gridSection}>
+        <section className={styles.ourServiceSection}>
+          <div className={styles.ourServiceSectionTitleWrapper}>
+            <h2>Naše usluge</h2>
+          </div>
+          <div className={styles.ourServiceSectionCardsWrapper}>
+            <div className={styles.card}>
+              <Link href="/kontakt">
+                <a>
+                  <BsChatFill />
+                  <p>Postavite pitanje</p>
+                  <p>Odgovor u što kraćem roku do 24 sata</p>
+                </a>
+              </Link>
+            </div>
+            <div className={styles.card}>
+              <Link href="/kurs">
+                <a>
+                  <FaUserGraduate />
+                  <p>Besplatni kursevi</p>
+                  <p>Dobijate 100% besplatni kurs veb-programiranja</p>
+                </a>
+              </Link>
+            </div>
+            <div className={styles.card}>
+              <Link href="/kurs">
+                <a target="_blank">
+                  <FaDiscord />
+                  <p>Discord bleja</p>
+                  <p>Svake nedelje bleja na discordu.</p>
+                </a>
+              </Link>
+            </div>
+            <div className={styles.card}>
+              <Link href="https://www.youtube.com/channel/UCE1U-7CyefeqKJDa2Tua2_w">
+                <a target="_blank">
+                  <FaYoutube />
+                  <p>Live stream-ovi</p>
+                  <p>Dođite da se družimo i naučimo nešto novo</p>
+                </a>
+              </Link>
+            </div>
+          </div>
+        </section>
+        {/* <section className={styles.startLearningSection}>
+          <BlobCarousel data={blobCarouselData} />
+        </section> */}
+        {/* <section className={styles.gridSection}>
           <div className={styles.gridWrapper}>
             <div className={styles.blob}>
               <Image src={gridBlobSrc} alt="blob" />
@@ -135,8 +186,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
-        <WhiteSpace />
+        </section> */}
       </main>
     </div>
   );

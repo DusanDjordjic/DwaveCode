@@ -2,8 +2,11 @@
 import styles from "./Layout.module.scss";
 // ICONS
 import { HiMenu, HiHome, HiOutlineViewGrid, HiCode } from "react-icons/hi";
-import { FaHtml5, FaCss3Alt } from "react-icons/fa";
+import { FaUserGraduate } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
+import { BsChatFill } from "react-icons/bs";
+import { IoIosPaper } from "react-icons/io";
+import { RiLoginCircleFill } from "react-icons/ri";
 // NEXT COMPONENTS
 import Link from "next/link";
 import Image from "next/image";
@@ -27,29 +30,44 @@ const sidebarData = [
   },
   {
     text: "Blog",
-    icon: <HiOutlineViewGrid />,
+    icon: <IoIosPaper />,
     link: "/blog",
   },
   {
-    text: "Coding",
-    icon: <HiCode />,
-    link: "/blog/codingtips",
+    text: "Kurs",
+    icon: <FaUserGraduate />,
+    link: "/kurs",
   },
   {
-    text: "HTML",
-    icon: <FaHtml5 />,
-    link: "/blog/html",
+    text: "Kontakt",
+    icon: <BsChatFill />,
+    link: "/kontakt",
   },
   {
-    text: "CSS",
-    icon: <FaCss3Alt />,
-    link: "/blog/css",
+    text: "Login",
+    icon: <RiLoginCircleFill />,
+    link: "/login",
   },
-  {
-    text: "JavaScript",
-    icon: <SiJavascript />,
-    link: "/blog/javascript",
-  },
+  // {
+  //   text: "Coding",
+  //   icon: <HiCode />,
+  //   link: "/blog/codingtips",
+  // },
+  // {
+  //   text: "HTML",
+  //   icon: <FaHtml5 />,
+  //   link: "/blog/html",
+  // },
+  // {
+  //   text: "CSS",
+  //   icon: <FaCss3Alt />,
+  //   link: "/blog/css",
+  // },
+  // {
+  //   text: "JavaScript",
+  //   icon: <SiJavascript />,
+  //   link: "/blog/javascript",
+  // },
 ];
 const Layout = ({ children }) => {
   const { displayTooltip, hideTooltip, isSearchOverlayActive } =

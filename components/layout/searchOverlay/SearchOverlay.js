@@ -10,7 +10,7 @@ const SearchOverlay = () => {
   const router = useRouter();
   const handleSubmit = (e) => {
     e.preventDefault();
-    router.push(`/blog/posts/${search}`);
+    router.push(`/blog/posts/${search.toLocaleLowerCase()}`);
     hideSearchOverlay();
     setSearach("");
   };

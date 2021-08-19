@@ -12,12 +12,32 @@ import BlogPost from "../../../components/blog/blogPost/BlogPost";
 
 const searchPosts = ({ blogPosts, length, blogSubHeader, query }) => {
   if (length === 0) {
-    return <div>{blogPosts}</div>;
+    return (
+      <div>
+        <Head>
+          <title>{`Blog | ${query}`}</title>
+          <meta
+            name="description"
+            content="Dwavecode želi da pomogne ljudima da uđu u svet ved programiranja na najlaši mogući način"
+          />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <main className={styles.main}>
+          <section className={styles.introSection}>
+            <BlogHeader />
+          </section>
+          <section className={styles.blogSection}>
+            <BlogNewsHeader data={blogSubHeader} />
+            <div className={styles.content}></div>
+          </section>
+        </main>
+      </div>
+    );
   }
   return (
     <div>
       <Head>
-        <title>Blog | Sve</title>
+        <title>{`Blog | ${query}`}</title>
         <meta
           name="description"
           content="Dwavecode želi da pomogne ljudima da uđu u svet ved programiranja na najlaši mogući način"
@@ -53,10 +73,10 @@ export const getServerSideProps = async (context) => {
   if (blogPosts.length < 1) {
     return {
       props: {
-        blogPosts: `No posts found when searched for "${query}"`,
+        blogPosts: [],
         length: 0,
         blogSubHeader: {
-          text: `Rezultat za traženo ${query}`,
+          text: `Ništa nije pronađeno za traženo "${query}"`,
           link: {
             url: "/blog",
             text: "Nazad",

@@ -2,7 +2,8 @@
 .button {
   color: $--clr-black;
   background-color: $--clr-green;
-  border-radius: 5px;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
   font-size: 16px;
   font-weight: 500;
   -webkit-box-shadow: 0px 10px 30px -6px rgba(56, 240, 212, 0.53);

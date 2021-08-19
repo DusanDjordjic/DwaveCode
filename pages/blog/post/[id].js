@@ -9,7 +9,6 @@ import BlogHeader from "../../../components/blog/blogHeader/BlogHeader";
 import WhiteSpace from "../../../components/layout/whiteSpace/WhiteSpace";
 import MarkDownBox from "../../../components/markDown/MarkDownBox";
 const SinglePost = ({ blogPost }) => {
-  console.log(blogPost);
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -35,7 +34,6 @@ const SinglePost = ({ blogPost }) => {
             </div>
           </div>
         </section>
-        <WhiteSpace />
         <section>
           <MarkDownBox text={blogPost.text} />
         </section>

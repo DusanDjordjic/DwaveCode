@@ -13,7 +13,7 @@ import BlogHeader from "../../components/blog/blogHeader/BlogHeader";
 import BlogButtons from "../../components/blog/blogButtons/BlogButtons";
 import BlogNewsHeader from "../../components/blog/blogHeader/BlogSubHeader";
 import BlogPost from "../../components/blog/blogPost/BlogPost";
-import FeedbackCard from "../../components/feedback/FeedbackCard";
+import FeedbackCard from "../../components/OneTimeComponents/feedback/FeedbackCard";
 // MONGOOSE
 import BlogPostModel from "../../models/BlogPost";
 import { dbConnect } from "../../middleware/db/dbConnect";

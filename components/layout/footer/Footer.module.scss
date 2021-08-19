@@ -24,7 +24,7 @@
           font-size: 14px;
 
           &:first-of-type {
-            color: rgba($color: $--clr-gray-2, $alpha: 0.5);
+            color: $--clr-gray-3;
             text-transform: uppercase;
             font-weight: 500;
             font-size: 16px;
@@ -38,7 +38,7 @@
           }
           .inactive {
             cursor: default;
-            color: rgba($color: $--clr-gray-2, $alpha: 0.5);
+            color: $--clr-gray-3;
             text-decoration: line-through;
             &:hover {
               text-decoration: line-through;

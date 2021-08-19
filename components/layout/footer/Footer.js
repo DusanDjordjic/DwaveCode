@@ -39,7 +39,14 @@ const Footer = () => {
             <ul>
               <li>Linkovi</li>
               <li>
-                <Link href="/">Instagram</Link>
+                <Link href="https://www.instagram.com/dwavecode/">
+                  Instagram
+                </Link>
+              </li>
+              <li>
+                <Link href="https://www.youtube.com/channel/UCE1U-7CyefeqKJDa2Tua2_w/featured">
+                  Youtube
+                </Link>
               </li>
               <li>
                 <Link href="/">
@@ -67,19 +74,19 @@ const Footer = () => {
             <ul>
               <li>Blog</li>
               <li>
-                <Link href="/">Najnovije</Link>
+                <Link href="/blog">Najnovije</Link>
               </li>
               <li>
-                <Link href="/">Sve</Link>
+                <Link href="/blog/svi-postovi">Sve</Link>
               </li>
               <li>
-                <Link href="/">Html</Link>
+                <Link href="/blog/posts/html">Html</Link>
               </li>
               <li>
-                <Link href="/">Css</Link>
+                <Link href="/blog/posts/css">Css</Link>
               </li>
               <li>
-                <Link href="/">JavaScript</Link>
+                <Link href="/blog/posts/javascript">JavaScript</Link>
               </li>
             </ul>
           </div>
