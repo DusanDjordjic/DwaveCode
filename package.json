@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanem/react-nprogress": "^3.0.77",
     "framer-motion": "^4.1.17",
     "mongoose": "^5.13.7",
     "next": "^11.0.1",
