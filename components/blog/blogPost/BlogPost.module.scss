@@ -47,7 +47,7 @@
       .author {
         display: flex;
         align-items: center;
-        color: $--clr-gray-1;
+
         img {
           width: 40px;
           height: 40px;
@@ -55,6 +55,7 @@
           border: 1px solid $--clr-gray-1 !important;
         }
         p {
+          color: $--clr-gray-1;
           font-size: 12px;
           margin-left: 10px;
         }
@@ -64,6 +65,7 @@
         align-items: center;
         color: $--clr-gray-1;
         p {
+          color: $--clr-gray-1;
           font-size: 12px;
           margin-left: 10px;
         }

@@ -4,7 +4,6 @@ import { AppProvider } from "../context/context";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Progress from "../components/layout/progress/Progress";
-import { AppContext } from "../context/context";
 // Uvozimo "Context" i "Layout" i obavijamo ih oko nasih stranica
 // Layout nam sluzi da bi u njemu napravili sidebar
 // Context nam sluzi da bi imali

@@ -3,10 +3,8 @@ import styles from "../../../styles/PostPage.module.scss";
 const ObjectId = require("mongoose").Types.ObjectId;
 import { dbConnect } from "../../../middleware/db/dbConnect";
 import { jsonify } from "../../../lib/jsonify";
-import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import BlogHeader from "../../../components/blog/blogHeader/BlogHeader";
-import WhiteSpace from "../../../components/layout/whiteSpace/WhiteSpace";
 import MarkDownBox from "../../../components/markDown/MarkDownBox";
 const SinglePost = ({ blogPost }) => {
   return (

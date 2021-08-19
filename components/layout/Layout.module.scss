@@ -48,7 +48,6 @@
 }
 .logoContainer {
   padding: 10px;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -84,8 +83,12 @@
       &:hover {
         background-color: $--clr-green;
         color: $--clr-black;
+        p {
+          color: $--clr-black;
+        }
       }
       p {
+        color: $--clr-gray-2;
         cursor: pointer;
         margin-left: 10px;
       }
@@ -94,6 +97,9 @@
       background-color: $--clr-green;
       color: $--clr-black;
       transition: all 0.3s;
+      p {
+        color: $--clr-black;
+      }
     }
   }
 }

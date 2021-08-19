@@ -10,20 +10,25 @@ body {
 h1 {
   font-size: calc(30px + 3 * ((100vw - 430px) / 770));
   font-weight: 600;
+  color: $--clr-black;
 }
 h2 {
   font-size: calc(24px + 3 * ((100vw - 430px) / 770));
   font-weight: 500;
+  color: $--clr-black;
 }
 h3 {
   font-size: calc(18px + 3 * ((100vw - 430px) / 770));
   font-weight: 500;
+  color: $--clr-black;
 }
 h4 {
   font-size: calc(16px + 3 * ((100vw - 430px) / 770));
   font-weight: 500;
+  color: $--clr-black;
 }
 p {
+  color: $--clr-black;
   text-align: justify;
   font-size: 16px;
   font-weight: 400;
