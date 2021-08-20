@@ -71,6 +71,29 @@
         right: 20px;
         background-color: transparent;
       }
+      .tagsContainer {
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        button {
+          cursor: pointer;
+          color: $--clr-black;
+          background-color: $--clr-green;
+          border-radius: 10px;
+          border-top-left-radius: 0px;
+          font-size: 16px;
+          font-weight: 500;
+          -webkit-box-shadow: 0px 10px 30px -6px rgba(56, 240, 212, 0.53);
+          -moz-box-shadow: 0px 10px 30px -6px rgba(56, 240, 212, 0.53);
+          box-shadow: 0px 10px 30px -6px rgba(56, 240, 212, 0.53);
+          transition: all 0.3s;
+          padding: 8px 10px;
+          margin-right: 10px;
+          &:hover {
+            filter: brightness(105%);
+          }
+        }
+      }
     }
   }
 }

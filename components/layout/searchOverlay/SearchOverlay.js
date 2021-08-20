@@ -5,12 +5,19 @@ import { GoSearch } from "react-icons/go";
 import { GrFormClose } from "react-icons/gr";
 import { useRouter } from "next/router";
 const SearchOverlay = () => {
-  const { isSearchOverlayActive, hideSearchOverlay } = useContext(AppContext);
+  const { isSearchOverlayActive, hideSearchOverlay, tags } =
+    useContext(AppContext);
   const [search, setSearach] = useState("");
   const router = useRouter();
   const handleSubmit = (e) => {
     e.preventDefault();
-    router.push(`/blog/posts/${search.toLocaleLowerCase()}`);
+    router.push(`/blog/posts?query=${search.toLocaleLowerCase()}`);
+    hideSearchOverlay();
+    setSearach("");
+  };
+  const handleTagClick = (e, text) => {
+    e.preventDefault();
+    router.push(`/blog/posts?tag=${text}`);
     hideSearchOverlay();
     setSearach("");
   };
@@ -48,6 +55,17 @@ const SearchOverlay = () => {
           >
             <GrFormClose />
           </button>
+          {tags.length !== 0 && (
+            <div className={styles.tagsContainer}>
+              {tags.map((tag, index) => {
+                return (
+                  <button key={index} onClick={(e) => handleTagClick(e, tag)}>
+                    {tag}
+                  </button>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
     </div>

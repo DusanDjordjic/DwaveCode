@@ -70,10 +70,20 @@ const sidebarData = [
   // },
 ];
 const Layout = ({ children }) => {
-  const { displayTooltip, hideTooltip, isSearchOverlayActive } =
+  const { displayTooltip, hideTooltip, isSearchOverlayActive, setTags } =
     useContext(AppContext);
+
+  useEffect(async () => {
+    // Get tags for blogPosts and put them in context
+    console.log("layout fired");
+    const response = await fetch("/api/getTags");
+    const tags = await response.json();
+
+    setTags(tags.tags);
+  }, []);
   const [isSidebarActive, setIsSidebarActive] = useState(false);
   const router = useRouter();
+
   const handleMouseEnter = (e, text) => {
     const data = {
       x: e.target.offsetLeft + e.target.clientWidth + 20,

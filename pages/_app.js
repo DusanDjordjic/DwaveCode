@@ -3,6 +3,7 @@ import Layout from "../components/layout/Layout";
 import { AppProvider } from "../context/context";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+
 import Progress from "../components/layout/progress/Progress";
 // Uvozimo "Context" i "Layout" i obavijamo ih oko nasih stranica
 // Layout nam sluzi da bi u njemu napravili sidebar
@@ -10,7 +11,7 @@ import Progress from "../components/layout/progress/Progress";
 function MyApp({ Component, pageProps }) {
   const [isAnimating, setIsAnimating] = useState(false);
   const router = useRouter();
-
+  let tags;
   const handleStart = () => {
     setIsAnimating(true);
   };
@@ -30,9 +31,10 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router]);
 
+  
   return (
     <AppProvider>
-      <Layout>
+      <Layout tags={tags}>
         <Progress isAnimating={isAnimating} />
         <Component {...pageProps} />
       </Layout>

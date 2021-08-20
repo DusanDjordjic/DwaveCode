@@ -4,8 +4,7 @@ const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
   const [tooltipActive, setTooltilActive] = useState(false);
-  const [searchTag, setSearchTag] = useState("sve");
-
+  const [tags, setTags] = useState([]);
   const [isSearchOverlayActive, setIsSearchOverlayActive] = useState(false);
   const [tooltipData, setTooltipData] = useState({
     x: 70,
@@ -36,6 +35,8 @@ const AppProvider = ({ children }) => {
         isSearchOverlayActive,
         hideSearchOverlay,
         displaySearchOverlay,
+        tags,
+        setTags,
       }}
     >
       {children}

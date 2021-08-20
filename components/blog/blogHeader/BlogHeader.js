@@ -17,11 +17,9 @@ const Header = () => {
               Najnovije
             </a>
           </Link>
-          <Link href="/blog/svi-postovi">
+          <Link href="/blog/posts">
             <a
-              className={
-                router.pathname === "/blog/svi-postovi" ? styles.active : ""
-              }
+              className={router.pathname === "/blog/posts" ? styles.active : ""}
             >
               Sve
             </a>

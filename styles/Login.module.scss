@@ -82,6 +82,15 @@
           filter: brightness(105%);
         }
       }
+      .errorMessage {
+        margin-top: 10px;
+        font-size: 0.8em;
+      }
+    }
+    .hasError {
+      input {
+        border: 1px solid red;
+      }
     }
     .formControlChexkBox {
       display: flex;
