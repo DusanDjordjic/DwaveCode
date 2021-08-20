@@ -34,9 +34,9 @@ const sidebarData = [
     link: "/blog",
   },
   {
-    text: "Kurs",
+    text: "Kursevi",
     icon: <FaUserGraduate />,
-    link: "/kurs",
+    link: "/kursevi/pocetna",
   },
   {
     text: "Kontakt",
@@ -75,7 +75,6 @@ const Layout = ({ children }) => {
 
   useEffect(async () => {
     // Get tags for blogPosts and put them in context
-    console.log("layout fired");
     const response = await fetch("/api/getTags");
     const tags = await response.json();
 
