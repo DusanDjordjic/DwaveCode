@@ -7,8 +7,10 @@ import onlineLectionsSrc from "../../public/onlineLections.svg";
 import { FaHandshake, FaPiggyBank } from "react-icons/fa";
 import { MdMoneyOff } from "react-icons/md";
 import { ImOffice } from "react-icons/im";
-import { IoArrowRedoSharp } from "react-icons/io";
+import { GiShare } from "react-icons/gi";
 import Link from "next/link";
+import courseSrc1 from "../../public/Cards/Card-Design-01.jpg";
+import { MdKeyboardArrowRight } from "react-icons/md";
 const KurseviPocetna = () => {
   return (
     <div className={styles.container}>
@@ -95,8 +97,76 @@ const KurseviPocetna = () => {
         <section className={styles.coursesSection}>
           <h2>Naši kursevi</h2>
           <div className={styles.coursesSectionCardsWrapper}>
-            <div className={styles.card}>
-              
+            <div className={styles.cardWrapper}>
+              <div className={styles.card}>
+                <div className={styles.imageWrapper}>
+                  <div className={styles.imageGradient}></div>
+                  <Image
+                    src="/Cards/Card-Design-01.jpg"
+                    height="100"
+                    width="100"
+                    layout="responsive"
+                  />
+                </div>
+                <div className={styles.textWrapper}>
+                  <h3>HTML kurs</h3>
+                  <p>12 lekcija / 3h 45min</p>
+                  <p className={styles.descSubheader}>Deskripcija</p>
+                  <p>
+                    U ovom kursu naučićete sve od najosnovnijih znanja iz html-a
+                    kako napraviti .html fajl, kako ga otvoriti u pretraživaču
+                    itd. Do Naprednijih stvari koje se tiču linkova, kako
+                    funkcionišu adrese, slaganje i pozicioniranje elemenata.
+                  </p>
+                  <p className={styles.courseQuote}>
+                    Html za sajt je kao skelet za čoveka
+                  </p>
+                </div>
+                <div className={styles.footer}>
+                  <button className={styles.linkButton}>
+                    <MdKeyboardArrowRight />
+                    Započni
+                  </button>
+                  <button className={styles.shareButton}>
+                    <GiShare />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className={styles.cardWrapper}>
+              <div className={styles.card}>
+                <div className={styles.imageWrapper}>
+                  <div className={styles.imageGradient}></div>
+                  <Image
+                    src="/Cards/Card-Design-01.jpg"
+                    height="100"
+                    width="100"
+                    layout="responsive"
+                  />
+                </div>
+                <div className={styles.textWrapper}>
+                  <h3>HTML kurs</h3>
+                  <p>12 lekcija / 3h 45min</p>
+                  <p className={styles.descSubheader}>Deskripcija</p>
+                  <p>
+                    U ovom kursu naučićete sve od najosnovnijih znanja iz html-a
+                    kako napraviti .html fajl, kako ga otvoriti u pretraživaču
+                    itd. Do Naprednijih stvari koje se tiču linkova.
+                  </p>
+                  <p className={styles.courseQuote}>
+                    Html za sajt je kao skelet za čoveka
+                  </p>
+                </div>
+                <div className={styles.footer}>
+                  <button className={styles.linkButton}>
+                    <MdKeyboardArrowRight />
+                    Započni
+                  </button>
+                  <button className={styles.shareButton}>
+                    <GiShare />
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </section>
