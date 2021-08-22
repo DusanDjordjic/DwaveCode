@@ -53,8 +53,5 @@ const postSchema = new mongoose.Schema({
   },
 });
 
-if (!mongoose.models["BlogPost"]) {
+export default mongoose.models["BlogPost"] ||
   mongoose.model("BlogPost", postSchema, "BlogPosts");
-}
-const BlogPost = mongoose.models["BlogPost"];
-export default BlogPost;

@@ -137,6 +137,7 @@
         border-radius: 10px;
         border-top-left-radius: 0px;
         overflow: hidden;
+        background-color: $--clr-black;
         .imageWrapper {
           position: relative;
           .imageGradient {
@@ -153,7 +154,6 @@
           }
         }
         .textWrapper {
-          background-color: $--clr-black;
           padding: 10px 20px;
           padding-bottom: 42px;
           h3 {
@@ -183,7 +183,6 @@
           position: absolute;
           bottom: 0px;
           width: 100%;
-          background-color: $--clr-black;
           padding: 0 20px;
           padding-bottom: 10px;
           border-bottom-left-radius: 10px;
