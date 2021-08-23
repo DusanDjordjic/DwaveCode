@@ -3,13 +3,13 @@ import { useMemo, useState } from "react";
 import styles from "./Rate.module.scss";
 const Rate = ({ rating, onRating, isStatic }) => {
   const [hoverRating, setHoverRating] = useState(rating);
-  let starRating = Array(5)
-    .fill(0)
-    .map((item, i) => i + 1);
-  if (!isStatic) {
-    starRating = useMemo(() => {
-      return starRating.map((id) => {
-        if (hoverRating >= id) {
+
+  const starRating = useMemo(() => {
+    return starRating.map((id) => {
+      if (hoverRating >= id) {
+        if (isStatic) {
+          return <AiFillStar key={id} style={{ cursor: "default" }} />;
+        } else {
           return (
             <AiFillStar
               key={id}
@@ -18,6 +18,10 @@ const Rate = ({ rating, onRating, isStatic }) => {
               onMouseLeave={() => setHoverRating(rating)}
             />
           );
+        }
+      } else {
+        if (isStatic) {
+          return <AiOutlineStar key={id} style={{ cursor: "default" }} />;
         } else {
           return (
             <AiOutlineStar
@@ -28,19 +32,9 @@ const Rate = ({ rating, onRating, isStatic }) => {
             />
           );
         }
-      });
-    }, [hoverRating, rating]);
-  } else {
-    starRating = useMemo(() => {
-      return starRating.map((id) => {
-        if (hoverRating >= id) {
-          return <AiFillStar key={id} style={{ cursor: "default" }} />;
-        } else {
-          return <AiOutlineStar key={id} style={{ cursor: "default" }} />;
-        }
-      });
-    }, [rating]);
-  }
+      }
+    });
+  }, [hoverRating, rating]);
 
   return <div className={styles.container}>{starRating}</div>;
 };
