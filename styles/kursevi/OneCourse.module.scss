@@ -1,0 +1,193 @@
+@import "../vars.scss";
+.container {
+  min-height: 100vh;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0 16px;
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+  }
+  section.introSection {
+    .introSectionTextWrapper,
+    .introSectionImageWrapper {
+      width: 100%;
+    }
+    .introSectionTextWrapper {
+      .ratingContainer {
+        margin: 20px 0px 30px 0px;
+        display: flex;
+        align-items: center;
+        p {
+          margin-left: 5px;
+          font-weight: 600;
+        }
+      }
+      .description {
+        font-size: calc(16px + 3 * ((100vw - 430px) / 770));
+        margin-bottom: 30px;
+      }
+    }
+    .introSectionImageWrapper {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      display: none;
+      align-items: center;
+      div {
+        padding: 0 !important;
+        img {
+          position: relative !important;
+          width: 100% !important;
+          height: 100% !important;
+          border-radius: 10px;
+          border-top-left-radius: 0px;
+        }
+      }
+    }
+    .keyInfoWrapper {
+      margin-top: 50px;
+      min-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      padding-top: 0px !important;
+      .keyInfoItem {
+        padding: 0 20px;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        color: $--clr-gray-3;
+        .keyInfoIconSpan {
+          padding-right: 20px;
+        }
+        p {
+          color: $--clr-gray-3;
+          display: flex;
+          flex-wrap: wrap;
+          span {
+            min-width: 100%;
+            color: $--clr-black;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+  .contentNavigation {
+    position: relative;
+    z-index: 10;
+    min-width: 100%;
+    background-color: $--clr-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    ul {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
+      .navButton {
+        margin: 10px;
+        a {
+          cursor: pointer;
+          font-size: 16px;
+          background-color: transparent;
+          color: $--clr-gray-3;
+          transition: all 0.3s;
+          font-weight: 500;
+          border-bottom: 2px solid transparent;
+          &:hover {
+            color: $--clr-green;
+          }
+        }
+        .active {
+          color: $--clr-green;
+          border-bottom: 2px solid $--clr-green;
+        }
+      }
+    }
+  }
+  section.contentSection {
+    .contentWrapper {
+      border: 1px solid red;
+      margin-top: 50px;
+      max-width: 700px;
+      margin: 0 auto;
+      div.wrapperDiv {
+        padding: 30px 10px;
+        h2 {
+          font-size: 2em;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 768px) {
+  .main {
+    section {
+      padding: 0 20px;
+      width: 95%;
+    }
+    section.introSection {
+      .keyInfoWrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .main {
+    section {
+      padding: 0 30px;
+      width: 900px;
+    }
+    section.introSection {
+      .introSectionTextWrapper {
+        padding-right: 10px;
+        width: 50%;
+      }
+      .introSectionImageWrapper {
+        padding-left: 10px;
+        width: 50%;
+      }
+      .introSectionTextWrapper {
+        border-right: 1px solid $--clr-gray-2;
+      }
+      .introSectionImageWrapper {
+        display: flex;
+        align-items: center;
+      }
+    }
+    .contentNavigation {
+      position: sticky;
+      top: 0;
+    }
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .main {
+    section {
+      padding: 0 50px;
+      width: 1100px;
+    }
+    section.introSection {
+      .introSectionTextWrapper {
+        padding-right: 50px;
+      }
+      .introSectionImageWrapper {
+        padding-left: 50px;
+      }
+    }
+  }
+}

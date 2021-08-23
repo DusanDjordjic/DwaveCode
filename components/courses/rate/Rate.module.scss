@@ -1,0 +1,9 @@
+@import "../../../styles/vars.scss";
+.container {
+  display: flex;
+  svg {
+    cursor: pointer;
+    padding: 0 2px;
+    color: $--clr-green;
+  }
+}

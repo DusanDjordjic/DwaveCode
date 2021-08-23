@@ -8,7 +8,8 @@ export default async function (req, res) {
       "U ovom kursu naučićete sve od najosnovnijih znanja iz html-a kako napraviti .html fajl, kako ga otvoriti u pretraživaču itd. Do Naprednijih stvari koje se tiču linkova.",
     quote: "Dizajn je vidljiva inteligencija",
     coverImage: "/Cards/Card-Design-02.jpg",
-    readTime: " 4h 00min",
+    readTime: " 10h 30min",
+    weeklyStudy: "5h 15min",
     likes: [],
     lections: [
       {

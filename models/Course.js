@@ -64,6 +64,10 @@ const courseSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  weeklyStudy: {
+    type: String,
+    required: true,
+  },
   likes: {
     type: [Number],
   },
@@ -72,7 +76,5 @@ const courseSchema = new mongoose.Schema({
     required: true,
   },
 });
-console.log("jjjj", mongoose.models["Course"]);
-
 export default mongoose.models["Course"] ||
   mongoose.model("Course", courseSchema, "Courses");
