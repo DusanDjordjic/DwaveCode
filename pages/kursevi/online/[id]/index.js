@@ -18,8 +18,8 @@ import { dbConnect } from "../../../../middleware/db/dbConnect";
 import { average } from "../../../../lib/average";
 import { jsonify } from "../../../../lib/jsonify";
 const Kurs = ({ course }) => {
-  const averageLikes = average(course.likes);
   if (course) {
+    const averageLikes = average(course.likes);
     return (
       <>
         {/* Head */}
@@ -257,9 +257,9 @@ const Kurs = ({ course }) => {
 export const getStaticProps = async (context) => {
   try {
     // Get id from params
-  const courseId = context.params.id;
-  // Connect to DB
-  dbConnect();
+    const courseId = context.params.id;
+    // Connect to DB
+    dbConnect();
     // Fetch Course By Id
     const course = await CourseSchema.findById(courseId);
     if (course) {
