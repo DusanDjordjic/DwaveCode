@@ -60,7 +60,7 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
 
 export default Blog;
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     // Connect to DB
     dbConnect();
@@ -79,6 +79,7 @@ export const getServerSideProps = async () => {
             },
           },
         },
+        revalidate: 60 * 30
       };
     }else{
       // If there is no blogPosts
@@ -93,6 +94,7 @@ export const getServerSideProps = async () => {
             },
           },
         },
+        revalidate: 60 * 30
       };
     }
     
@@ -110,6 +112,7 @@ export const getServerSideProps = async () => {
           },
         },
       },
+      revalidate: 60 * 30
     };
   }
 };
