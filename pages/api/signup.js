@@ -7,7 +7,7 @@ export default function (req, res) {
     // Getting information from req.body
     const { name, email, password } = JSON.parse(req.body);
     try {
-      // Chexk if user exists
+      // Check if user exists
       res.status(200).json({ message: "Hello", error: false });
     } catch (error) {
       res.status(400).json({ message: error, error: true });

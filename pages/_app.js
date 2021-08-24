@@ -1,14 +1,17 @@
+// STYLES
 import "../styles/globals.scss";
+// CUSTOM COMPONENTS
 import Layout from "../components/layout/Layout";
+// CONTEXT
 import { AppProvider } from "../context/context";
+// REACT HOOKS
 import { useEffect, useState } from "react";
+// NEXT HOOKS
 import { useRouter } from "next/router";
-
+// PROGRESS BAR COMPONENTS
 import Progress from "../components/layout/progress/Progress";
-// Uvozimo "Context" i "Layout" i obavijamo ih oko nasih stranica
-// Layout nam sluzi da bi u njemu napravili sidebar
-// Context nam sluzi da bi imali
 function MyApp({ Component, pageProps }) {
+  // Progress Bar Logic
   const [isAnimating, setIsAnimating] = useState(false);
   const router = useRouter();
   let tags;

@@ -1,5 +1,6 @@
-import { jsonify } from "../../../../../lib/jsonify";
+// MIDDLEWARE
 import { dbConnect } from "../../../../../middleware/db/dbConnect";
+// MODELS
 import CourseSchema from "../../../../../models/Course";
 const Lections = ({ text }) => {
   return <h1>{text}</h1>;
@@ -14,7 +15,9 @@ export const getStaticProps = (context) => {
   };
 };
 export const getStaticPaths = async () => {
+  // Connect to DB
   dbConnect();
+  // Fetch CourseArray
   const courseArray = await CourseSchema.find({});
   return {
     paths: courseArray.map((item) => {
@@ -24,6 +27,6 @@ export const getStaticPaths = async () => {
         },
       };
     }),
-    fallback: false,
+    fallback: true,
   };
 };

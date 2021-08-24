@@ -1,19 +1,20 @@
-import BlogPostModel from "../../../models/BlogPost";
-
+// STYLES
 import styles from "../../../styles/SearchPosts.module.scss";
 // NEXT COMPONENTS
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
 // CUSTOM COMPONENTS
 import BlogHeader from "../../../components/blog/blogHeader/BlogHeader";
 import BlogNewsHeader from "../../../components/blog/blogHeader/BlogSubHeader";
 import BlogPost from "../../../components/blog/blogPost/BlogPost";
-
+// MODELS
+import BlogPostModel from "../../../models/BlogPost";
+// MIDDLEWARE
+import { dbConnect } from "../../../middleware/db/dbConnect";
 const searchPosts = ({ blogPosts, length, blogSubHeader, query }) => {
   if (length === 0) {
     return (
-      <div>
+      <div className={styles.container}>
+        {/* Head */}
         <Head>
           <title>{`Blog | ${query}`}</title>
           <meta
@@ -22,12 +23,16 @@ const searchPosts = ({ blogPosts, length, blogSubHeader, query }) => {
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>
+        {/* Main */}
         <main className={styles.main}>
           <section className={styles.introSection}>
+            {/* Blog Header */}
             <BlogHeader />
           </section>
           <section className={styles.blogSection}>
+            {/* Blog News Header */}
             <BlogNewsHeader data={blogSubHeader} />
+             {/* Content */}
             <div className={styles.content}></div>
           </section>
         </main>
@@ -35,7 +40,8 @@ const searchPosts = ({ blogPosts, length, blogSubHeader, query }) => {
     );
   }
   return (
-    <div>
+    <div className={styles.container}>
+      {/* Head */}
       <Head>
         <title>{`Blog | ${query ? query : "Sve"}`}</title>
         <meta
@@ -44,13 +50,17 @@ const searchPosts = ({ blogPosts, length, blogSubHeader, query }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* Main */}
       <main className={styles.main}>
         <section className={styles.introSection}>
+          {/* Blog Header */}
           <BlogHeader />
         </section>
         <section className={styles.blogSection}>
+          {/* Blog News Header */}
           <BlogNewsHeader data={blogSubHeader} />
           <div className={styles.content}>
+            {/* Mapping Blog Posts */}
             {blogPosts.map((post, index) => {
               return <BlogPost key={index} data={post} />;
             })}
@@ -64,42 +74,62 @@ const searchPosts = ({ blogPosts, length, blogSubHeader, query }) => {
 export default searchPosts;
 
 export const getServerSideProps = async (context) => {
-  const { query, tag } = context.query;
-  const response = await BlogPostModel.find({});
-  let blogPosts = response;
+  try {
+    dbConnect();
+    // Get query and a tag from params
+    const { query, tag } = context.query;
+    // Fetch BlogPosts
+    const response = await BlogPostModel.find({});
+    let blogPosts = response;
 
-  // Ako nema ni tag ni query vrati sve
-  if (!query && !tag) {
-    return {
-      props: {
-        blogPosts: JSON.parse(JSON.stringify(blogPosts)),
-        length: blogPosts.length,
-        blogSubHeader: {
-          text: `Sve objave`,
-          link: {
-            url: "/blog",
-            text: "Nazad",
-          },
-        },
-      },
-    };
-  }
-
-  // Ako ima tag filtriraj po njemu
-  if (tag) {
-    blogPosts = response.filter((post) => {
-      return post.tags.includes(tag);
-    });
-
-    // Vrati podatke na page
-    // Ako je posle filtriranja po TAG-u prazan niz
-    if (blogPosts.length < 1) {
+    // Ako nema ni tag ni query vrati sve
+    if (!query && !tag) {
       return {
         props: {
-          blogPosts: [],
-          length: 0,
+          blogPosts: JSON.parse(JSON.stringify(blogPosts)),
+          length: blogPosts.length,
           blogSubHeader: {
-            text: `Ništa nije pronađeno za traženo "${tag}"`,
+            text: `Sve objave`,
+            link: {
+              url: "/blog",
+              text: "Nazad",
+            },
+          },
+        },
+      };
+    }
+
+    // Ako ima tag filtriraj po njemu
+    if (tag) {
+      blogPosts = response.filter((post) => {
+        return post.tags.includes(tag);
+      });
+
+      // Vrati podatke na page
+      // Ako je posle filtriranja po TAG-u prazan niz
+      if (blogPosts.length < 1) {
+        return {
+          props: {
+            blogPosts: [],
+            length: 0,
+            blogSubHeader: {
+              text: `Ništa nije pronađeno za traženo "${tag}"`,
+              link: {
+                url: "/blog",
+                text: "Nazad",
+              },
+            },
+            query: tag,
+          },
+        };
+      }
+      // Ako NIJE prazan niz vrati pronadjeno
+      return {
+        props: {
+          blogPosts: JSON.parse(JSON.stringify(blogPosts)),
+          length: blogPosts.length,
+          blogSubHeader: {
+            text: `Rezultat za traženo "${tag}"`,
             link: {
               url: "/blog",
               text: "Nazad",
@@ -109,36 +139,36 @@ export const getServerSideProps = async (context) => {
         },
       };
     }
-    // Ako NIJE prazan niz vrati pronadjeno
-    return {
-      props: {
-        blogPosts: JSON.parse(JSON.stringify(blogPosts)),
-        length: blogPosts.length,
-        blogSubHeader: {
-          text: `Rezultat za traženo "${tag}"`,
-          link: {
-            url: "/blog",
-            text: "Nazad",
+    // Ako ima query filtriraj po njemu
+    if (query) {
+      blogPosts = response.filter((post) => {
+        return post.title.includes(query);
+      });
+      // Vrati podatke na page
+      // Ako je posle filtriranja po QUERY-ju prazan niz
+      if (blogPosts.length < 1) {
+        return {
+          props: {
+            blogPosts: [],
+            length: 0,
+            blogSubHeader: {
+              text: `Ništa nije pronađeno za traženo "${query}"`,
+              link: {
+                url: "/blog",
+                text: "Nazad",
+              },
+            },
+            query: query,
           },
-        },
-        query: tag,
-      },
-    };
-  }
-  // Ako ima query filtriraj po njemu
-  if (query) {
-    blogPosts = response.filter((post) => {
-      return post.title.includes(query);
-    });
-    // Vrati podatke na page
-    // Ako je posle filtriranja po QUERY-ju prazan niz
-    if (blogPosts.length < 1) {
+        };
+      }
+      // Ako NIJE prazan niz vrati pronadjeno
       return {
         props: {
-          blogPosts: [],
-          length: 0,
+          blogPosts: JSON.parse(JSON.stringify(blogPosts)),
+          length: blogPosts.length,
           blogSubHeader: {
-            text: `Ništa nije pronađeno za traženo "${query}"`,
+            text: `Rezultat za traženo "${query}"`,
             link: {
               url: "/blog",
               text: "Nazad",
@@ -148,13 +178,13 @@ export const getServerSideProps = async (context) => {
         },
       };
     }
-    // Ako NIJE prazan niz vrati pronadjeno
+  } catch (error) {
     return {
       props: {
         blogPosts: JSON.parse(JSON.stringify(blogPosts)),
         length: blogPosts.length,
         blogSubHeader: {
-          text: `Rezultat za traženo "${query}"`,
+          text: `Doslo je do greske, pokusajte ponovo`,
           link: {
             url: "/blog",
             text: "Nazad",

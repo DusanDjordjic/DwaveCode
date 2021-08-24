@@ -80,6 +80,16 @@ const Layout = ({ children }) => {
 
     setTags(tags.tags);
   }, []);
+  // Effect callbacks are synchronous to prevent race conditions. Put the async function inside:
+
+  // useEffect(() => {
+  //  async function fetchData() {
+  //     // You can await here
+  //     const response = await MyAPI.getData(someId);
+  //     // ...
+  //   }
+  //   fetchData();
+  // }, [someId]); // Or [] if effect doesn't need props or state
   const [isSidebarActive, setIsSidebarActive] = useState(false);
   const router = useRouter();
 

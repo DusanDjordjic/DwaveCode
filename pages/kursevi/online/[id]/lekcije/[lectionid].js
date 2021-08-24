@@ -1,13 +1,13 @@
-import { jsonify } from "../../../../../lib/jsonify";
+// MIDDLEWARE
 import { dbConnect } from "../../../../../middleware/db/dbConnect";
+// MODELS
 import CourseSchema from "../../../../../models/Course";
 const Lection = ({ text }) => {
-  return <h1>hiii</h1>;
+  return <h1>{text}</h1>;
 };
 export default Lection;
 
 export const getStaticProps = async (context) => {
-  console.log("AAAAA", context);
   return {
     props: {
       text: "Helloaaaa",
@@ -15,8 +15,11 @@ export const getStaticProps = async (context) => {
   };
 };
 export const getStaticPaths = async () => {
+  // Connect to DB
   dbConnect();
+  // Fetch CourseArray
   const courseArray = await CourseSchema.find({});
+  // Make Paths from corses Ids and Lections Ids
   let paths = [];
   courseArray.forEach((course) => {
     course.lections.forEach((lection) => {
@@ -27,10 +30,6 @@ export const getStaticPaths = async () => {
   });
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
-// : [
-//     { params: { id: "61227b9648dd08286c891850", lectionid: "1" } },
-//     { params: { id: "61227b9648dd08286c891850", lectionid: "2" } },
-//   ],

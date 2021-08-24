@@ -1,21 +1,16 @@
 // STYLES
 import styles from "../../styles/Blog.module.scss";
-// ICONS
-
 // NEXT COMPONENTS
 import Head from "next/head";
-// import Image from "next/image";
-// import Link from "next/link";
 // CUSTOM COMPONENTS
-// import Button from "../../components/layout/smallComponents/button/Button";
-// import Line from "../../components/layout/smallComponents/line/Line";
 import BlogHeader from "../../components/blog/blogHeader/BlogHeader";
 import BlogButtons from "../../components/blog/blogButtons/BlogButtons";
 import BlogNewsHeader from "../../components/blog/blogHeader/BlogSubHeader";
 import BlogPost from "../../components/blog/blogPost/BlogPost";
 import FeedbackCard from "../../components/OneTimeComponents/feedback/FeedbackCard";
-// MONGOOSE
+// MODELS
 import BlogPostModel from "../../models/BlogPost";
+// MIDDLEWARE
 import { dbConnect } from "../../middleware/db/dbConnect";
 // LIB
 import { jsonify } from "../../lib/jsonify";
@@ -26,7 +21,7 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
         <title>Dwave Code | Blog</title>
         <meta
           name="description"
-          content="Dwavecode želi da pomogne ljudima da uđu u svet ved programiranja na najlaši mogući način"
+          content="Tekstovi na temu veb-programiranja, resenja kompleksinh problema i razne druge stvari"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -67,21 +62,42 @@ export default Blog;
 
 export const getServerSideProps = async () => {
   try {
+    // Connect to DB
     dbConnect();
+    // Fetch BlogPosts
     const blogPosts = await BlogPostModel.find({});
-    return {
-      props: {
-        blogPosts: jsonify(blogPosts),
-        blogSubHeader: {
-          text: "Najnovije",
-          link: {
-            url: "/blog/svi-postovi",
-            text: "Pogledaj sve",
+    if(blogPosts.length !== 0){
+      // If there is a blogPosts
+      return {
+        props: {
+          blogPosts: jsonify(blogPosts),
+          blogSubHeader: {
+            text: "Najnovije",
+            link: {
+              url: "/blog/svi-postovi",
+              text: "Pogledaj sve",
+            },
           },
         },
-      },
-    };
+      };
+    }else{
+      // If there is no blogPosts
+      return {
+        props: {
+          blogPosts: [],
+          blogSubHeader: {
+            text: "NEMA POSTOVA",
+            link: {
+              url: "/blog/svi-postovi",
+              text: "Pogledaj sve",
+            },
+          },
+        },
+      };
+    }
+    
   } catch (error) {
+    // If an error occurs log-it and return ERROR=TRUE
     console.log("***ERROR***", error);
     return {
       props: {

@@ -1,17 +1,11 @@
 // STYLES
 import styles from "../styles/Home.module.scss";
-// DATA
-import { blobCarouselData } from "../data/blobCarousel";
-// REACT HOOKS
-// import { useState, useEffect } from "react";
 // NEXT COMPONENTS
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 // CUSTOM COMPONENTS
 import Button from "../components/layout/smallComponents/button/Button";
-import WhiteSpace from "../components/layout/whiteSpace/WhiteSpace";
-import BlobCarousel from "../components/OneTimeComponents/blobCarousel/BlobCarousel";
 // FRAMER MOTION
 import { motion } from "framer-motion";
 // ICONS
@@ -19,27 +13,25 @@ import { FaYoutube, FaDiscord, FaUserGraduate } from "react-icons/fa";
 import { BsChatFill } from "react-icons/bs";
 // IMAGE SOURCES
 import codeThinkigSrc from "../public/codeThinking.svg";
-import cardDesignSix from "../public/Cards/Card-Design-06.jpg";
-import cardDesignOne from "../public/Cards/Card-Design-01.jpg";
-import cardDesignTwo from "../public/Cards/Card-Design-02.jpg";
-import cardDesignThree from "../public/Cards/Card-Design-03.jpg";
-import cardDesignFour from "../public/Cards/Card-Design-04.jpg";
-import gridBlobSrc from "../public/blob.png";
 export default function Home() {
   return (
     <div className={styles.container}>
+      {/* Head */}
       <Head>
-        <title>Dwave Code | Početna</title>
+        <title>Dwavecode | Početna</title>
         <meta
           name="description"
           content="Dwavecode želi da pomogne ljudima da uđu u svet ved programiranja na najlaši mogući način"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      {/* Main */}
       <main className={styles.main}>
+        {/* Intro Section */}
         <section className={styles.introSection}>
+          {/* Intro Section Text */}
           <div className={styles.introSectionTextWrapper}>
+            {/* Motion Div */}
             <motion.div
               initial="hidden"
               animate="visible"
@@ -67,8 +59,9 @@ export default function Home() {
               <Button text={"Počni sa učenjem"} link="/blog" />
             </motion.div>
           </div>
-
+          {/* Intro Section Image */}
           <div className={styles.introSectionImageWrapper}>
+            {/* Motion Div */}
             <motion.div
               initial="hidden"
               animate="visible"
@@ -90,11 +83,15 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+        {/* Our Service Section */}
         <section className={styles.ourServiceSection}>
+          {/* Our Service Section Title */}
           <div className={styles.ourServiceSectionTitleWrapper}>
             <h2>Naše usluge</h2>
           </div>
+          {/* Our Section Cards Wrapper */}
           <div className={styles.ourServiceSectionCardsWrapper}>
+            {/* Card - Kontakt*/}
             <div className={styles.card}>
               <Link href="/kontakt">
                 <a>
@@ -104,6 +101,7 @@ export default function Home() {
                 </a>
               </Link>
             </div>
+            {/* Card - Kurs */}
             <div className={styles.card}>
               <Link href="/kurs">
                 <a>
@@ -113,6 +111,7 @@ export default function Home() {
                 </a>
               </Link>
             </div>
+            {/* Card - Discord */}
             <div className={styles.card}>
               <Link href="/kurs">
                 <a target="_blank">
@@ -122,6 +121,7 @@ export default function Home() {
                 </a>
               </Link>
             </div>
+            {/* Card - Youtube */}
             <div className={styles.card}>
               <Link href="https://www.youtube.com/channel/UCE1U-7CyefeqKJDa2Tua2_w">
                 <a target="_blank">

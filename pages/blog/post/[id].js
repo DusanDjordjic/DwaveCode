@@ -1,11 +1,18 @@
-import BlogPostModel from "../../../models/BlogPost";
+// STYLES
 import styles from "../../../styles/PostPage.module.scss";
-const ObjectId = require("mongoose").Types.ObjectId;
-import { dbConnect } from "../../../middleware/db/dbConnect";
-import { jsonify } from "../../../lib/jsonify";
+// NEXT COMPONENTS
 import Image from "next/image";
+// CUSTOM COMPONENTS
 import BlogHeader from "../../../components/blog/blogHeader/BlogHeader";
 import MarkDownBox from "../../../components/markDown/MarkDownBox";
+// MODELS
+import BlogPostModel from "../../../models/BlogPost";
+// MIDDLEWARE
+import { dbConnect } from "../../../middleware/db/dbConnect";
+// LIB
+import { jsonify } from "../../../lib/jsonify";
+// OTHER
+const ObjectId = require("mongoose").Types.ObjectId;
 const SinglePost = ({ blogPost }) => {
   if (blogPost) {
     return (
@@ -47,18 +54,33 @@ const SinglePost = ({ blogPost }) => {
 export default SinglePost;
 
 export async function getStaticProps(context) {
-  const id = context.params.id;
-  dbConnect();
-  const blogPost = await BlogPostModel.findOne({ _id: new ObjectId(id) });
-  return {
-    props: {
-      blogPost: jsonify(blogPost),
-    },
-  };
+  try {
+    // Get id from params
+    const id = context.params.id;
+    // Connect to DB
+    dbConnect();
+    // Fetch BlogPost with id
+    const blogPost = await BlogPostModel.findOne({ _id: new ObjectId(id) });
+    return {
+      // If there is no error return BlogPosts
+      props: {
+        blogPost: jsonify(blogPost),
+      },
+    };
+  } catch (error) {
+    return {
+      // If there is an error return undefined
+      props: {
+        blogPost: undefined,
+      },
+    };
+  }
 }
 
 export async function getStaticPaths() {
+  // Connect to DB
   dbConnect();
+  // Fetch BlogPosts
   const blogPosts = await BlogPostModel.find({});
   return {
     paths: blogPosts.map((post) => {
