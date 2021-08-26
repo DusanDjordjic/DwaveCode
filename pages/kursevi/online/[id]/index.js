@@ -22,9 +22,8 @@ import { dbConnect } from "../../../../middleware/db/dbConnect";
 import { average } from "../../../../lib/average";
 import { jsonify } from "../../../../lib/jsonify";
 const Kurs = ({ course }) => {
+  const router = useRouter();
   if (course) {
-    const router = useRouter();
-    console.log(router);
     const averageLikes = average(course.likes);
     return (
       <>
