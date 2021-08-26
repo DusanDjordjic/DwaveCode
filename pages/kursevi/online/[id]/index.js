@@ -3,11 +3,15 @@ import styles from "../../../../styles/kursevi/OneCourse.module.scss";
 // NEXT COMPONENTS
 import Image from "next/image";
 import Head from "next/head";
+import Link from "next/link";
+// NEXT HOOKS
+import { useRouter } from "next/router";
 // REACT SCROLL COMPONENTS
 import { Link as ScrollLink, Element as ScrollElement } from "react-scroll";
 // CUSTOM COMPONENTS
 import Rate from "../../../../components/courses/rate/Rate";
 import Button from "../../../../components/layout/smallComponents/button/Button";
+import RoundButton from "../../../../components/layout/smallComponents/roundButton/RoundButton";
 // ICONS
 import { FaGlobeEurope, FaHourglassEnd, FaStopwatch } from "react-icons/fa";
 // MODELS
@@ -19,6 +23,8 @@ import { average } from "../../../../lib/average";
 import { jsonify } from "../../../../lib/jsonify";
 const Kurs = ({ course }) => {
   if (course) {
+    const router = useRouter();
+    console.log(router);
     const averageLikes = average(course.likes);
     return (
       <>
@@ -182,21 +188,44 @@ const Kurs = ({ course }) => {
               {/* Content Wrapper */}
               <div className={styles.contentWrapper}>
                 {/* Scroll Element - Pregled */}
-                <ScrollElement name="pregled" className={styles.wrapperDiv}>
+                <ScrollElement
+                  name="pregled"
+                  className={`${styles.wrapperDiv} ${styles.pregledDiv}`}
+                >
                   <h2>Pregled</h2>
                   <p>{course.content.overview}</p>
                 </ScrollElement>
                 {/* Scroll Element - Lekcije */}
-                <ScrollElement name="lekcije" className={styles.wrapperDiv}>
+                <ScrollElement
+                  name="lekcije"
+                  className={`${styles.wrapperDiv} ${styles.lekicjeDiv}`}
+                >
                   <h2>Lekcije</h2>
-                  {course.lections.map((lection, index) => {
-                    return (
-                      <div key={index}>
-                        <h4>{lection.title}</h4>
-                        <p>{lection.text}</p>
-                      </div>
-                    );
-                  })}
+                  <div className={styles.lectionsWrapper}>
+                    {course.lections.map((lection, index) => {
+                      return (
+                        <div key={index} className={styles.lectionCard}>
+                          <div className={styles.imageWrapper}>
+                            <Image
+                              src="/Cards/Card-Design-01.jpg"
+                              height="100"
+                              width="100"
+                              layout="responsive"
+                            />
+                          </div>
+                          <div className={styles.textWrapper}>
+                            <div>
+                              <h4>{lection.title}</h4>
+                              <p>{lection.description}</p>
+                            </div>
+                            <RoundButton
+                              link={`${router.asPath}/lekcije/${lection._id}`}
+                            />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </ScrollElement>
                 {/* Scroll Element - Sta cu Nauciti */}
                 <ScrollElement

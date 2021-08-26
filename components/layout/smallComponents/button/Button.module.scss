@@ -1,24 +1,25 @@
 @import "../../../../styles/vars.scss";
 .button {
-  color: $--clr-black;
-  background-color: $--clr-green;
+  background-image: $--gradient;
+  background-size: $--bg-size;
+  animation: $--gradient-animation;
   border-radius: 10px;
   border-top-left-radius: 0px;
-  font-size: 16px;
-  font-weight: 500;
-  -webkit-box-shadow: 0px 10px 30px -6px rgba(56, 240, 212, 0.53);
-  -moz-box-shadow: 0px 10px 30px -6px rgba(56, 240, 212, 0.53);
-  box-shadow: 0px 10px 30px -6px rgba(56, 240, 212, 0.53);
+  font-weight: 600;
+  color: $--clr-gray-1;
+  -webkit-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
+  -moz-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
+  box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
   transition: all 0.3s;
+  padding: 7px 10px 7px 20px;
+
   a {
     display: flex;
     align-items: center;
-    padding: 10px 0 10px 20px;
     svg {
-      font-size: 16px;
-      min-height: 20px;
-      min-height: 20px;
-      margin-right: 10px;
+      font-size: 1.3em;
+      min-height: 0px;
+      min-width: 0px;
       transition: all 0.3s;
     }
   }
@@ -30,5 +31,36 @@
       }
     }
     filter: brightness(105%);
+  }
+}
+.disabledButton {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: $--clr-gray-1;
+  background-image: $--gradient;
+  background-size: $--bg-size;
+  animation: $--gradient-animation;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  -webkit-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
+  -moz-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
+  box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
+  transition: all 0.3s;
+  padding: 7px 10px 7px 20px;
+  svg {
+    aspect-ratio: 1 / 1;
+    font-size: 1.3em;
+    min-height: 0px;
+    min-width: 0px;
+    transition: all 0.3s;
+  }
+}
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
   }
 }

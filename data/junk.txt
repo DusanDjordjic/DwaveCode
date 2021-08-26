@@ -1,0 +1,49 @@
+<section className={styles.ourServiceSection}>
+          {/* Our Service Section Title */}
+          <div className={styles.ourServiceSectionTitleWrapper}>
+            <h2>Naše usluge</h2>
+          </div>
+          {/* Our Section Cards Wrapper */}
+          <div className={styles.ourServiceSectionCardsWrapper}>
+            {/* Card - Kontakt*/}
+            <div className={styles.card}>
+              <Link href="/kontakt">
+                <a>
+                  <BsChatFill />
+                  <p>Postavite pitanje</p>
+                  <p>Odgovor u što kraćem roku do 24 sata</p>
+                </a>
+              </Link>
+            </div>
+            {/* Card - Kurs */}
+            <div className={styles.card}>
+              <Link href="/kurs">
+                <a>
+                  <FaUserGraduate />
+                  <p>Besplatni kursevi</p>
+                  <p>Dobijate 100% besplatni kurs veb-programiranja</p>
+                </a>
+              </Link>
+            </div>
+            {/* Card - Discord */}
+            <div className={styles.card}>
+              <Link href="/kurs">
+                <a target="_blank">
+                  <FaDiscord />
+                  <p>Discord bleja</p>
+                  <p>Svake nedelje bleja na discordu.</p>
+                </a>
+              </Link>
+            </div>
+            {/* Card - Youtube */}
+            <div className={styles.card}>
+              <Link href="https://www.youtube.com/channel/UCE1U-7CyefeqKJDa2Tua2_w">
+                <a target="_blank">
+                  <FaYoutube />
+                  <p>Live stream-ovi</p>
+                  <p>Dođite da se družimo i naučimo nešto novo</p>
+                </a>
+              </Link>
+            </div>
+          </div>
+        </section>

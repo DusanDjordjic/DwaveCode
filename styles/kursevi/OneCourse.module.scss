@@ -122,10 +122,47 @@
       max-width: 700px;
       margin: 0 auto;
       div.wrapperDiv {
-        padding: 30px 10px;
+        padding: 30px 0;
         h2 {
           font-size: 2em;
           font-weight: 500;
+          margin-bottom: 10px;
+        }
+      }
+      div.pregledDiv {
+        p {
+          margin: 20px 0;
+        }
+      }
+      div.lekicjeDiv {
+        .lectionsWrapper {
+          .lectionCard {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: transparent;
+            transition: all 0.3s;
+            border-radius: 10px;
+            border-top-left-radius: 0px;
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            align-items: center;
+            box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.1);
+            &:hover {
+              box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.25);
+            }
+            .imageWrapper {
+              overflow: hidden;
+              border-radius: 10px;
+              border-top-left-radius: 0px;
+            }
+            .textWrapper {
+              margin-left: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              
+            }
+          }
         }
       }
     }

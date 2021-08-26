@@ -6,23 +6,23 @@
   min-height: 100vh;
   position: relative;
   display: flex;
-  svg {
-    font-size: 28px;
-    min-height: 30px;
-    min-width: 30px;
-    display: block;
-  }
 }
 .sidebar {
-  z-index: 5;
+  z-index: 500;
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
-  width: 50px;
+  width: 54px;
   background-color: $--clr-black;
   color: $--clr-gray-2;
   transition: all 0.3s;
+  svg {
+    min-height: 24px;
+    min-width: 24px;
+    display: block;
+    color: $--clr-gray-0;
+  }
   ul {
     list-style: none;
   }
@@ -50,13 +50,14 @@
   padding: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   .logo {
     display: flex;
     align-items: center;
 
     .logoText {
       font-weight: 500;
+      color: $--clr-gray-0;
       margin-left: 10px;
     }
     .logoIcon {
@@ -68,37 +69,69 @@
   }
   .toggleBtn {
     cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      svg {
+        box-shadow: 0px 10px 30px -6px rgba($color: $--clr-green, $alpha: 0.5);
+        color: $--clr-gray-1;
+      }
+    }
   }
 }
 .navList {
   list-style: none;
   li {
-    border-top: 1px solid $--clr-gray-0;
-    a {
+    .linkWrapper {
       padding: 10px;
-      display: flex;
-      align-items: center;
-      width: 100%;
-      transition: all 0.3s;
-      &:hover {
-        background-color: $--clr-green;
-        color: $--clr-black;
+      a {
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 5px;
+        border-top-left-radius: 0px;
+        display: flex;
+        align-items: center;
+
+        transition: all 0.3s;
+        &:hover {
+          box-shadow: 0px 10px 30px -6px rgba($color: $--clr-green, $alpha: 0.5);
+          background-image: linear-gradient(
+            70deg,
+            rgba(32, 246, 255, 1) 0%,
+            rgba(0, 151, 255, 1) 100%
+          );
+          background-size: 300%;
+          animation: bg-animation 10s infinite alternate;
+          color: $--clr-gray-1;
+          p {
+            color: $--clr-gray-1;
+          }
+          svg {
+            color: $--clr-gray-1;
+          }
+        }
         p {
-          color: $--clr-black;
+          color: $--clr-gray-0;
+          cursor: pointer;
+          margin-left: 10px;
         }
       }
-      p {
-        color: $--clr-gray-2;
-        cursor: pointer;
-        margin-left: 10px;
-      }
-    }
-    .active {
-      background-color: $--clr-green;
-      color: $--clr-black;
-      transition: all 0.3s;
-      p {
-        color: $--clr-black;
+      .active {
+        box-shadow: 0px 10px 30px -6px rgba($color: $--clr-green, $alpha: 0.5);
+        background-image: linear-gradient(
+          70deg,
+          rgba(32, 246, 255, 1) 0%,
+          rgba(0, 151, 255, 1) 100%
+        );
+        background-size: 300%;
+        animation: bg-animation 10s infinite alternate;
+        color: $--clr-gray-1;
+        transition: all 0.3s;
+        p {
+          color: $--clr-gray-1;
+        }
+        svg {
+          color: $--clr-gray-1;
+        }
       }
     }
   }
@@ -107,10 +140,9 @@
 .main {
   position: absolute;
   left: 50px;
-  width: calc(100% - 50px);
+  width: calc(100% - 54px);
   transition: all 0.3s;
   .content {
-    padding-bottom: 100px;
     background-color: $--clr-gray-1;
   }
 }
@@ -122,5 +154,14 @@
   .main {
     left: 240px;
     width: calc(100% - 240px);
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
   }
 }

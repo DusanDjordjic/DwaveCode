@@ -10,184 +10,194 @@ import Button from "../components/layout/smallComponents/button/Button";
 import { motion } from "framer-motion";
 // ICONS
 import { FaYoutube, FaDiscord, FaUserGraduate } from "react-icons/fa";
-import { BsChatFill } from "react-icons/bs";
+import { GoSearch } from "react-icons/go";
+import { BsChatFill, BsArrowRight } from "react-icons/bs";
 // IMAGE SOURCES
 import codeThinkigSrc from "../public/codeThinking.svg";
+import bannerSrc from "../public/HomePage/banner.jpg";
+import blogillSrc from "../public/Illustrations/reading-il.svg";
+import progillSrc from "../public/Illustrations/programming-il.svg";
+import frieillSrc from "../public/Illustrations/friends-il.svg";
+import smallCardOneSrc from "../public/Cards/Card-Design-02.jpg";
+import smallCardTwoSrc from "../public/Cards/Card-Design-06.jpg";
 export default function Home() {
   return (
     <div className={styles.container}>
-      {/* Head */}
-      <Head>
-        <title>Dwavecode | Početna</title>
-        <meta
-          name="description"
-          content="Dwavecode želi da pomogne ljudima da uđu u svet ved programiranja na najlaši mogući način"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {/* Main */}
-      <main className={styles.main}>
-        {/* Intro Section */}
-        <section className={styles.introSection}>
-          {/* Intro Section Text */}
-          <div className={styles.introSectionTextWrapper}>
-            {/* Motion Div */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: {
-                  scale: 0.8,
-                  opacity: 0,
-                },
-                visible: {
-                  scale: 1,
-                  opacity: 1,
-                  transition: {
-                    delay: 0.4,
-                  },
-                },
-              }}
-            >
-              <h1>Dwave Code</h1>
-              <h3>Besplatna škola programiranja</h3>
+      <div className={styles.Section__LayoutContainer}>
+        <div className={styles.Section__Layout}>
+          <section className={styles.introBannerSection}>
+            <div className={styles.backgroundGradient}></div>
+            <div className={styles.content}>
+              <div className={styles.bannerTitle}>
+                <h1>Postanite uspešan veb developer uz naše kurseve</h1>
+                <p>
+                  Danas kada je sve veća potreba za veb programerima mi vam
+                  nudimo potrebno znanje da postanete deo talasa koji nailazi.
+                  Sa našim kursevima moći ćete da napravite kompleksne
+                  aplikacije i unapredite svet u kojem svi zajedno živimo.
+                </p>
+                <Button
+                  text="Počni odmah"
+                  link="/kursevi/pocetna"
+                  fontSize={16}
+                  isDisabled={false}
+                />
+              </div>
+
+              <div className={styles.bannerImage}>
+                <div className={styles.bannerCard}>
+                  <header>
+                    <p className={styles.bold}>Dwavecode</p>
+                    <div className={styles.searchBar}>
+                      <GoSearch />
+                      <p className={styles.regular}>Search...</p>
+                    </div>
+                  </header>
+                  <div className={styles.smallCard}>
+                    <p className={`${styles.bold} ${styles.smallCardTitle}`}>
+                      Najnovije
+                    </p>
+                    <div className={styles.smallCardContent}>
+                      <div className={styles.imageWrapper}>
+                        <Image src={smallCardOneSrc} />
+                      </div>
+
+                      <div className={styles.smallCardText}>
+                        <p
+                          className={`${styles.bold} ${styles.smallCardTextTitle}`}
+                        >
+                          Css Kurs
+                        </p>
+                        <p
+                          className={`${styles.regular} ${styles.smallCardTextText}`}
+                        >
+                          Ovaj kurs je namenjen svima, jer nikada ne možete
+                          postati dovoljno dobri u dizajniranju. Naučićemo sve
+                          od elementarnih do naprednih znanja. Pogledaćemo kako
+                          da pozicioniramo elemente na stranici, kako da
+                          napravimo kul animacije, tranzicije i efekte.
+                        </p>
+
+                        <Button
+                          text="Počni sa učenjem"
+                          link="/"
+                          fontSize={12}
+                          isDisabled={true}
+                          className={styles.smallCardButton}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className={styles.smallCard}>
+                    <p className={`${styles.bold} ${styles.smallCardTitle}`}>
+                      Popularno
+                    </p>
+                    <div className={styles.smallCardContent}>
+                      <div className={styles.imageWrapper}>
+                        <Image src={smallCardTwoSrc} />
+                      </div>
+
+                      <div className={styles.smallCardText}>
+                        <p
+                          className={`${styles.bold} ${styles.smallCardTextTitle}`}
+                        >
+                          Postani veb developer
+                        </p>
+                        <p
+                          className={`${styles.regular} ${styles.smallCardTextText}`}
+                        >
+                          Za mene postoji samo jedan dobar razlog zašto je veb
+                          programiranje zanimljivije od drugih, a to je taj da
+                          vrlo brzo i lako mogu da utičem na ceo svet putem
+                          interneta.
+                        </p>
+                        <Button
+                          text="Počni sa učenjem"
+                          link="/"
+                          fontSize={12}
+                          isDisabled={true}
+                          className={styles.smallCardButton}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className={styles.whyUsSection}>
+            <h2>Zašto baš Dwavecode?</h2>
+            <div className={styles.textWrapper}>
               <p>
-                Na našem sajtu naučićete sve od osnova do naprednih tehnologija
-                koje se koriste za programiranje web stranica. Takođe naučićete
-                da razmišljate kao programer i da rešavate realne probleme.
+                Već tri godine se bavimo veb dizajnom i pravljenjem veb
+                aplikacija, uz pomoć najnovijih tehnologija kao na primer{" "}
+                <span>React i Next.js</span>. Cilj nam je da upoznamo i
+                pomognemo svakome da nauči kako se prave veb aplikacije. Ako
+                želite da naučite kako da napravite sajt baš kao što je ovaj, na
+                pravom ste mestu.
               </p>
-              <Button text={"Počni sa učenjem"} link="/blog" />
-            </motion.div>
-          </div>
-          {/* Intro Section Image */}
-          <div className={styles.introSectionImageWrapper}>
-            {/* Motion Div */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={{
-                hidden: {
-                  scale: 0.8,
-                  opacity: 0,
-                },
-                visible: {
-                  scale: 1,
-                  opacity: 1,
-                  transition: {
-                    delay: 0.4,
-                  },
-                },
-              }}
-            >
-              <Image src={codeThinkigSrc} alt="Code Thinking" />
-            </motion.div>
-          </div>
-        </section>
-        {/* Our Service Section */}
-        <section className={styles.ourServiceSection}>
-          {/* Our Service Section Title */}
-          <div className={styles.ourServiceSectionTitleWrapper}>
-            <h2>Naše usluge</h2>
-          </div>
-          {/* Our Section Cards Wrapper */}
-          <div className={styles.ourServiceSectionCardsWrapper}>
-            {/* Card - Kontakt*/}
-            <div className={styles.card}>
-              <Link href="/kontakt">
-                <a>
-                  <BsChatFill />
-                  <p>Postavite pitanje</p>
-                  <p>Odgovor u što kraćem roku do 24 sata</p>
-                </a>
-              </Link>
+              <p>
+                Takođe svako može da{" "}
+                <span>postane deo našeg freelance tima</span> i stekne realno
+                iskustvo koje će mu kasnije dosta koristiti.
+              </p>
             </div>
-            {/* Card - Kurs */}
-            <div className={styles.card}>
-              <Link href="/kurs">
-                <a>
-                  <FaUserGraduate />
-                  <p>Besplatni kursevi</p>
-                  <p>Dobijate 100% besplatni kurs veb-programiranja</p>
-                </a>
-              </Link>
-            </div>
-            {/* Card - Discord */}
-            <div className={styles.card}>
-              <Link href="/kurs">
-                <a target="_blank">
-                  <FaDiscord />
-                  <p>Discord bleja</p>
-                  <p>Svake nedelje bleja na discordu.</p>
-                </a>
-              </Link>
-            </div>
-            {/* Card - Youtube */}
-            <div className={styles.card}>
-              <Link href="https://www.youtube.com/channel/UCE1U-7CyefeqKJDa2Tua2_w">
-                <a target="_blank">
-                  <FaYoutube />
-                  <p>Live stream-ovi</p>
-                  <p>Dođite da se družimo i naučimo nešto novo</p>
-                </a>
-              </Link>
-            </div>
-          </div>
-        </section>
-        {/* <section className={styles.startLearningSection}>
-          <BlobCarousel data={blobCarouselData} />
-        </section> */}
-        {/* <section className={styles.gridSection}>
-          <div className={styles.gridWrapper}>
-            <div className={styles.blob}>
-              <Image src={gridBlobSrc} alt="blob" />
-            </div>
-            <div className={styles.grid}>
-              <div className={`${styles.gridItem} ${styles.gridItemSmall}`}>
-                <Link href="/blog/html">
-                  <a>
-                    <Image src={cardDesignOne} alt="banner" />
-                  </a>
-                </Link>
-              </div>
-              <div className={`${styles.gridItem} ${styles.gridItemSmall}`}>
-                <Link href="/blog/html">
-                  <a>
-                    <Image src={cardDesignTwo} alt="banner" />
-                  </a>
-                </Link>
-              </div>
-              <div className={`${styles.gridItem} ${styles.gridItemSmall}`}>
-                <Link href="/blog/html">
-                  <a>
-                    <Image src={cardDesignThree} alt="banner" />
-                  </a>
-                </Link>
-              </div>
-              <div className={`${styles.gridItem} ${styles.gridItemSmall}`}>
-                <Link href="/blog/html">
-                  <a>
-                    <Image src={cardDesignFour} alt="banner" />
-                  </a>
-                </Link>
-              </div>
-              <div className={`${styles.gridItem} ${styles.gridItemSmall}`}>
-                <Link href="/blog/html">
-                  <a>Uskoro!</a>
-                </Link>
-              </div>
-              <div
-                className={`${styles.gridItem} ${styles.gridItemSix} ${styles.gridItemBig}`}
-              >
+            <div className={styles.cardsWrapper}>
+              <div className={`${styles.card}`}>
+                <div className={styles.cardLine}></div>
+
                 <Link href="/blog">
                   <a>
-                    <Image src={cardDesignSix} alt="banner" />
+                    <div className={styles.cardContent}>
+                      <div className={styles.cardHeader}>
+                        <p className={styles.cardTitle}>Posetite blog</p>
+                        <BsArrowRight />
+                      </div>
+                      <div className={styles.imageWrapper}>
+                        <Image src={blogillSrc} />
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+              </div>
+              <div className={`${styles.card}`}>
+                <div className={styles.cardLine}></div>
+
+                <Link href="/kursevi/pocetna">
+                  <a>
+                    <div className={styles.cardContent}>
+                      <div className={styles.cardHeader}>
+                        <p className={styles.cardTitle}>Pogledajte kurseve</p>
+                        <BsArrowRight />
+                      </div>
+                      <div className={styles.imageWrapper}>
+                        <Image src={progillSrc} />
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+              </div>
+              <div className={`${styles.card}`}>
+                <div className={styles.cardLine}></div>
+
+                <Link href="/blog">
+                  <a>
+                    <div className={styles.cardContent}>
+                      <div className={styles.cardHeader}>
+                        <p className={styles.cardTitle}>Kontaktirajte nas</p>
+                        <BsArrowRight />
+                      </div>
+                      <div className={styles.imageWrapper}>
+                        <Image src={frieillSrc} />
+                      </div>
+                    </div>
                   </a>
                 </Link>
               </div>
             </div>
-          </div>
-        </section> */}
-      </main>
+          </section>
+        </div>
+      </div>
     </div>
   );
 }

@@ -8,9 +8,24 @@ $--clr-black-08: rgba(
   $alpha: 0.8,
 );
 $--clr-white: #ffffff;
-$--clr-gray-0: #474747;
+$--clr-gray-0: #646464;
 $--clr-gray-1: #f2f5ff;
-$--clr-gray-2: #d8dff7;
+$--clr-gray-2: #e7ecfe;
 $--clr-gray-3: #6a8097;
+$--clr-blue-1: #264d7f;
 
-$--clr-green: #38f0d4;
+$--clr-green: #0097ff;
+$--clr-secondary: #20f6ff;
+$clr: #080866;
+$clr2: #f9fbfc;
+$clr3: #446169;
+$clr5: #20d1e7;
+
+$clr4: #006dc4;
+$--gradient: linear-gradient(
+  70deg,
+  rgb(32, 246, 255) 0%,
+  rgb(0, 151, 255) 100%
+);
+$--bg-size: 300%;
+$--gradient-animation: bg-animation 10s infinite alternate;

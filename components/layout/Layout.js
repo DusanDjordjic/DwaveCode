@@ -21,7 +21,7 @@ import Footer from "./footer/Footer";
 // CONTEXT
 import { AppContext } from "../../context/context";
 // IMAGE SOURCES
-import logoSrc from "../../public/logo.svg";
+import logoSrc from "../../public/Dwave-logo-gray.png";
 const sidebarData = [
   {
     text: "Home",
@@ -117,7 +117,7 @@ const Layout = ({ children }) => {
             <div className={styles.logoIcon}>
               <Image src={logoSrc} width={40} height={40} />
             </div>
-            <div className={styles.logoText}>DwaveCode</div>
+            <div className={styles.logoText}>Dwavecode</div>
           </div>
           <div
             className={styles.toggleBtn}
@@ -136,31 +136,35 @@ const Layout = ({ children }) => {
                   onMouseEnter={(e) => handleMouseEnter(e, item.text)}
                   onMouseLeave={() => hideTooltip()}
                 >
-                  <Link href={item.link}>
-                    <a
-                      className={
-                        router.pathname == item.link ? styles.active : ""
-                      }
-                    >
-                      {item.icon}
-                      <p>{item.text}</p>
-                    </a>
-                  </Link>
+                  <div className={styles.linkWrapper}>
+                    <Link href={item.link}>
+                      <a
+                        className={
+                          router.pathname == item.link ? styles.active : ""
+                        }
+                      >
+                        {item.icon}
+                        <p>{item.text}</p>
+                      </a>
+                    </Link>
+                  </div>
                 </li>
               );
             } else {
               return (
                 <li key={index} onClick={() => setIsSidebarActive(false)}>
-                  <Link href={item.link}>
-                    <a
-                      className={
-                        router.pathname == item.link ? styles.active : ""
-                      }
-                    >
-                      {item.icon}
-                      <p>{item.text}</p>
-                    </a>
-                  </Link>
+                  <div className={styles.linkWrapper}>
+                    <Link href={item.link}>
+                      <a
+                        className={
+                          router.pathname == item.link ? styles.active : ""
+                        }
+                      >
+                        {item.icon}
+                        <p>{item.text}</p>
+                      </a>
+                    </Link>
+                  </div>
                 </li>
               );
             }
