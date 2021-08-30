@@ -2,7 +2,7 @@ import styles from "./FeedbackCard.module.scss";
 import Button from "../../layout/smallComponents/button/Button";
 import Link from "next/link";
 import Image from "next/image";
-import imageSrc from "../../../public/newIdea.svg";
+import imageSrc from "../../../public/Illustrations/newIdea.svg";
 const FeedbackCard = () => {
   return (
     <div className={styles.container}>

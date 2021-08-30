@@ -14,7 +14,7 @@ import { ImOffice } from "react-icons/im";
 import { GiShare } from "react-icons/gi";
 import { MdKeyboardArrowRight } from "react-icons/md";
 // IMAGE SOURCES
-import onlineLectionsSrc from "../../public/onlineLections.svg";
+import onlineLectionsSrc from "../../public/Illustrations/onlineLections.svg";
 // MODELS
 import CourseSchema from "../../models/Course";
 // MIDDLEWARE
@@ -153,12 +153,12 @@ const KurseviPocetna = ({ coursesArray, error }) => {
                           <p className={styles.courseQuote}>{kurs.quote}</p>
                         </div>
                         <div className={styles.footer}>
-                          <Link href={`/kursevi/online/${kurs._id}`}>
-                            <a className={styles.linkButton}>
-                              <MdKeyboardArrowRight />
-                              Započni
-                            </a>
-                          </Link>
+                          <Button
+                            text="Započni"
+                            link={`/kursevi/online/${kurs._id}`}
+                            isDisabled={false}
+                          />
+
                           <button
                             className={styles.shareButton}
                             onClick={() =>

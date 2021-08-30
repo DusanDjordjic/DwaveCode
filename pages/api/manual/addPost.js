@@ -8,12 +8,14 @@ export default async function (req, res) {
     dbConnect();
     // Make New Blog Post
     const newPost = new BlogPost({
-      title: "css",
-      date: new Date(2021, 7, 19).getTime(),
-      description: "U uvodu ćemo pogledati šta je to html i kako funkcioniše",
+      title: "Funkcije | Šta su i kako ih koristiti",
+      date: new Date().getTime(),
+      description:
+        "Naučićemo šta su funkcije, zašto su toliko moćne i kako da ih koristimo na najbolji način",
+      editorPick: true,
       coverImage: "/Blog/Html/1.png",
-      tags: ["sve", "css"],
-      text: "# CSS Kurs",
+      tags: ["sve", "javascript"],
+      text: "# Javascript",
       overlay: {
         author: {
           name: "Dwave Code",

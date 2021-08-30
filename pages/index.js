@@ -51,7 +51,6 @@ export default function Home() {
                   isDisabled={false}
                 />
               </div>
-
               <div className={styles.bannerImage}>
                 <div className={styles.bannerCard}>
                   <header>

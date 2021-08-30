@@ -218,6 +218,10 @@
             background-color: transparent;
             color: $--clr-green;
             transition: all 0.3s;
+            svg {
+              min-height: 30px;
+              min-width: 30px;
+            }
             &:hover {
               filter: brightness(110%);
             }

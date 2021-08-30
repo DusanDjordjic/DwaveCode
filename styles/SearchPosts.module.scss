@@ -1,20 +1,19 @@
 @import "../styles/vars.scss";
-
 .container {
-  min-height: 100vh;
-  background-color: $--clr-gray-1;
+  .Section__LayoutContainer {
+    margin: 0px 10px;
+    .Section__Layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-bottom: 100px;
+    }
+  }
 }
 
 .main {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
   section {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    padding: 0 16px;
   }
   .introSection {
     .introSectionText {
@@ -23,8 +22,11 @@
     }
   }
   .blogSection {
-    .content {
+    margin-top: 100px;
+    .contentWrapper {
       min-height: 100vh;
+    }
+    .content {
       margin-top: 30px;
       display: grid;
       grid-template-columns: 1fr;
@@ -34,11 +36,12 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .main {
-    section {
-      padding: 0 20px;
-      width: 95%;
+  .container {
+    .Section__LayoutContainer {
+      margin: 0px 20px;
     }
+  }
+  .main {
     .blogSection {
       .content {
         grid-template-columns: 1fr 1fr;
@@ -48,22 +51,10 @@
 }
 @media only screen and (min-width: 992px) {
   .main {
-    section {
-      padding: 0 30px;
-      width: 900px;
-    }
     .blogSection {
       .content {
         grid-template-columns: 1fr 1fr 1fr;
       }
-    }
-  }
-}
-@media only screen and (min-width: 1200px) {
-  .main {
-    section {
-      padding: 0 50px;
-      width: 1100px;
     }
   }
 }

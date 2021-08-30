@@ -15,7 +15,7 @@ const BlogPost = ({ data, type }) => {
                 src={coverImage}
                 layout="fill"
                 className={styles.blogImage}
-                alt="blog post"
+                alt={title}
               />
             </div>
             <div className={styles.blogPostImageOverlay}>

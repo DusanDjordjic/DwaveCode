@@ -43,6 +43,10 @@ const postSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  editorPick: {
+    type: Boolean,
+    default: false,
+  },
   coverImage: {
     type: String,
     required: true,

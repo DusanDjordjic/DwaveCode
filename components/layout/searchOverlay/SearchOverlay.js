@@ -4,6 +4,8 @@ import { useState, useContext } from "react";
 import { GoSearch } from "react-icons/go";
 import { GrFormClose } from "react-icons/gr";
 import { useRouter } from "next/router";
+import { MdKeyboardArrowRight } from "react-icons/md";
+
 const SearchOverlay = () => {
   const { isSearchOverlayActive, hideSearchOverlay, tags } =
     useContext(AppContext);
@@ -60,7 +62,7 @@ const SearchOverlay = () => {
               {tags.map((tag, index) => {
                 return (
                   <button key={index} onClick={(e) => handleTagClick(e, tag)}>
-                    {tag}
+                    {tag} <MdKeyboardArrowRight />
                   </button>
                 );
               })}

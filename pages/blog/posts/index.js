@@ -14,59 +14,71 @@ const searchPosts = ({ blogPosts, length, blogSubHeader, query }) => {
   if (length === 0) {
     return (
       <div className={styles.container}>
-        {/* Head */}
-        <Head>
-          <title>{`Blog | ${query}`}</title>
-          <meta
-            name="description"
-            content="Dwavecode želi da pomogne ljudima da uđu u svet ved programiranja na najlaši mogući način"
-          />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-        {/* Main */}
-        <main className={styles.main}>
-          <section className={styles.introSection}>
-            {/* Blog Header */}
-            <BlogHeader />
-          </section>
-          <section className={styles.blogSection}>
-            {/* Blog News Header */}
-            <BlogNewsHeader data={blogSubHeader} />
-             {/* Content */}
-            <div className={styles.content}></div>
-          </section>
-        </main>
+        <div className={styles.Section__LayoutContainer}>
+          <div className={styles.Section__Layout}>
+            {/* Head */}
+            <Head>
+              <title>{`Blog | ${query}`}</title>
+              <meta
+                name="description"
+                content="Dwavecode želi da pomogne ljudima da uđu u svet ved programiranja na najlaši mogući način"
+              />
+              <link rel="icon" href="/favicon.ico" />
+            </Head>
+            {/* Main */}
+            <main className={styles.main}>
+              <section className={styles.introSection}>
+                {/* Blog Header */}
+                <BlogHeader />
+              </section>
+              <section className={styles.blogSection}>
+                {/* Blog News Header */}
+                <BlogNewsHeader data={blogSubHeader} />
+                {/* Content */}
+                <div className={styles.contentWrapper}>
+                  <div className={styles.content}></div>
+                </div>
+              </section>
+            </main>
+          </div>
+        </div>
       </div>
     );
   }
   return (
     <div className={styles.container}>
-      {/* Head */}
-      <Head>
-        <title>{`Blog | ${query ? query : "Sve"}`}</title>
-        <meta
-          name="description"
-          content="Dwavecode želi da pomogne ljudima da uđu u svet ved programiranja na najlaši mogući način"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {/* Main */}
-      <main className={styles.main}>
-        <section className={styles.introSection}>
-          {/* Blog Header */}
-          <BlogHeader />
-        </section>
-        <section className={styles.blogSection}>
-          {/* Blog News Header */}
-          <BlogNewsHeader data={blogSubHeader} />
-          <div className={styles.content}>
-            {/* Mapping Blog Posts */}
-            {blogPosts.map((post, index) => {
-              return <BlogPost key={index} data={post} />;
-            })}
-          </div>
-        </section>
-      </main>
+      <div className={styles.Section__LayoutContainer}>
+        <div className={styles.Section__Layout}>
+          {/* Head */}
+          <Head>
+            <title>{`Blog | ${query ? query : "Sve"}`}</title>
+            <meta
+              name="description"
+              content="Dwavecode želi da pomogne ljudima da uđu u svet ved programiranja na najlaši mogući način"
+            />
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
+          {/* Main */}
+          <main className={styles.main}>
+            <section className={styles.introSection}>
+              {/* Blog Header */}
+              <BlogHeader />
+            </section>
+            <section className={styles.blogSection}>
+              {/* Blog News Header */}
+              <BlogNewsHeader data={blogSubHeader} />
+              <div className={styles.contentWrapper}>
+                <div className={styles.content}>
+                  {/* Mapping Blog Posts */}
+                  {blogPosts.map((post, index) => {
+                    return <BlogPost key={index} data={post} />;
+                  })}
+                </div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </div>
     </div>
   );
 };
