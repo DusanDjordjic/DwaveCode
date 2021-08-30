@@ -95,7 +95,7 @@ const Layout = ({ children }) => {
 
   const handleMouseEnter = (e, text) => {
     const data = {
-      x: e.target.offsetLeft + e.target.clientWidth + 20,
+      x: e.target.offsetLeft + e.target.clientWidth + 10,
       y: e.target.offsetTop + e.target.clientHeight / 2 + window.scrollY,
       text: text,
     };
