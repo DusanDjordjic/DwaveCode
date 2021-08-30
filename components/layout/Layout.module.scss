@@ -15,13 +15,13 @@
   height: 100vh;
   width: 54px;
   background-color: $--clr-black;
-  color: $--clr-gray-2;
+  color: $--clr-gray-1;
   transition: all 0.3s;
   svg {
     min-height: 24px;
     min-width: 24px;
     display: block;
-    color: $--clr-gray-0;
+    color: $--clr-gray-3;
   }
   ul {
     list-style: none;
@@ -57,7 +57,7 @@
 
     .logoText {
       font-weight: 500;
-      color: $--clr-gray-0;
+      color: $--clr-gray-3;
       margin-left: 10px;
     }
     .logoIcon {
@@ -110,7 +110,7 @@
           }
         }
         p {
-          color: $--clr-gray-0;
+          color: $--clr-gray-3;
           cursor: pointer;
           margin-left: 10px;
         }
@@ -139,7 +139,7 @@
 
 .main {
   position: absolute;
-  left: 50px;
+  left: 54px;
   width: calc(100% - 54px);
   transition: all 0.3s;
   .content {
@@ -147,8 +147,8 @@
   }
 }
 .main.active {
-  left: 50px;
-  width: calc(100% - 50px);
+  left: 54px;
+  width: calc(100% - 54px);
 }
 @media only screen and (min-width: 768px) {
   .main {

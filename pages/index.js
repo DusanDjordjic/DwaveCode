@@ -12,14 +12,22 @@ import { motion } from "framer-motion";
 import { FaYoutube, FaDiscord, FaUserGraduate } from "react-icons/fa";
 import { GoSearch } from "react-icons/go";
 import { BsChatFill, BsArrowRight } from "react-icons/bs";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { HiPaperAirplane } from "react-icons/hi";
 // IMAGE SOURCES
-import codeThinkigSrc from "../public/codeThinking.svg";
-import bannerSrc from "../public/HomePage/banner.jpg";
+import iconOne from "../public/HomePage/paper-plane.png";
+import iconTwo from "../public/HomePage/freelance.png";
+import iconThree from "../public/HomePage/logo-blue.png";
+import iconFour from "../public/HomePage/patreon.png";
 import blogillSrc from "../public/Illustrations/reading-il.svg";
 import progillSrc from "../public/Illustrations/programming-il.svg";
 import frieillSrc from "../public/Illustrations/friends-il.svg";
 import smallCardOneSrc from "../public/Cards/Card-Design-02.jpg";
 import smallCardTwoSrc from "../public/Cards/Card-Design-06.jpg";
+import flSectionCardImageOne from "../public/HomePage/FreelanceSection/fl-books-icon.png";
+import flSectionCardImageTwo from "../public/HomePage/FreelanceSection/fl-computer-icon.png";
+import flSectionCardImageThree from "../public/HomePage/FreelanceSection/fl-trophy-icon.png";
+import flSectionCardWaveImage from "../public/HomePage/FreelanceSection/wave-path.png";
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -145,7 +153,6 @@ export default function Home() {
             <div className={styles.cardsWrapper}>
               <div className={`${styles.card}`}>
                 <div className={styles.cardLine}></div>
-
                 <Link href="/blog">
                   <a>
                     <div className={styles.cardContent}>
@@ -194,6 +201,169 @@ export default function Home() {
                   </a>
                 </Link>
               </div>
+            </div>
+          </section>
+          <section className={styles.helpUsSection}>
+            <h2>Šta možete da uradite da pomognete Dwavecode</h2>
+            <div className={styles.helpUsRow}>
+              <div className={styles.helpUsText}>
+                <span>01</span>
+                <p className={styles.subtitle}>Instagram</p>
+                <h3>Podelite naš profil na instagramu</h3>
+                <p className={styles.text}>
+                  Posetite nas na instagramu i podelite naš profil sa ljudima
+                  koje interesuje veb dizajn i pravljenje veb aplikacije. Jednim
+                  klikom pomoći ćete i njemu i nama.
+                </p>
+                <Button
+                  text="Posetite instagram"
+                  link="/"
+                  fontSize={16}
+                  isDisabled={false}
+                />
+              </div>
+              <div>
+                <div className={`${styles.imageWrapper}`}>
+                  <Image src={iconOne} layout="responsive" />
+                </div>
+              </div>
+            </div>
+
+            <div className={styles.helpUsRow}>
+              <div>
+                <div className={`${styles.imageWrapper}`}>
+                  <Image src={iconThree} layout="responsive" />
+                </div>
+              </div>
+              <div className={styles.helpUsText}>
+                <span>02</span>
+                <p className={styles.subtitle}>Veb-sajt</p>
+                <h3>Pomozite nam da unapredimo veb-sajt</h3>
+                <p className={styles.text}>
+                  Recite nam šta bi mogli da promenimo i kako da sajt i
+                  celokupno iskustvo učinimo boljim. Smatramo da je odnos sa
+                  klijentima veoma bitna stvar i zato cenimo svako vaše
+                  mišljenje.
+                </p>
+                <Button
+                  text="Kontaktirajte nas"
+                  link="/"
+                  fontSize={16}
+                  isDisabled={false}
+                />
+              </div>
+            </div>
+            <div className={styles.helpUsRow}>
+              <div className={styles.helpUsText}>
+                <span>03</span>
+                <p className={styles.subtitle}>Patreon</p>
+                <h3>Pordžite nas simboličnom donacijom</h3>
+                <p className={styles.text}>
+                  Sva sredstva prikupljena kroz donacije direktno pomažu
+                  dwavecode da postane još bolja platforma za učenje veb
+                  programiranja.
+                </p>
+                <Button
+                  text="Simbolična donacija"
+                  link="/"
+                  fontSize={16}
+                  isDisabled={false}
+                />
+              </div>
+              <div>
+                <div className={`${styles.imageWrapper}`}>
+                  <Image src={iconFour} layout="responsive" />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <section className={styles.freelanceSection}>
+        <div className={styles.freelanceSectionWaveImage}></div>
+        <div className={styles.freelanceSectionContent_Layout}>
+          <div className={styles.freelanceSectionContent}>
+            <div className={styles.freelanceSectionHeader}>
+              <h2>Preuzmite stvar u svoje ruke</h2>
+              <p>Nudimo vam edukaciju, praksu i mesto u našem timu</p>
+            </div>
+            <div className={styles.freelanceSectionTextContent}>
+              <div className={styles.freelanceSectionText}>
+                <div className={styles.freelanceSectionCard}>
+                  <div className={styles.freelanceSectionCardImage}>
+                    <div className={styles.cardLine}></div>
+                    <div className={styles.imageWrapper}>
+                      <Image src={flSectionCardImageOne} />
+                    </div>
+                  </div>
+                  <div className={styles.freelanceSectionCardText}>
+                    <Link href="/">
+                      <a>
+                        Kurs veb developera <MdKeyboardArrowRight />
+                      </a>
+                    </Link>
+                    <p>
+                      Nedeljne lekcije tako dizajnirane da i početnici postaju
+                      profesionalci.
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.freelanceSectionCard}>
+                  <div className={styles.freelanceSectionCardImage}>
+                    <div className={styles.cardLine}></div>
+                    <div className={styles.imageWrapper}>
+                      <Image src={flSectionCardImageTwo} />
+                    </div>
+                  </div>
+                  <div className={styles.freelanceSectionCardText}>
+                    <Link href="/">
+                      <a>
+                        Freelance &amp; Praksa <MdKeyboardArrowRight />
+                      </a>
+                    </Link>
+                    <p>
+                      Pridružite se našem freelance timu, steknite praksu i
+                      zaradite.
+                    </p>
+                  </div>
+                </div>
+                <div className={styles.freelanceSectionCard}>
+                  <div className={styles.freelanceSectionCardImage}>
+                    <div className={styles.cardLine}></div>
+                    <div className={styles.imageWrapper}>
+                      <Image src={flSectionCardImageThree} />
+                    </div>
+                  </div>
+                  <div className={styles.freelanceSectionCardText}>
+                    <Link href="/">
+                      <a>
+                        Pomoć 24/7 <MdKeyboardArrowRight />
+                      </a>
+                    </Link>
+                    <p>
+                      Uvek smo vam na raspolaganju putem Email-a, Discord-a ili
+                      četa.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div className={styles.Section__LayoutContainer}>
+        <div className={styles.Section__Layout}>
+          <section className={styles.endSection}>
+            <div className={styles.endSectionText}>
+              <h3>Počni sa Dwavecode programom</h3>
+              <p>Uči potpuno besplatno od svoje kuće kad god ti to poželiš</p>
+              <Button
+                text="Počni odmah"
+                link="/"
+                isDisabled={false}
+                fontSize={16}
+              />
             </div>
           </section>
         </div>

@@ -21,10 +21,10 @@ import Footer from "./footer/Footer";
 // CONTEXT
 import { AppContext } from "../../context/context";
 // IMAGE SOURCES
-import logoSrc from "../../public/Dwave-logo-gray.png";
+import logoSrc from "../../public/logo.png";
 const sidebarData = [
   {
-    text: "Home",
+    text: "Početna",
     icon: <HiHome />,
     link: "/",
   },
