@@ -111,22 +111,6 @@ const Layout = ({ children }) => {
             : ` ${styles.sidebar}`
         } ${isSearchOverlayActive && styles.blur}`}
       >
-        {/* LOGO CONTAINER START */}
-        <div className={styles.logoContainer}>
-          <div className={styles.logo}>
-            <div className={styles.logoIcon}>
-              <Image src={logoSrc} width={40} height={40} />
-            </div>
-            <div className={styles.logoText}>Dwavecode</div>
-          </div>
-          <div
-            className={styles.toggleBtn}
-            onClick={() => setIsSidebarActive(!isSidebarActive)}
-          >
-            <HiMenu />
-          </div>
-        </div>
-        {/* LOGO CONTAINER END */}
         <ul className={styles.navList}>
           {sidebarData.map((item, index) => {
             if (!isSidebarActive) {
@@ -174,10 +158,19 @@ const Layout = ({ children }) => {
       <div
         className={`${
           isSidebarActive
-            ? `${styles.main}`
-            : `${styles.main}  ${styles.active}`
+            ? `${styles.main}  ${styles.active}`
+            : `${styles.main} `
         } ${isSearchOverlayActive && styles.blur}`}
       >
+        <nav className={styles.navigation}>
+          <div
+            className={styles.toggleBtn}
+            onClick={() => setIsSidebarActive(!isSidebarActive)}
+          >
+            <HiMenu />
+          </div>
+          <p className={styles.logo}>Dwavecode</p>
+        </nav>
         <div className={styles.content}>{children}</div>
 
         <Footer />

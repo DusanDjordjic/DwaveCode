@@ -17,6 +17,14 @@ $--clr-blue-1: #080866;
 $--clr-main: #0097ff;
 $--clr-green: #0097ff;
 $--clr-secondary: #20f6ff;
+$--clr-main-03: rgba(
+  $color: #0097ff,
+  $alpha: 0.3,
+);
+$--clr-secondary-03: rgba(
+  $color: #20f6ff,
+  $alpha: 0.3,
+);
 $clr: #080866;
 // $clr2: #f9fbfc;
 // $clr3: #446169;

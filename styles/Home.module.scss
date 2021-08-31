@@ -26,13 +26,11 @@
 .introBannerSection {
   display: flex;
   justify-content: center;
-
   .content {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
   }
-
   .bannerTitle {
     margin-top: 100px;
     position: relative;
@@ -234,6 +232,10 @@
         margin-bottom: 30px;
         color: $--clr-gray-3;
       }
+      button {
+        z-index: 400;
+        position: relative;
+      }
     }
     .imageWrapper {
       display: none;
@@ -276,9 +278,10 @@
   .freelanceSectionContent {
     max-width: 1100px;
     .freelanceSectionHeader {
-      text-align: center;
       margin-bottom: 50px;
+      text-align: center;
       p {
+        text-align: center;
         font-size: 1.2em;
       }
     }
