@@ -1,222 +1,208 @@
 @import "../vars.scss";
 .container {
-  min-height: 100vh;
+  .Section__LayoutContainer {
+    margin: 0px 10px;
+    .Section__Layout {
+      max-width: 1100px;
+      margin: 0 auto;
+
+      section {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px 10px;
+        padding: 100px 0;
+      }
+    }
+    &:last-of-type {
+      .Section__Layout {
+        padding-bottom: 100px;
+      }
+    }
+  }
 }
 
-.main {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  section {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0px 10px;
-    max-width: 1100px;
-    padding-top: 100px !important;
-    padding-bottom: 100px !important;
+section.introSection {
+  .contentWrapper {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
   }
-  section.introSection {
-    .introSectionTextWrapper,
-    .introSectionImageWrapper {
-      width: 100%;
-    }
-    .introSectionTextWrapper {
-      .ratingContainer {
-        margin: 20px 0px 30px 0px;
-        display: flex;
-        align-items: center;
-        p {
-          margin-left: 5px;
-          font-weight: 600;
-        }
-        svg {
-          min-height: 20px;
-          min-width: 20px;
-        }
-      }
-      .description {
-        font-size: calc(16px + 3 * ((100vw - 430px) / 770));
-        margin-bottom: 30px;
-      }
-    }
-    .introSectionImageWrapper {
-      position: relative;
-      aspect-ratio: 1 / 1;
-      display: none;
-      align-items: center;
-      div {
-        padding: 0 !important;
-        img {
-          position: relative !important;
-          width: 100% !important;
-          height: 100% !important;
-          border-radius: 10px;
-          border-top-left-radius: 0px;
-        }
-      }
-    }
-    .keyInfoWrapper {
-      margin-top: 50px;
-      min-width: 100%;
-      display: grid;
-      grid-template-columns: 1fr;
-      padding-top: 0px !important;
-      .keyInfoItem {
-        padding: 0 20px;
-        margin: 10px 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: $--clr-gray-3;
-        .keyInfoIconSpan {
-          padding-right: 20px;
-        }
-        p {
-          color: $--clr-gray-3;
-          display: flex;
-          flex-wrap: wrap;
-          span {
-            min-width: 100%;
-            color: $--clr-black;
-            font-weight: 500;
-          }
-        }
-      }
-    }
-  }
-  .contentNavigation {
-    position: relative;
-    z-index: 10;
-    min-width: 100%;
-    background-color: $--clr-black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 20px;
-    ul {
+  .introSectionTextWrapper {
+    .ratingContainer {
+      margin: 20px 0px 30px 0px;
       display: flex;
       align-items: center;
-      flex-wrap: wrap;
+      p {
+        margin-left: 5px;
+        font-weight: 600;
+      }
+      svg {
+        min-height: 20px;
+        min-width: 20px;
+      }
+    }
+    .description {
+      font-size: calc(16px + 3 * ((100vw - 430px) / 770));
+      margin-bottom: 30px;
+    }
+  }
+  .introSectionImageWrapper {
+    position: relative;
+    display: none;
+    div {
+      padding: 0 !important;
+      img {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 10px;
+        border-top-left-radius: 0px;
+      }
+    }
+  }
+  .keyInfoWrapper {
+    margin-top: 50px;
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 0px !important;
+    .keyInfoItem {
+      padding: 0 20px;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
       justify-content: center;
-      list-style: none;
-      .navButton {
-        margin: 10px;
-        a {
-          cursor: pointer;
-          font-size: 16px;
-          background-color: transparent;
-          color: $--clr-gray-3;
-          transition: all 0.3s;
+      color: $--clr-gray-3;
+      .keyInfoIconSpan {
+        padding-right: 20px;
+      }
+      p {
+        color: $--clr-gray-3;
+        display: flex;
+        flex-wrap: wrap;
+        span {
+          min-width: 100%;
+          color: $--clr-black;
           font-weight: 500;
-          border-bottom: 2px solid transparent;
-          &:hover {
-            color: $--clr-green;
-          }
-        }
-        .active {
-          color: $--clr-green;
-          border-bottom: 2px solid $--clr-green;
         }
       }
     }
   }
-  section.contentSection {
-    .contentWrapper {
-      border: 1px solid red;
-      div.wrapperDiv {
-        padding: 30px 0;
-        h2 {
-          font-size: 2em;
-          font-weight: 500;
-          margin-bottom: 10px;
+}
+.contentNavigation {
+  position: relative;
+  z-index: 10;
+  min-width: 100%;
+  background-color: $--clr-black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    .navButton {
+      margin: 10px;
+      a {
+        cursor: pointer;
+        font-size: 16px;
+        background-color: transparent;
+        color: $--clr-gray-3;
+        transition: all 0.3s;
+        font-weight: 500;
+        border-bottom: 2px solid transparent;
+        &:hover {
+          color: $--clr-green;
         }
       }
-      div.pregledDiv {
-        p {
-          margin: 20px 0;
-        }
+      .active {
+        color: $--clr-green;
+        border-bottom: 2px solid $--clr-green;
       }
-      div.lekicjeDiv {
-        .lectionsWrapper {
-          .lectionCard {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: transparent;
-            transition: all 0.3s;
+    }
+  }
+}
+section.contentSection {
+  .contentWrapper {
+    border: 1px solid red;
+    div.wrapperDiv {
+      padding: 30px 0;
+      h2 {
+        font-size: 2em;
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+    }
+    div.pregledDiv {
+      p {
+        margin: 20px 0;
+      }
+    }
+    div.lekicjeDiv {
+      .lectionsWrapper {
+        .lectionCard {
+          margin-top: 20px;
+          padding: 15px;
+          background-color: transparent;
+          transition: all 0.3s;
+          border-radius: 10px;
+          border-top-left-radius: 0px;
+          display: grid;
+          grid-template-columns: 1fr 4fr;
+          box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.1);
+          &:hover {
+            box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.25);
+          }
+          .imageWrapper {
+            overflow: hidden;
             border-radius: 10px;
             border-top-left-radius: 0px;
-            display: grid;
-            grid-template-columns: 1fr 4fr;
-            box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.1);
-            &:hover {
-              box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.25);
-            }
-            .imageWrapper {
-              overflow: hidden;
-              border-radius: 10px;
-              border-top-left-radius: 0px;
-            }
-            .textWrapper {
-              margin-left: 20px;
-              display: flex;
-              align-items: center;
-              justify-content: space-between;
-            }
+          }
+          .textWrapper {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
           }
         }
       }
     }
   }
 }
+
 @media only screen and (min-width: 768px) {
-  .main {
-    section {
-      margin: 0px 20px;
-    }
-    section.introSection {
-      .keyInfoWrapper {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-      }
+  section.introSection {
+    .keyInfoWrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
 
 @media only screen and (min-width: 992px) {
-  .main {
-    section.introSection {
-      .introSectionTextWrapper {
-        padding-right: 10px;
-        width: 50%;
-      }
-      .introSectionImageWrapper {
-        padding-left: 10px;
-        width: 50%;
-      }
-      .introSectionTextWrapper {
-        border-right: 1px solid $--clr-gray-2;
-      }
-      .introSectionImageWrapper {
-        display: flex;
-        align-items: center;
-      }
+  section.introSection {
+    .contentWrapper {
+      grid-template-columns: 1fr 1fr;
     }
-    .contentNavigation {
-      position: sticky;
-      top: 0;
+    .introSectionImageWrapper {
+      display: block;
     }
+  }
+  .contentNavigation {
+    position: sticky;
+    top: 65px;
   }
 }
 @media only screen and (min-width: 1200px) {
-  .main {
-    section.introSection {
-      .introSectionTextWrapper {
-        padding-right: 50px;
-      }
-      .introSectionImageWrapper {
-        padding-left: 50px;
-      }
+  section.introSection {
+    .introSectionTextWrapper {
+      padding-right: 50px;
+    }
+    .introSectionImageWrapper {
+      padding-left: 50px;
     }
   }
 }

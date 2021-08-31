@@ -109,6 +109,7 @@
     width: 100%;
     z-index: 750;
     padding: 10px;
+    box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.5);
     background-color: $--clr-black;
     .toggleBtn {
       max-height: 45px;
