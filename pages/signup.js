@@ -2,6 +2,10 @@
 import styles from "../styles/Login.module.scss";
 // REACT HOOKS
 import { useState } from "react";
+// CUSTOM COMPONENTS
+import Button from "../components/layout/smallComponents/button/Button";
+// ICONS
+import { MdKeyboardArrowRight } from "react-icons/md";
 // NEXT COMPONENTS
 import Link from "next/link";
 import Head from "next/head";
@@ -28,6 +32,7 @@ const LoginPage = () => {
     );
     if (validationError.message === "ok") {
       console.log("super");
+      setError({ field: "", message: "" });
       // If there is no error make POST request
       const response = await fetch("/api/signup", {
         method: "post",
@@ -56,128 +61,142 @@ const LoginPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.container}>
-        {/* Main */}
-        <main className={styles.main}>
-          {/* Content Wrapper */}
-          <div className={styles.contentWrapper}>
-            {/* Banner */}
-            {/* Banner needs new design */}
-            <div className={styles.banner}>
-              <div>
-                <h2>Dwavecode</h2>
-                <p>Sajt za besplatno učenje programiranja</p>
-              </div>
-            </div>
-            {/* Form Wrapper */}
-            <div className={styles.formWrapper}>
-              <h1>Registruj novi nalog</h1>
-              <form onSubmit={(e) => handleSubmit(e)}>
-                {/* Name */}
-                {/* Classes for handling error */}
-                <div
-                  className={`${styles.formControl} ${
-                    error.field === "name" ? styles.hasError : ""
-                  }`}
-                >
-                  <label htmlFor="name">Ime *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                  />
-                  {/* Error is displayed here */}
-                  <p className={styles.errorMessage}>
-                    {error.field === "name" ? error.message : ""}
-                  </p>
-                </div>
-                {/* Email */}
-                {/* Classes for handling error */}
-                <div
-                  className={`${styles.formControl} ${
-                    error.field === "email" ? styles.hasError : ""
-                  }`}
-                >
-                  <label htmlFor="email">Email *</label>
-                  <input
-                    type="text"
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  {/* Error is displayed here */}
-                  <p className={styles.errorMessage}>
-                    {error.field === "email" ? error.message : ""}
-                  </p>
-                </div>
-                {/* Password */}
-                {/* Classes for handling error */}
-                <div
-                  className={`${styles.formControl} ${
-                    error.field === "password" ? styles.hasError : ""
-                  }`}
-                >
-                  <label htmlFor="password">Lozinka *</label>
-                  <input
-                    type="password"
-                    name="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  {/* Error is displayed here */}
-                  <p className={styles.errorMessage}>
-                    {error.field === "password" ? error.message : ""}
-                  </p>
-                </div>
-                {/* RepeatPassword */}
-                {/* Classes for handling error */}
-                <div
-                  className={`${styles.formControl} ${
-                    error.field === "repeatPassword" ? styles.hasError : ""
-                  }`}
-                >
-                  <label htmlFor="repeatPassword">Ponovi Lozinku *</label>
-                  <input
-                    type="password"
-                    name="repeatPassword"
-                    value={repeatPassword}
-                    onChange={(e) => setRepeatPassword(e.target.value)}
-                  />
-                  {/* Error is displayed here */}
-                  <p className={styles.errorMessage}>
-                    {error.field === "repeatPassword" ? error.message : ""}
-                  </p>
-                </div>
-                {/* TearmsOfUse */}
-                {/* Classes for handling error */}
-                <div
-                  className={`${styles.formControl} ${styles.formControlChexkBox}`}
-                >
-                  <input
-                    type="checkbox"
-                    name="tearmsOfUse"
-                    checked={checkbox}
-                    onChange={() => setCheckbox(!checkbox)}
-                  />
+        <div className={styles.Section__LayoutContainer}>
+          <div className={styles.Section__Layout}>
+            {/* Main */}
+            <main className={styles.main}>
+              {/* Content Wrapper */}
+              <section className={styles.formSection}>
+                <div className={styles.contentWrapper}>
+                  {/* Banner */}
+                  {/* Banner needs new design */}
+                  <div className={styles.banner}>
+                    <div>
+                      <h2>Pozdrav, Prijatelju</h2>
+                      <p>Napravi nalog i počni sa učenjem već danas</p>
+                    </div>
+                    <div>
+                      <p>Već imaš nalog?</p>
+                      <Button text="Uloguj se" link="/login" />
+                    </div>
+                  </div>
+                  {/* Form Wrapper */}
+                  <div className={styles.formWrapper}>
+                    <h1>Registruj novi nalog</h1>
+                    <form onSubmit={(e) => handleSubmit(e)}>
+                      {/* Name */}
+                      {/* Classes for handling error */}
+                      <div
+                        className={`${styles.formControl} ${
+                          error.field === "name" ? styles.hasError : ""
+                        }`}
+                      >
+                        <label htmlFor="name">Ime *</label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                        />
+                        {/* Error is displayed here */}
+                        <p className={styles.errorMessage}>
+                          {error.field === "name" ? error.message : ""}
+                        </p>
+                      </div>
+                      {/* Email */}
+                      {/* Classes for handling error */}
+                      <div
+                        className={`${styles.formControl} ${
+                          error.field === "email" ? styles.hasError : ""
+                        }`}
+                      >
+                        <label htmlFor="email">Email *</label>
+                        <input
+                          type="text"
+                          name="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
+                        {/* Error is displayed here */}
+                        <p className={styles.errorMessage}>
+                          {error.field === "email" ? error.message : ""}
+                        </p>
+                      </div>
+                      {/* Password */}
+                      {/* Classes for handling error */}
+                      <div
+                        className={`${styles.formControl} ${
+                          error.field === "password" ? styles.hasError : ""
+                        }`}
+                      >
+                        <label htmlFor="password">Lozinka *</label>
+                        <input
+                          type="password"
+                          name="password"
+                          value={password}
+                          onChange={(e) => setPassword(e.target.value)}
+                        />
+                        {/* Error is displayed here */}
+                        <p className={styles.errorMessage}>
+                          {error.field === "password" ? error.message : ""}
+                        </p>
+                      </div>
+                      {/* RepeatPassword */}
+                      {/* Classes for handling error */}
+                      <div
+                        className={`${styles.formControl} ${
+                          error.field === "repeatPassword"
+                            ? styles.hasError
+                            : ""
+                        }`}
+                      >
+                        <label htmlFor="repeatPassword">Ponovi Lozinku *</label>
+                        <input
+                          type="password"
+                          name="repeatPassword"
+                          value={repeatPassword}
+                          onChange={(e) => setRepeatPassword(e.target.value)}
+                        />
+                        {/* Error is displayed here */}
+                        <p className={styles.errorMessage}>
+                          {error.field === "repeatPassword"
+                            ? error.message
+                            : ""}
+                        </p>
+                      </div>
+                      {/* TearmsOfUse */}
+                      {/* Classes for handling error */}
+                      <div
+                        className={`${styles.formControl} ${styles.formControlChexkBox}`}
+                      >
+                        <input
+                          type="checkbox"
+                          name="tearmsOfUse"
+                          checked={checkbox}
+                          onChange={() => setCheckbox(!checkbox)}
+                        />
 
-                  <label htmlFor="tearmsOfUse">
-                    Slažem se sa <Link href="/">uslovima korišćenja</Link>
-                  </label>
-                  {/* Error is displayed here */}
-                  <p className={styles.errorMessage}>
-                    {error.field === "checkBox" ? error.message : ""}
-                  </p>
+                        <label htmlFor="tearmsOfUse">
+                          Slažem se sa <Link href="/">uslovima korišćenja</Link>
+                        </label>
+                        {/* Error is displayed here */}
+                        <p className={styles.errorMessage}>
+                          {error.field === "checkBox" ? error.message : ""}
+                        </p>
+                      </div>
+                      {/* Submit Button */}
+                      <div className={styles.formControl}>
+                        <button type="submit">
+                          Registruj se <MdKeyboardArrowRight />
+                        </button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
-                {/* Submit Button */}
-                <div className={styles.formControl}>
-                  <button type="submit">Registruj se</button>
-                </div>
-                {/* To Login */}
-                <Link href="/login">Nemaš nalog? Naprav novi.</Link>
-              </form>
-            </div>
+              </section>
+            </main>
           </div>
-        </main>
+        </div>
       </div>
     </>
   );

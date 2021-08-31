@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "./Button.module.scss";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { useRouter } from "next/router";
