@@ -214,12 +214,7 @@ export default function Home() {
                   koje interesuje veb dizajn i pravljenje veb aplikacije. Jednim
                   klikom pomoći ćete i njemu i nama.
                 </p>
-                <Button
-                  text="Posetite instagram"
-                  link="/"
-                  fontSize={16}
-                  isDisabled={false}
-                />
+                <Button text="Posetite instagram" link="/" />
               </div>
               <div>
                 <div className={`${styles.imageWrapper}`}>
@@ -244,19 +239,14 @@ export default function Home() {
                   klijentima veoma bitna stvar i zato cenimo svako vaše
                   mišljenje.
                 </p>
-                <Button
-                  text="Kontaktirajte nas"
-                  link="/"
-                  fontSize={16}
-                  isDisabled={false}
-                />
+                <Button text="Kontaktirajte nas" link="/" />
               </div>
             </div>
             <div className={styles.helpUsRow}>
               <div className={styles.helpUsText}>
                 <span>03</span>
                 <p className={styles.subtitle}>Patreon</p>
-                <h3>Pordžite nas simboličnom donacijom</h3>
+                <h3>Podržite nas simboličnom donacijom</h3>
                 <p className={styles.text}>
                   Sva sredstva prikupljena kroz donacije direktno pomažu
                   dwavecode da postane još bolja platforma za učenje veb
