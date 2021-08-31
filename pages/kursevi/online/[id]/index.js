@@ -3,7 +3,6 @@ import styles from "../../../../styles/kursevi/OneCourse.module.scss";
 // NEXT COMPONENTS
 import Image from "next/image";
 import Head from "next/head";
-import Link from "next/link";
 // NEXT HOOKS
 import { useRouter } from "next/router";
 // REACT SCROLL COMPONENTS
