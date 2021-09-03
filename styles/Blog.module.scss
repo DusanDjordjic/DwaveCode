@@ -50,11 +50,29 @@
       grid-template-columns: 1fr;
       gap: 30px;
       .editorPickMain {
-        .editorPickPostsWrapper {
+        .editorPickPostsWrapper > div {
           border-bottom: 1px solid $--clr-gray-2;
         }
       }
       .editorPickSidebar {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+  }
+  .groupsSection {
+    h2 {
+      margin-bottom: 40px;
+    }
+    .group {
+      margin-bottom: 40px;
+    }
+    justify-content: center;
+    margin-top: 100px;
+    .content {
+      margin-top: 30px;
+      .contentMain {
         display: grid;
         grid-template-columns: 1fr;
         gap: 30px;
@@ -80,6 +98,14 @@
     .editorPicksSection {
       .editorPickGrid {
         .editorPickSidebar {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+    .groupsSection {
+      .content {
+        .contentMain {
           grid-template-columns: 1fr 1fr;
         }
       }
@@ -102,6 +128,13 @@
 
         .editorPickSidebar {
           grid-template-columns: 1fr;
+        }
+      }
+    }
+    .groupsSection {
+      .content {
+        .contentMain {
+          grid-template-columns: 1fr 1fr 1fr;
         }
       }
     }

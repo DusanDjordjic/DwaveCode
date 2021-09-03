@@ -1,5 +1,7 @@
 // STYLES
 import styles from "../../../../styles/kursevi/OneCourse.module.scss";
+// PACKEGES
+import cooike from "js-cookie";
 // NEXT COMPONENTS
 import Image from "next/image";
 import Head from "next/head";

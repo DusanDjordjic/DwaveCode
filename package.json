@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@tanem/react-nprogress": "^3.0.77",
+    "cookie": "^0.4.1",
     "framer-motion": "^4.1.17",
+    "js-cookie": "^3.0.1",
     "mongoose": "^5.13.7",
     "next": "^11.0.1",
     "react": "^17.0.2",

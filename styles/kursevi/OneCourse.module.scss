@@ -127,7 +127,6 @@ section.introSection {
 }
 section.contentSection {
   .contentWrapper {
-    border: 1px solid red;
     div.wrapperDiv {
       padding: 30px 0;
       h2 {
@@ -143,15 +142,17 @@ section.contentSection {
     }
     div.lekicjeDiv {
       .lectionsWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
         .lectionCard {
           margin-top: 20px;
-          padding: 15px;
+
           background-color: transparent;
           transition: all 0.3s;
           border-radius: 10px;
           border-top-left-radius: 0px;
-          display: grid;
-          grid-template-columns: 1fr 4fr;
+
           box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.1);
           &:hover {
             box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.25);
@@ -162,6 +163,7 @@ section.contentSection {
             border-top-left-radius: 0px;
           }
           .textWrapper {
+            padding: 15px;
             margin-left: 20px;
             display: flex;
             align-items: center;

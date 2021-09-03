@@ -31,6 +31,12 @@ import flSectionCardWaveImage from "../public/HomePage/FreelanceSection/wave-pat
 export default function Home() {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Dwavecode</title>
+        <meta name="description" content="Sajt za učenje veb programiranja" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <div className={styles.Section__LayoutContainer}>
         <div className={styles.Section__Layout}>
           <section className={styles.introBannerSection}>

@@ -9,6 +9,7 @@ import BlogNewsHeader from "../../components/blog/blogHeader/BlogSubHeader";
 import BlogPost from "../../components/blog/blogPost/BlogPost";
 import BlogPostSmall from "../../components/blog/blogPostSmall/BlogPostSmall";
 import FeedbackCard from "../../components/OneTimeComponents/feedback/FeedbackCard";
+import FeedbackCard2 from "../../components/OneTimeComponents/feedback/FeedbackCard2";
 // MODELS
 import BlogPostModel from "../../models/BlogPost";
 // MIDDLEWARE
@@ -21,6 +22,27 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
     link: {
       url: "/blog/posts",
       text: "Pogledaj sve",
+    },
+  };
+  const htmlSubHeader = {
+    text: "HTML",
+    link: {
+      url: "/blog/posts?tag=html",
+      text: "Pogledaj još",
+    },
+  };
+  const cssSubHeader = {
+    text: "CSS",
+    link: {
+      url: "/blog/posts?tag=css",
+      text: "Pogledaj još",
+    },
+  };
+  const jsSubHeader = {
+    text: "Javascript",
+    link: {
+      url: "/blog/posts?tag=javascript",
+      text: "Pogledaj još",
     },
   };
   return (
@@ -70,60 +92,70 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
                   <div className={styles.editorPickPostsWrapper}>
                     {blogPosts.map((post, index) => {
                       if (post.editorPick) {
-                        return <BlogPostSmall key={index} data={post} />;
+                        return (
+                          <BlogPostSmall
+                            key={index}
+                            data={post}
+                            isVertical={false}
+                          />
+                        );
                       }
                     })}
                   </div>
                 </div>
                 <div className={styles.editorPickSidebar}>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Itaque omnis repellendus quaerat placeat aspernatur
-                    distinctio voluptatem illum sed fugiat rerum corporis fugit
-                    quam, earum odio quos quae alias mollitia error quisquam
-                    dolore laudantium veniam officiis quidem. Laboriosam quis
-                    nobis veniam, mollitia placeat optio sint illum. Ipsa,
-                    sapiente voluptatem! Accusamus saepe dolor, exercitationem
-                    inventore minima laboriosam totam laborum omnis, architecto
-                    modi ipsa impedit, veniam asperiores assumenda illo ab aut
-                    facere. Assumenda est in, hic, necessitatibus itaque dicta
-                    nemo eaque quas expedita reiciendis dolore praesentium
-                    distinctio aut aliquid fuga officia incidunt ipsum odio
-                    nesciunt voluptatum. Non sunt eius maiores corrupti dolore
-                    delectus!
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Itaque omnis repellendus quaerat placeat aspernatur
-                    distinctio voluptatem illum sed fugiat rerum corporis fugit
-                    quam, earum odio quos quae alias mollitia error quisquam
-                    dolore laudantium veniam officiis quidem. Laboriosam quis
-                    nobis veniam, mollitia placeat optio sint illum. Ipsa,
-                    sapiente voluptatem! Accusamus saepe dolor, exercitationem
-                    inventore minima laboriosam totam laborum omnis, architecto
-                    modi ipsa impedit, veniam asperiores assumenda illo ab aut
-                    facere. Assumenda est in, hic, necessitatibus itaque dicta
-                    nemo eaque quas expedita reiciendis dolore praesentium
-                    distinctio aut aliquid fuga officia incidunt ipsum odio
-                    nesciunt voluptatum. Non sunt eius maiores corrupti dolore
-                    delectus!
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Itaque omnis repellendus quaerat placeat aspernatur
-                    distinctio voluptatem illum sed fugiat rerum corporis fugit
-                    quam, earum odio quos quae alias mollitia error quisquam
-                    dolore laudantium veniam officiis quidem. Laboriosam quis
-                    nobis veniam, mollitia placeat optio sint illum. Ipsa,
-                    sapiente voluptatem! Accusamus saepe dolor, exercitationem
-                    inventore minima laboriosam totam laborum omnis, architecto
-                    modi ipsa impedit, veniam asperiores assumenda illo ab aut
-                    facere. Assumenda est in, hic, necessitatibus itaque dicta
-                    nemo eaque quas expedita reiciendis dolore praesentium
-                    distinctio aut aliquid fuga officia incidunt ipsum odio
-                    nesciunt voluptatum. Non sunt eius maiores corrupti dolore
-                    delectus!
-                  </p>
+                  <FeedbackCard2 type="blog" />
+                </div>
+              </div>
+            </section>
+            <section className={styles.groupsSection}>
+              <h2>Pogledaj najnovije iz...</h2>
+              <div className={styles.group}>
+                <BlogNewsHeader data={htmlSubHeader} />
+                <div className={styles.content}>
+                  <div className={styles.contentMain}>
+                    {blogPosts
+                      .filter((post) => post.tags.includes("html"))
+                      .map((post, index) => {
+                        if (index < 3) {
+                          return (
+                            <BlogPost key={index} data={post} type="small" />
+                          );
+                        }
+                      })}
+                  </div>
+                </div>
+              </div>
+              <div className={styles.group}>
+                <BlogNewsHeader data={cssSubHeader} />
+                <div className={styles.content}>
+                  <div className={styles.contentMain}>
+                    {blogPosts
+                      .filter((post) => post.tags.includes("css"))
+                      .map((post, index) => {
+                        if (index < 3) {
+                          return (
+                            <BlogPost key={index} data={post} type="small" />
+                          );
+                        }
+                      })}
+                  </div>
+                </div>
+              </div>
+              <div className={styles.group}>
+                <BlogNewsHeader data={jsSubHeader} />
+                <div className={styles.content}>
+                  <div className={styles.contentMain}>
+                    {blogPosts
+                      .filter((post) => post.tags.includes("javascript"))
+                      .map((post, index) => {
+                        if (index < 3) {
+                          return (
+                            <BlogPost key={index} data={post} type="small" />
+                          );
+                        }
+                      })}
+                  </div>
                 </div>
               </div>
             </section>

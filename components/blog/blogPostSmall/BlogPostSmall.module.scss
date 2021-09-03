@@ -3,11 +3,56 @@
 .blogPost {
   border-radius: 10px;
   position: relative;
-
   a {
     padding: 30px 0;
     display: grid;
     grid-template-columns: 1fr 3fr;
+    align-items: center;
+    &:hover {
+      .blogPostImage {
+        .imageWrapper {
+          .blogImage {
+            filter: brightness(90%);
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+    .blogPostImage {
+      position: relative;
+      cursor: pointer;
+      .imageWrapper {
+        border-radius: 10px;
+        overflow: hidden;
+        div {
+          position: relative !important;
+          vertical-align: top;
+        }
+        .blogImage {
+          position: relative !important;
+          transition: all 0.3s;
+          width: 100% !important;
+          height: auto !important;
+          border-radius: 10px;
+        }
+      }
+    }
+    .blogPostText {
+      padding: 0 20px;
+      h4 {
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+.blogPostVerical {
+  border-radius: 10px;
+  position: relative;
+
+  a {
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: center;
     &:hover {
       .blogPostImage {

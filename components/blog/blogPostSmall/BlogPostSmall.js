@@ -2,8 +2,8 @@ import styles from "./BlogPostSmall.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 const BlogPostSmall = (data) => {
-  console.log(data);
   const { _id, title, coverImage } = data.data;
+
   return (
     <div className={styles.blogPost}>
       <Link href={`/blog/post/${_id}`}>

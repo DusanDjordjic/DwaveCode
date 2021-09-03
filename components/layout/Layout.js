@@ -164,12 +164,16 @@ const Layout = ({ children }) => {
       >
         <nav className={styles.navigation}>
           <div
-            className={styles.toggleBtn}
+            className={
+              isSidebarActive
+                ? `${styles.toggleBtn} ${styles.toggleBtnActive}`
+                : `${styles.toggleBtn}`
+            }
             onClick={() => setIsSidebarActive(!isSidebarActive)}
           >
             <HiMenu />
           </div>
-          <p className={styles.logo}>Dwavecode</p>
+          <Image src={logoSrc} />
         </nav>
         <div className={styles.content}>{children}</div>
 

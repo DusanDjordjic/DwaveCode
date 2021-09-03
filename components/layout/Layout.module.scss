@@ -114,6 +114,7 @@
     .toggleBtn {
       max-height: 45px;
       max-width: 45px;
+      margin-right: 20px;
       cursor: pointer;
       transition: all 0.3s;
       svg {
@@ -131,15 +132,15 @@
         }
       }
     }
-    .logo {
-      margin-left: 20px;
+    .toggleBtnActive {
+      svg {
+        background-color: $--clr-main-03;
+        color: $--clr-gray-1;
+      }
+    }
+    img {
       user-select: none;
-      font-weight: 700;
-      background-image: $--gradient;
-      background-size: $--bg-size;
-      animation: $--gradient-animation;
-      background-clip: text;
-      color: transparent;
+      max-height: 45px !important;
     }
   }
   .content {

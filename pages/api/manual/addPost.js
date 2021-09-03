@@ -8,20 +8,19 @@ export default async function (req, res) {
     dbConnect();
     // Make New Blog Post
     const newPost = new BlogPost({
-      title: "Funkcije | Šta su i kako ih koristiti",
+      title: "HTML 5",
       date: new Date().getTime(),
-      description:
-        "Naučićemo šta su funkcije, zašto su toliko moćne i kako da ih koristimo na najbolji način",
-      editorPick: true,
+      description: "Post broj 5 iz html-a",
+      editorPick: false,
       coverImage: "/Blog/Html/1.png",
-      tags: ["sve", "javascript"],
-      text: "# Javascript",
+      tags: ["sve", "html"],
+      text: "# Html 5",
       overlay: {
         author: {
           name: "Dwave Code",
           authorImage: "/Dwave-logo.jpg",
         },
-        readTime: 5,
+        readTime: 4,
       },
     });
     // Save Blog Post
