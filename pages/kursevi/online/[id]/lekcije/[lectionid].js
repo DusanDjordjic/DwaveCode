@@ -26,7 +26,9 @@ const Lection = ({
     const link = array.join("/");
     router.push(link);
   };
-
+  if (!currentLection) {
+    return <h1>Loading</h1>;
+  }
   if (error) {
     return (
       <div>
