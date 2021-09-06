@@ -30,7 +30,12 @@ const Lection = ({
   };
 
   // Set state for questions
-
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState(0);
+  const [answerDescription, setAnswerDescription] = useState("");
+  const [isSubmited, setIsSubmited] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
+  const [score, setScore] = useState(0);
   useEffect(() => {
     if (currentLection.questions[questionIndex + 1] === undefined) {
       setIsFinished(true);
@@ -64,6 +69,7 @@ const Lection = ({
     setIsFinished(false);
     setScore(0);
   };
+  
   if (!currentLection) {
     return <h1>Loading</h1>;
   }
