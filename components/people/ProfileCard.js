@@ -11,7 +11,7 @@ const ProfileCard = ({ data }) => {
         <p className={styles.descriotion}>{data.teacherDescription}</p>
         <div className={styles.quoteWrapper}>
           <p className={styles.quote}>{data.teacherQuote}</p>
-          <p className={styles.quoteIcon}>"</p>
+          <p className={styles.quoteIcon}>&quot;</p>
         </div>
       </div>
     </div>
