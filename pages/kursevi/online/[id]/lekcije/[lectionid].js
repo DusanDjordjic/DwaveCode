@@ -2,6 +2,8 @@
 import styles from "../../../../../styles/kursevi/lection/SingleLection.module.scss";
 // NEXT COMPONENTS
 import Head from "next/head";
+// REACT HOOKS
+import { useState, useEffect } from "react";
 // NEXT HOOKS
 import { useRouter } from "next/router";
 // CUSTOM COMPONENTS
@@ -36,6 +38,46 @@ const Lection = ({
       </div>
     );
   }
+  // Set state for questions
+  const [questionIndex, setQuestionIndex] = useState(0);
+  const [selectedAnswer, setSelectedAnswer] = useState(0);
+  const [answerDescription, setAnswerDescription] = useState("");
+  const [isSubmited, setIsSubmited] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
+  const [score, setScore] = useState(0);
+  useEffect(() => {
+    if (currentLection.questions[questionIndex + 1] === undefined) {
+      setIsFinished(true);
+    }
+  }, [questionIndex]);
+  const handleSubmit = () => {
+    if (
+      selectedAnswer === currentLection.questions[questionIndex].rightAnswer
+    ) {
+      console.log("Tacno");
+      setScore((prevValue) => prevValue + 1);
+    } else {
+      console.log("Netacno");
+    }
+    setAnswerDescription(
+      currentLection.questions[questionIndex].rightAnswerDescription
+    );
+    setIsSubmited(true);
+  };
+  const nextQuestion = () => {
+    setQuestionIndex((prevValue) => prevValue + 1);
+    setSelectedAnswer(0);
+    setAnswerDescription("");
+    setIsSubmited(false);
+  };
+  const restartQuestions = () => {
+    setQuestionIndex(0);
+    setSelectedAnswer(0);
+    setAnswerDescription("");
+    setIsSubmited(false);
+    setIsFinished(false);
+    setScore(0);
+  };
   return (
     <>
       {/* Head */}
@@ -58,15 +100,90 @@ const Lection = ({
                     <button
                       onClick={() => handleButtonClick(previousLectionId)}
                     >
-                      Prev
+                      Prethodna lekcija
                     </button>
                   )}
                   {nextLectionId && (
                     <button onClick={() => handleButtonClick(nextLectionId)}>
-                      Next
+                      Sledeća lekcija
                     </button>
                   )}
                 </div>
+              </div>
+            </section>
+            <section className={styles.questionsSection}>
+              <div className={styles.questionBox}>
+                <header>
+                  <p>
+                    Pitanje: {questionIndex + 1} od{" "}
+                    {currentLection.questions.length}
+                  </p>
+                  <p>Bodovi: {score}</p>
+                </header>
+                <div className={styles.answers}>
+                  <h4>
+                    {questionIndex + 1}.{" "}
+                    {currentLection.questions[questionIndex].question}
+                  </h4>
+                  <ul>
+                    {currentLection.questions[questionIndex].answers.map(
+                      (answer, index) => {
+                        return (
+                          <li
+                            className={`${
+                              selectedAnswer === answer.answerId &&
+                              styles.active
+                            } ${
+                              isSubmited
+                                ? currentLection.questions[questionIndex]
+                                    .rightAnswer === answer.answerId
+                                  ? styles.right
+                                  : styles.wrong
+                                : ""
+                            }`}
+                            key={index}
+                            onClick={() => setSelectedAnswer(answer.answerId)}
+                          >
+                            {answer.answerText}
+                          </li>
+                        );
+                      }
+                    )}
+                  </ul>
+                </div>
+                <footer>
+                  <div className={isSubmited ? styles.textWrapper : ""}>
+                    <p>{answerDescription}</p>
+                  </div>
+                  <div className={styles.buttonsWrapper}>
+                    <button
+                      onClick={handleSubmit}
+                      className={styles.submitButton}
+                    >
+                      Odgovori
+                    </button>
+                    {isFinished ? (
+                      ""
+                    ) : (
+                      <button
+                        onClick={nextQuestion}
+                        className={styles.nextButton}
+                      >
+                        Sledece pitanje
+                      </button>
+                    )}
+                    {isFinished && isSubmited ? (
+                      <button
+                        onClick={restartQuestions}
+                        className={styles.nextButton}
+                      >
+                        Ponovo
+                      </button>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                </footer>
               </div>
             </section>
           </div>
