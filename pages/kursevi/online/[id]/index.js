@@ -306,7 +306,7 @@ const Kurs = ({ course }) => {
                                 className={styles.commentWrapper}
                                 key={index}
                               >
-                                <p className={styles.comments}>"{comment}"</p>
+                                <p className={styles.comments}>{comment}</p>
                               </div>
                             );
                           }
