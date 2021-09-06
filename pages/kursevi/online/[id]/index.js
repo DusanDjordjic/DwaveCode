@@ -13,8 +13,15 @@ import { Link as ScrollLink, Element as ScrollElement } from "react-scroll";
 import Rate from "../../../../components/courses/rate/Rate";
 import Button from "../../../../components/layout/smallComponents/button/Button";
 import RoundButton from "../../../../components/layout/smallComponents/roundButton/RoundButton";
+import ProfileCard from "../../../../components/people/ProfileCard";
+import FeedbackCard2 from "../../../../components/OneTimeComponents/feedback/FeedbackCard2";
 // ICONS
-import { FaGlobeEurope, FaHourglassEnd, FaStopwatch } from "react-icons/fa";
+import {
+  FaGlobeEurope,
+  FaHourglassEnd,
+  FaStopwatch,
+  FaCheck,
+} from "react-icons/fa";
 // MODELS
 import CourseSchema from "../../../../models/Course";
 // MIDDLEWARE
@@ -115,7 +122,7 @@ const Kurs = ({ course }) => {
                   to="pregled"
                   spy={true}
                   smooth={true}
-                  offset={-100}
+                  offset={-150}
                   duration={500}
                 >
                   Pregled
@@ -128,7 +135,7 @@ const Kurs = ({ course }) => {
                   to="lekcije"
                   spy={true}
                   smooth={true}
-                  offset={-100}
+                  offset={-150}
                   duration={500}
                 >
                   Lekcije
@@ -141,7 +148,7 @@ const Kurs = ({ course }) => {
                   to="sta-cu-nauciti"
                   spy={true}
                   smooth={true}
-                  offset={-100}
+                  offset={-150}
                   duration={500}
                 >
                   Šta ću naučiti
@@ -154,7 +161,7 @@ const Kurs = ({ course }) => {
                   to="predavaci"
                   spy={true}
                   smooth={true}
-                  offset={-100}
+                  offset={-150}
                   duration={500}
                 >
                   Predavači
@@ -167,7 +174,7 @@ const Kurs = ({ course }) => {
                   to="utisci"
                   spy={true}
                   smooth={true}
-                  offset={-100}
+                  offset={-150}
                   duration={500}
                 >
                   Utisci
@@ -180,7 +187,7 @@ const Kurs = ({ course }) => {
                   to="sta-dalje"
                   spy={true}
                   smooth={true}
-                  offset={-100}
+                  offset={-150}
                   duration={500}
                 >
                   Šta dalje
@@ -212,22 +219,25 @@ const Kurs = ({ course }) => {
                       {course.lections.map((lection, index) => {
                         return (
                           <div key={index} className={styles.lectionCard}>
-                            <div className={styles.imageWrapper}>
-                              <Image
-                                src="/Cards/Card-Design-01.jpg"
-                                height="100"
-                                width="100"
-                                layout="responsive"
-                              />
+                            <div className={styles.courseNameDiv}>
+                              <p>Kurs</p>
+                              <p className={styles.courseName}>
+                                {course.title}
+                              </p>
                             </div>
                             <div className={styles.textWrapper}>
                               <div>
+                                <p className={styles.lectionNumber}>
+                                  lekcija {index + 1}
+                                </p>
                                 <h4>{lection.title}</h4>
                                 <p>{lection.description}</p>
                               </div>
-                              <RoundButton
-                                link={`${router.asPath}/lekcije/${lection._id}`}
-                              />
+                              <div className={styles.buttonWrapper}>
+                                <RoundButton
+                                  link={`${router.asPath}/lekcije/${lection._id}`}
+                                />
+                              </div>
                             </div>
                           </div>
                         );
@@ -240,34 +250,46 @@ const Kurs = ({ course }) => {
                     className={styles.wrapperDiv}
                   >
                     <h2>Šta ću naučiti</h2>
-                    {course.content.knowledges.map((knowladge, index) => {
-                      return <p key={index}>{knowladge}</p>;
-                    })}
+                    <div className={styles.znanjaWrapper}>
+                      {course.content.knowledges.map((knowladge, index) => {
+                        return (
+                          <div className={styles.znanje}>
+                            <FaCheck />
+                            <p key={index}>{knowladge}</p>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </ScrollElement>
                   {/* Scroll Element - Predavaci */}
                   <ScrollElement name="predavaci" className={styles.wrapperDiv}>
                     <h2>Predavači</h2>
-                    {course.content.teachers.map((teacher, index) => {
-                      return (
-                        <div key={index}>
-                          <Image
-                            src={teacher.teacherImage}
-                            height="100"
-                            width="100"
-                          />
-                          <p>{teacher.teacherName}</p>
-                          <p>{teacher.teacherDescription}</p>
-                          <p>{teacher.teacherQuote}</p>
-                        </div>
-                      );
-                    })}
+                    <div className={styles.teachersWrapper}>
+                      {course.content.teachers.map((teacher, index) => {
+                        return <ProfileCard key={index} data={teacher} />;
+                      })}
+                    </div>
                   </ScrollElement>
                   {/* Scroll Element - Utisci */}
                   <ScrollElement name="utisci" className={styles.wrapperDiv}>
                     <h2>Utisci</h2>
-                    {course.content.comments.map((comment, index) => {
-                      return <p key={index}>{comment}</p>;
-                    })}
+                    <div className={styles.commentsGrid}>
+                      <div className={styles.commnetsWrapper}>
+                        {course.content.comments.map((comment, index) => {
+                          return (
+                            <div className={styles.commentWrapper}>
+                              <p className={styles.comments} key={index}>
+                                "{comment}"
+                              </p>
+                            </div>
+                          );
+                        })}
+                      </div>
+                      <FeedbackCard2
+                        title={"Ostavite komentar"}
+                        actionFunction={() => console.log("Komentarcina")}
+                      />
+                    </div>
                   </ScrollElement>
                   {/* Scroll Element - Sta Dalje */}
                   <ScrollElement name="sta-dalje" className={styles.wrapperDiv}>

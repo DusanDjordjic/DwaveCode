@@ -7,7 +7,7 @@ import emojiHappy from "../../../public/emojis/emoji-happy.svg";
 import emojiNeutral from "../../../public/emojis/emoji-neutral.svg";
 import emojiSad from "../../../public/emojis/emoji-sad.svg";
 import emojiCrying from "../../../public/emojis/emoji-crying.svg";
-const FeedbackCard2 = ({ type }) => {
+const FeedbackCard2 = ({ title, actionFunction }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -25,14 +25,37 @@ const FeedbackCard2 = ({ type }) => {
     }
     e.preventDefault();
     setIsSubmited(true);
-
+    actionFunction();
     // Add message to db
   };
   if (isSubmited) {
     return (
       <div className={styles.cardWrapper}>
         <div className={styles.cardClicked}>
-          <p>Hvala na odgovoru</p>
+          <header>
+            <h4>{title}</h4>
+            <ul>
+              <li className={activeIndex === 1 ? styles.active : null}>
+                <Image src={emojiCrying} />
+              </li>
+              <li className={activeIndex === 2 ? styles.active : null}>
+                <Image src={emojiSad} />
+              </li>
+              <li className={activeIndex === 3 ? styles.active : null}>
+                <Image src={emojiNeutral} />
+              </li>
+              <li className={activeIndex === 4 ? styles.active : null}>
+                <Image src={emojiHappy} />
+              </li>
+              <li className={activeIndex === 5 ? styles.active : null}>
+                <Image src={emojiHeart} />
+              </li>
+            </ul>
+          </header>
+          <div>
+            <p>Poruka primljena</p>
+            <p>Hvala Vam na odgovoru</p>
+          </div>
         </div>
       </div>
     );
@@ -41,7 +64,7 @@ const FeedbackCard2 = ({ type }) => {
     <div className={styles.cardWrapper}>
       <div className={styles.card}>
         <header>
-          <h4>Kako vam se čini sajt?</h4>
+          <h4>{title}</h4>
           <ul>
             <li
               className={activeIndex === 1 ? styles.active : null}

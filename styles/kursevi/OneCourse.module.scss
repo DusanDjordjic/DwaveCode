@@ -71,7 +71,7 @@ section.introSection {
       margin: 10px 0;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       color: $--clr-gray-3;
       .keyInfoIconSpan {
         padding-right: 20px;
@@ -128,46 +128,112 @@ section.introSection {
 section.contentSection {
   .contentWrapper {
     div.wrapperDiv {
-      padding: 30px 0;
+      padding: 50px 0;
       h2 {
         font-size: 2em;
-        font-weight: 500;
-        margin-bottom: 10px;
+        font-weight: 700;
+        margin-bottom: 30px;
       }
     }
-    div.pregledDiv {
-      p {
-        margin: 20px 0;
-      }
-    }
+
     div.lekicjeDiv {
       .lectionsWrapper {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 30px;
+        grid-template-columns: 1fr;
+        gap: 50px;
         .lectionCard {
-          margin-top: 20px;
-
           background-color: transparent;
           transition: all 0.3s;
           border-radius: 10px;
           border-top-left-radius: 0px;
+          overflow: hidden;
+          display: grid;
+          grid-template-columns: 1fr;
 
-          box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.1);
-          &:hover {
-            box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.25);
+          box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.15);
+
+          .courseNameDiv {
+            background-image: $--gradient;
+            background-size: $--bg-size;
+            animation: $--gradient-animation;
+            padding: 50px 20px;
+            p {
+              color: $--clr-gray-1;
+              font-size: 1em;
+            }
+            .courseName {
+              font-size: 2em;
+              font-weight: 700;
+              color: $--clr-gray-1;
+              text-align: left;
+            }
           }
-          .imageWrapper {
-            overflow: hidden;
-            border-radius: 10px;
-            border-top-left-radius: 0px;
-          }
+
           .textWrapper {
-            padding: 15px;
-            margin-left: 20px;
+            .lectionNumber {
+              font-size: 0.9em;
+            }
+            padding: 20px;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            .buttonWrapper {
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+    .znanjaWrapper {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 30px;
+      .znanje {
+        margin: 10px 0;
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        gap: 10px;
+        svg {
+          box-sizing: content-box;
+          padding: 10px;
+          background-image: $--gradient;
+          background-size: $--bg-size;
+          animation: $--gradient-animation;
+
+          font-weight: 500;
+          color: $--clr-gray-1;
+          border-radius: 100px;
+
+          min-height: 20px;
+          min-width: 20px;
+          max-height: 30px;
+          max-width: 30px;
+        }
+        p {
+          margin-top: 10px;
+        }
+      }
+    }
+    .teachersWrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    .commentsGrid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 30px;
+      .commnetsWrapper {
+        .commentWrapper {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+          padding: 20px;
+          border-radius: 10px;
+          border-top-left-radius: 0px;
+          background-color: $--clr-gray-2;
+          .comments {
+            font-style: italic;
           }
         }
       }
@@ -178,8 +244,35 @@ section.contentSection {
 @media only screen and (min-width: 768px) {
   section.introSection {
     .keyInfoWrapper {
-      display: grid;
       grid-template-columns: repeat(3, 1fr);
+      .keyInfoItem {
+        justify-content: center;
+      }
+    }
+  }
+  section.contentSection {
+    .contentWrapper {
+      div.lekicjeDiv {
+        .lectionsWrapper {
+          .lectionCard {
+            grid-template-columns: 1fr 2fr;
+          }
+        }
+      }
+      .znanjaWrapper {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .teachersWrapper {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .commentsGrid {
+        grid-template-columns: 1fr 1fr;
+        .commnetsWrapper {
+          .commentWrapper {
+            padding: 20px 50px;
+          }
+        }
+      }
     }
   }
 }
@@ -197,6 +290,31 @@ section.contentSection {
     position: sticky;
     top: 65px;
   }
+  section.contentSection {
+    .contentWrapper {
+      div.lekicjeDiv {
+        .lectionsWrapper {
+          .lectionCard {
+            grid-template-columns: 1fr 3fr;
+          }
+        }
+      }
+      .znanjaWrapper {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .teachersWrapper {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .commentsGrid {
+        grid-template-columns: 2fr 1fr;
+        .commnetsWrapper {
+          .commentWrapper {
+            padding: 20px 100px;
+          }
+        }
+      }
+    }
+  }
 }
 @media only screen and (min-width: 1200px) {
   section.introSection {
@@ -206,5 +324,13 @@ section.contentSection {
     .introSectionImageWrapper {
       padding-left: 50px;
     }
+  }
+}
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
   }
 }

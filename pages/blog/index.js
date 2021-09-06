@@ -104,7 +104,12 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
                   </div>
                 </div>
                 <div className={styles.editorPickSidebar}>
-                  <FeedbackCard2 type="blog" />
+                  <FeedbackCard2
+                    title="Kako vam se čini sajt?"
+                    actionFunction={() => {
+                      console.log("Blogcina");
+                    }}
+                  />
                 </div>
               </div>
             </section>

@@ -5,11 +5,38 @@
   justify-content: center;
 }
 .cardClicked {
-  background-color: $--clr-gray-2;
   padding: 20px;
-  border-radius: 15px;
-  p {
-    color: $--clr-blue-1;
+  header {
+    h4 {
+      min-width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style: none;
+      min-width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      li {
+        filter: grayscale(1);
+        transition: all 0.3s;
+        transform: scale(0.9);
+      }
+      li.active {
+        filter: grayscale(0);
+        transform: scale(1.1);
+      }
+    }
+  }
+  div {
+    margin-top: 20px;
+    p {
+      font-size: 0.9em;
+      text-align: center;
+      color: $--clr-blue-1;
+    }
   }
 }
 
@@ -18,7 +45,8 @@
   top: 100px;
   background-color: $--clr-gray-2;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 10px;
+  border-top-left-radius: 0px;
   header {
     h4 {
       min-width: 100%;

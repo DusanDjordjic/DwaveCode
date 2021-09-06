@@ -1,0 +1,61 @@
+@import "../../styles/vars.scss";
+.card {
+  border-radius: 10px;
+  border-top-left-radius: 0px;
+  overflow: hidden;
+  background-image: $--gradient;
+  background-size: $--bg-size;
+  animation: $--gradient-animation;
+  .imageWrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    img {
+      border: 3px solid $--clr-gray-1 !important;
+      border-radius: 100%;
+    }
+  }
+  .textWrapper {
+    p {
+      color: $--clr-gray-1;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .name {
+      font-weight: 500;
+    }
+    .descriotion {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .quoteWrapper {
+      border-top: 1px solid rgba($--clr-blue-1, 0.3);
+      padding: 20px;
+      position: relative;
+      .quote {
+        font-size: 1em;
+        font-style: italic;
+        position: relative;
+        z-index: 5;
+      }
+      .quoteIcon {
+        font-style: italic;
+        position: absolute;
+        top: 10px;
+        left: -10px;
+        font-weight: 700;
+        font-size: 100px;
+        line-height: 100px;
+        color: rgba($--clr-blue-1, 0.3);
+      }
+    }
+  }
+}
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}

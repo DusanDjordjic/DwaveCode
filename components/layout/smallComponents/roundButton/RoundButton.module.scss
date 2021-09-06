@@ -1,23 +1,31 @@
 @import "../../../../styles/vars.scss";
 .button {
-  color: $--clr-black;
-  background-color: $--clr-green;
-  border-radius: 100px;
-  border-top-left-radius: 0px;
+  cursor: pointer;
   font-size: 16px;
+  background-image: $--gradient;
+  background-size: $--bg-size;
+  animation: $--gradient-animation;
+  border-radius: 100px;
   font-weight: 500;
-  -webkit-box-shadow: 0px 10px 30px -6px rgba(56, 240, 212, 0.53);
-  -moz-box-shadow: 0px 10px 30px -6px rgba(56, 240, 212, 0.53);
-  box-shadow: 0px 10px 30px -6px rgba(56, 240, 212, 0.53);
+  color: $--clr-gray-1;
+  -webkit-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
+  -moz-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
+  box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
   transition: all 0.3s;
+  padding: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   a {
     display: flex;
     align-items: center;
-    padding: 10px 5px;
+    padding: 5px;
     svg {
       font-size: 16px;
       min-height: 20px;
-      min-height: 20px;
+      min-width: 20px;
+      max-height: 30px;
+      max-width: 30px;
       transition: all 0.3s;
     }
   }
@@ -29,5 +37,13 @@
       }
     }
     filter: brightness(105%);
+  }
+}
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
   }
 }
