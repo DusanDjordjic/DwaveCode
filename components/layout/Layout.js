@@ -1,10 +1,10 @@
 // STYLES
 import styles from "./Layout.module.scss";
 // ICONS
-import { HiMenu, HiHome, HiOutlineViewGrid, HiCode } from "react-icons/hi";
+import { HiMenu, HiHome, HiOutlineViewGrid } from "react-icons/hi";
 import { FaUserGraduate } from "react-icons/fa";
 import { SiJavascript } from "react-icons/si";
-import { BsChatFill } from "react-icons/bs";
+import { BsChatFill, BsFillInfoCircleFill } from "react-icons/bs";
 import { IoIosPaper } from "react-icons/io";
 import { RiLoginCircleFill } from "react-icons/ri";
 // NEXT COMPONENTS
@@ -29,6 +29,11 @@ const sidebarData = [
     link: "/",
   },
   {
+    text: "O nama",
+    icon: <BsFillInfoCircleFill />,
+    link: "/about",
+  },
+  {
     text: "Blog",
     icon: <IoIosPaper />,
     link: "/blog",
@@ -48,11 +53,7 @@ const sidebarData = [
     icon: <RiLoginCircleFill />,
     link: "/login",
   },
-  // {
-  //   text: "Coding",
-  //   icon: <HiCode />,
-  //   link: "/blog/codingtips",
-  // },
+
   // {
   //   text: "HTML",
   //   icon: <FaHtml5 />,
