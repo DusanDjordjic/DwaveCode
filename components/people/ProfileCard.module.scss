@@ -6,6 +6,7 @@
   background-image: $--gradient;
   background-size: $--bg-size;
   animation: $--gradient-animation;
+  box-shadow: 5px 20px 30px -18px rgba(0, 0, 0, 0.5);
   .imageWrapper {
     display: flex;
     justify-content: center;

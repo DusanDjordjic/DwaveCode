@@ -5,6 +5,8 @@ import cooike from "js-cookie";
 // NEXT COMPONENTS
 import Image from "next/image";
 import Head from "next/head";
+// REACT HOOKS
+import { useState } from "react";
 // NEXT HOOKS
 import { useRouter } from "next/router";
 // REACT SCROLL COMPONENTS
@@ -22,6 +24,7 @@ import {
   FaStopwatch,
   FaCheck,
 } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
 // MODELS
 import CourseSchema from "../../../../models/Course";
 // MIDDLEWARE
@@ -30,7 +33,28 @@ import { dbConnect } from "../../../../middleware/db/dbConnect";
 import { average } from "../../../../lib/average";
 import { jsonify } from "../../../../lib/jsonify";
 const Kurs = ({ course }) => {
+  const [numberOfComments, setNumberOfComments] = useState(3);
   const router = useRouter();
+  console.log(course);
+  const displayMoreCommnets = () => {
+    setNumberOfComments((prevValue) => prevValue + 3);
+  };
+  const addComment = async (email, message, likes) => {
+    const response = await fetch("/api/updatecommnets", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        message: message,
+        likes: likes,
+        courseId: course._id.toString(),
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+  };
   if (course) {
     const averageLikes = average(course.likes);
     return (
@@ -253,9 +277,9 @@ const Kurs = ({ course }) => {
                     <div className={styles.znanjaWrapper}>
                       {course.content.knowledges.map((knowladge, index) => {
                         return (
-                          <div className={styles.znanje}>
+                          <div className={styles.znanje} key={index}>
                             <FaCheck />
-                            <p key={index}>{knowladge}</p>
+                            <p>{knowladge}</p>
                           </div>
                         );
                       })}
@@ -276,18 +300,31 @@ const Kurs = ({ course }) => {
                     <div className={styles.commentsGrid}>
                       <div className={styles.commnetsWrapper}>
                         {course.content.comments.map((comment, index) => {
-                          return (
-                            <div className={styles.commentWrapper}>
-                              <p className={styles.comments} key={index}>
-                                "{comment}"
-                              </p>
-                            </div>
-                          );
+                          if (index < numberOfComments) {
+                            return (
+                              <div
+                                className={styles.commentWrapper}
+                                key={index}
+                              >
+                                <p className={styles.comments}>"{comment}"</p>
+                              </div>
+                            );
+                          }
                         })}
+                        {course.content.comments.length > numberOfComments && (
+                          <div className={styles.showMoreWrapper}>
+                            <button
+                              onClick={() => displayMoreCommnets(2)}
+                              className={styles.showMoreButton}
+                            >
+                              <MdKeyboardArrowDown />
+                            </button>
+                          </div>
+                        )}
                       </div>
                       <FeedbackCard2
                         title={"Ostavite komentar"}
-                        actionFunction={() => console.log("Komentarcina")}
+                        actionFunction={addComment}
                       />
                     </div>
                   </ScrollElement>
@@ -329,6 +366,7 @@ export const getStaticProps = async (context) => {
           error: false,
           errorText: "",
         },
+        revalidate: 60,
       };
     } else {
       // If there is an error ERROR=TRUE
@@ -338,6 +376,7 @@ export const getStaticProps = async (context) => {
           error: true,
           errorText: "No course",
         },
+        revalidate: 60,
       };
     }
   } catch (error) {
@@ -348,6 +387,7 @@ export const getStaticProps = async (context) => {
         error: true,
         errorText: error,
       },
+      revalidate: 60,
     };
   }
 };

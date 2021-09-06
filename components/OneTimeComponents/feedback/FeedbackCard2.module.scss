@@ -42,8 +42,9 @@
 
 .card {
   position: sticky;
-  top: 100px;
+  top: 150px;
   background-color: $--clr-gray-2;
+  box-shadow: 5px 20px 30px -18px rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 10px;
   border-top-left-radius: 0px;

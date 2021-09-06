@@ -51,7 +51,7 @@ const KurseviPocetna = ({ coursesArray, error }) => {
                         Potpuno besplanti kursevi o veb-programiranju Nadamo se
                         da ćemo vas upoznati i raditi sa vama
                       </p>
-                      <Button text="Pogledaj kurseve" link="/kursevi" />
+                      <Button text="Pogledaj kurseve" link="/kursevi/svi" />
                     </div>
                     {/* Intro Section Image Wrapper */}
                     <div className={styles.introSectionImageWrapper}>
@@ -152,7 +152,10 @@ const KurseviPocetna = ({ coursesArray, error }) => {
                             </div>
                             <div className={styles.textWrapper}>
                               <h3>{kurs.title}</h3>
-                              <p>{`${kurs.lections.length} lekcija / ${kurs.readTime}`}</p>
+                              <p>{`${kurs.lections.length} 
+                              ${
+                                kurs.lections.length < 5 ? "lekcije" : "lekcija"
+                              } / ${kurs.readTime}`}</p>
                               <p className={styles.descSubheader}>
                                 Deskripcija
                               </p>

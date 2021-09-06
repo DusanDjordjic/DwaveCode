@@ -25,7 +25,7 @@ const FeedbackCard2 = ({ title, actionFunction }) => {
     }
     e.preventDefault();
     setIsSubmited(true);
-    actionFunction();
+    actionFunction(email, message, activeIndex);
     // Add message to db
   };
   if (isSubmited) {
