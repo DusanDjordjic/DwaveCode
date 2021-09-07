@@ -35,7 +35,6 @@ import { jsonify } from "../../../../lib/jsonify";
 const Kurs = ({ course }) => {
   const [numberOfComments, setNumberOfComments] = useState(3);
   const router = useRouter();
-  console.log(course);
   const displayMoreCommnets = () => {
     setNumberOfComments((prevValue) => prevValue + 3);
   };
@@ -50,6 +49,7 @@ const Kurs = ({ course }) => {
         message: message,
         likes: likes,
         courseId: course._id.toString(),
+        from: course.title,
       }),
     });
     const data = await response.json();

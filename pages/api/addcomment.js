@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 // MODELS
-import CourseSchema from "../../models/Course";
 import MessageSchema from "../../models/Message";
 // MIDDLEWARE
 import { dbConnect } from "../../middleware/db/dbConnect";
@@ -11,16 +10,13 @@ export default async function (req, res) {
       // Connect to DB
       dbConnect();
       // Get data from body
-      const { email, message, courseId, likes, from } = req.body;
+      const { email, message, from, grade } = req.body;
 
-      const updatedCourse = await CourseSchema.findByIdAndUpdate(courseId, {
-        $push: { likes: likes, "content.comments": message },
-      });
       const newMessage = new MessageSchema({
         from,
         message,
         email,
-        grade: likes,
+        grade
       });
       await newMessage.save();
       res.status(200).json({ message: "Success" });

@@ -45,6 +45,22 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
       text: "Pogledaj još",
     },
   };
+  const sendMessage = async (email, message, grade) => {
+    const response = await fetch("/api/addcomment", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        message: message,
+        from: "Blog",
+        grade: grade,
+      }),
+    });
+    const data = await response.json();
+    console.log(data);
+  };
   return (
     <div className={styles.container}>
       <Head>
@@ -106,9 +122,7 @@ const Blog = ({ blogPosts, blogSubHeader }) => {
                 <div className={styles.editorPickSidebar}>
                   <FeedbackCard2
                     title="Kako vam se čini sajt?"
-                    actionFunction={() => {
-                      console.log("Blogcina");
-                    }}
+                    actionFunction={sendMessage}
                   />
                 </div>
               </div>

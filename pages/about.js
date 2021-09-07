@@ -14,20 +14,8 @@ import { GoSearch } from "react-icons/go";
 import { BsChatFill, BsArrowRight } from "react-icons/bs";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { HiPaperAirplane } from "react-icons/hi";
-// IMAGE SOURCES
-import iconOne from "../public/HomePage/paper-plane.png";
-import iconTwo from "../public/HomePage/freelance.png";
-import iconThree from "../public/HomePage/logo-blue.png";
-import iconFour from "../public/HomePage/patreon.png";
-import blogillSrc from "../public/Illustrations/reading-il.svg";
-import progillSrc from "../public/Illustrations/programming-il.svg";
-import frieillSrc from "../public/Illustrations/friends-il.svg";
-import smallCardOneSrc from "../public/Cards/Card-Design-02.jpg";
-import smallCardTwoSrc from "../public/Cards/Card-Design-06.jpg";
-import flSectionCardImageOne from "../public/HomePage/FreelanceSection/fl-books-icon.png";
-import flSectionCardImageTwo from "../public/HomePage/FreelanceSection/fl-computer-icon.png";
-import flSectionCardImageThree from "../public/HomePage/FreelanceSection/fl-trophy-icon.png";
-import flSectionCardWaveImage from "../public/HomePage/FreelanceSection/wave-path.png";
+// IMAGE SRORCES
+import teamworkSrc from "../public/about/teamwork-image.png";
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -43,6 +31,68 @@ export default function Home() {
             <div className={styles.content}>
               <h3>Dwavecode</h3>
               <h3>Dwavecode</h3>
+            </div>
+          </section>
+          <section className={styles.secondSection}>
+            
+              <div className={styles.introText}>
+              <h1>O nama</h1>
+              <p className={styles.quote}>
+                &quot;Ljudi veruju u ono što naprave&quot;
+              </p>
+              </div>
+              <div className={styles.textContainer}>
+                <div className={styles.textWrapper}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                  necessitatibus, consequatur dicta deleniti alias blanditiis
+                  quaerat cum explicabo id iure iste repellat? Necessitatibus
+                  eaque in rem quo optio maxime quibusdam?
+                </div>
+                <div className={styles.textWrapper}>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Corporis, hic magnam? Impedit quas molestiae, accusamus eum
+                  laboriosam voluptate ex facere esse neque incidunt tempora
+                  omnis adipisci sunt. Veritatis, deleniti ex?
+                </div>
+                <div className={styles.textWrapper}>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Tempora amet ab dicta enim laudantium rerum aliquid, porro
+                  distinctio quia incidunt possimus id? Labore autem, possimus
+                  dolorem saepe nobis vero? Itaque!
+                </div>
+                <div className={styles.textWrapper}>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Asperiores, nesciunt facere aliquid provident a sunt? Porro
+                  quibusdam nemo voluptatum fuga odio quidem architecto, ipsum
+                  saepe tenetur expedita commodi esse fugit!
+                </div>
+              </div>
+            
+          </section>
+          <section className={styles.thirdSection}>
+            <Image src={teamworkSrc} />
+            <div className={styles.textContainer}>
+              <div className={styles.textWrapper}>
+                <h3>Naša priča</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+                necessitatibus, consequatur dicta deleniti alias blanditiis
+                quaerat cum explicabo id iure iste repellat? Necessitatibus
+                eaque in rem quo optio maxime quibusdam?
+              </div>
+              <div className={styles.textWrapper}>
+                <h3>Šta želimo da postignemo</h3>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Corporis, hic magnam? Impedit quas molestiae, accusamus eum
+                laboriosam voluptate ex facere esse neque incidunt tempora omnis
+                adipisci sunt. Veritatis, deleniti ex?
+              </div>
+              <div className={styles.textWrapper}>
+                <h3>Postanite član</h3>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Tempora amet ab dicta enim laudantium rerum aliquid, porro
+                distinctio quia incidunt possimus id? Labore autem, possimus
+                dolorem saepe nobis vero? Itaque!
+              </div>
             </div>
           </section>
         </div>
