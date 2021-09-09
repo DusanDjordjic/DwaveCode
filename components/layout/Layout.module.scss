@@ -1,7 +1,5 @@
 @import "../../styles/vars.scss";
-.blur {
-  filter: blur(3px);
-}
+
 .container {
   min-height: 100vh;
   position: relative;
@@ -12,7 +10,6 @@
   position: fixed;
   padding-top: 65px;
   top: 0;
-  left: -54;
   height: 100vh;
   width: 240px;
   background-color: $--clr-white;
@@ -39,7 +36,6 @@
 }
 .sidebar.active {
   transform: translateX(0%);
-  width: 240px;
   p {
     display: block;
   }
@@ -101,8 +97,8 @@
     display: flex;
     align-items: center;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 0 !important;
+    width: 100% !important;
     z-index: 750;
     padding: 10px;
     box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.5);
