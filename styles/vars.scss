@@ -11,8 +11,11 @@ $--clr-white: #ffffff;
 $--clr-gray-1: #f2f5ff;
 $--clr-gray-2: #e7ecfe;
 $--clr-gray-3: #6a8097;
-
-$--clr-blue-1: #080866;
+$--clr-gray-3-03: rgba(
+  $color: #6a8097,
+  $alpha: 0.3,
+);
+$--clr-blue-1: #191919;
 
 $--clr-main: #0097ff;
 $--clr-green: #0097ff;
@@ -22,6 +25,10 @@ $--clr-right: #12dd34;
 $--clr-main-03: rgba(
   $color: #0097ff,
   $alpha: 0.3,
+);
+$--clr-main-02: rgba(
+  $color: #0097ff,
+  $alpha: 0.2,
 );
 $--clr-secondary-03: rgba(
   $color: #20f6ff,
