@@ -54,17 +54,23 @@
 
   .textContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 60px;
+    span {
+      color: $--clr-main;
+    }
   }
 }
 .thirdSection {
   .textContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     column-gap: 60px;
     .textWrapper {
       margin-top: 60px;
+      span {
+        color: $--clr-main;
+      }
     }
   }
 }
@@ -108,6 +114,16 @@
       h3 {
         font-size: 8rem;
       }
+    }
+  }
+  .secondSection {
+    .textContainer {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .thirdSection {
+    .textContainer {
+      grid-template-columns: 1fr 1fr;
     }
   }
 }
