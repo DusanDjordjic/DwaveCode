@@ -1,6 +1,7 @@
 import styles from "../../styles/kursevi/About.module.scss";
 import Head from "next/head";
 import Link from "next/link";
+import CoursesNavigation from "../../components/courses/coursesNavigation/CoursesNavigation";
 import Image from "next/image";
 import { FaHandshake, FaPiggyBank } from "react-icons/fa";
 import { MdMoneyOff } from "react-icons/md";
@@ -19,6 +20,7 @@ const About = () => {
       <div className={styles.container}>
         <div className={styles.Section__LayoutContainer}>
           <div className={styles.Section__Layout}>
+            <CoursesNavigation />
             <section className={styles.mainSection}>
               <h1>Informacije o kursevima</h1>
               <div className={styles.cardsWrapper}>
@@ -69,6 +71,7 @@ const About = () => {
                   </p>
                 </div>
               </div>
+              <Link href="/kursevi/pocetna">Nazad</Link>
             </section>
           </div>
         </div>

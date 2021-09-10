@@ -35,11 +35,9 @@ const Svi = ({ error, coursesArray }) => {
             {/* Main */}
             <main className={styles.main}>
               {/* Intro Section */}
-              <section className={styles.introSection}>
-                <CoursesNavigation />
-              </section>
+              <CoursesNavigation />
               <section className={styles.coursesSection}>
-                <h2>Svi kursevi</h2>
+                <h1>Svi kursevi</h1>
                 <div className={styles.coursesSectionCardsWrapper}>
                   {/* Mapping courses */}
                   {coursesArray.map((kurs) => {

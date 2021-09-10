@@ -93,7 +93,7 @@ section.introSection {
   position: relative;
   z-index: 10;
   min-width: 100%;
-  background-color: $--clr-black;
+  background-color: $--clr-main-03-solid;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -115,12 +115,12 @@ section.introSection {
         font-weight: 500;
         border-bottom: 2px solid transparent;
         &:hover {
-          color: $--clr-green;
+          color: $--clr-black;
         }
       }
       .active {
-        color: $--clr-green;
-        border-bottom: 2px solid $--clr-green;
+        color: $--clr-black;
+        border-bottom: 2px solid $--clr-black;
       }
     }
   }
@@ -228,7 +228,7 @@ section.contentSection {
           padding: 20px;
           border-radius: 10px;
           border-top-left-radius: 0px;
-          background-color: $--clr-gray-2;
+          background-color: $--clr-main-03;
           box-shadow: 5px 10px 20px -18px rgba(0, 0, 0, 0.5);
           .comments {
             font-style: italic;
