@@ -29,6 +29,15 @@ const Header = () => {
               Svi kursevi
             </a>
           </Link>
+          <Link href="/kursevi/about">
+            <a
+              className={
+                router.pathname === "/kursevi/about" ? styles.active : ""
+              }
+            >
+              Informacije
+            </a>
+          </Link>
         </div>
       </div>
     </header>

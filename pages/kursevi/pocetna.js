@@ -75,13 +75,13 @@ const KurseviPocetna = ({ coursesArray, error }) => {
                         Balkance. Sve što vam je potrebno je malo dobre volje za
                         ostalo smo se pobrinuli mi.
                       </p>
-                      <Button text="Saznajte više" link="/kursevi" />
+                      <Button text="Saznajte više" link="/kursevi/about" />
                     </div>
                     {/* Our Service Section Cards Wrapper */}
                     <div className={styles.ourServiceSectionCardsWrapper}>
                       {/* Card - Pristup */}
                       <div className={styles.card}>
-                        <Link href="/kontakt">
+                        <Link href="/kursevi/about">
                           <a>
                             <MdMoneyOff />
                             <p>Besplatan pristup</p>
@@ -91,7 +91,7 @@ const KurseviPocetna = ({ coursesArray, error }) => {
                       </div>
                       {/* Card - Kontakt */}
                       <div className={styles.card}>
-                        <Link href="/kontakt">
+                        <Link href="/kursevi/about">
                           <a>
                             <ImOffice />
                             <p>Radite na pravim projektima</p>
@@ -104,7 +104,7 @@ const KurseviPocetna = ({ coursesArray, error }) => {
                       </div>
                       {/* Card - Kontakt */}
                       <div className={styles.card}>
-                        <Link href="/kontakt">
+                        <Link href="/kursevi/about">
                           <a>
                             <FaPiggyBank />
                             <p>Šansu da zaradite</p>
@@ -117,7 +117,7 @@ const KurseviPocetna = ({ coursesArray, error }) => {
                       </div>
                       {/* Card - Kontakt */}
                       <div className={styles.card}>
-                        <Link href="/kontakt">
+                        <Link href="/kursevi/about">
                           <a>
                             <FaHandshake />
                             <p>Nova poznanstva</p>

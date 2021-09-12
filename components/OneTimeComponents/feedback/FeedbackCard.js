@@ -12,7 +12,7 @@ const FeedbackCard = () => {
           Pošaljite nam poruku o tome šta bi mogli da unapredimo ili koju temu
           da obradimo.
         </p>
-        <Button text="Kontaktiraj nas" link="/" />
+        <Button text="Kontaktiraj nas" link="/kontakt" />
       </div>
       <div className={styles.imageWrapper}>
         <Image src={imageSrc} layout="intrinsic" alt="new idea" />

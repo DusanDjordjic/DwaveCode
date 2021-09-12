@@ -1,7 +1,5 @@
 @import "../../styles/vars.scss";
-.blur {
-  filter: blur(3px);
-}
+
 .container {
   min-height: 100vh;
   position: relative;
@@ -12,13 +10,12 @@
   position: fixed;
   padding-top: 65px;
   top: 0;
-  left: -54;
   height: 100vh;
   width: 240px;
-  background-color: $--clr-black;
-  color: $--clr-gray-1;
+  background-color: $--clr-white;
   transform: translateX(-100%);
   transition: all 0.3s;
+  border-right: 1px solid rgba($--clr-gray-3, 0.2);
   svg {
     min-height: 24px;
     min-width: 24px;
@@ -40,7 +37,6 @@
 }
 .sidebar.active {
   transform: translateX(0%);
-  width: 240px;
   p {
     display: block;
   }
@@ -66,29 +62,26 @@
         transition: all 0.3s;
         &:hover {
           background-color: $--clr-main-03;
-          color: $--clr-gray-1;
           p {
-            color: $--clr-gray-1;
+            color: $--clr-black;
           }
           svg {
-            color: $--clr-gray-1;
+            color: $--clr-black;
           }
         }
         p {
-          color: $--clr-gray-3;
           cursor: pointer;
           margin-left: 10px;
         }
       }
       .active {
         background-color: $--clr-main-03;
-        color: $--clr-gray-1;
         transition: all 0.3s;
         p {
-          color: $--clr-gray-1;
+          color: $--clr-black;
         }
         svg {
-          color: $--clr-gray-1;
+          color: $--clr-black;
         }
       }
     }
@@ -105,12 +98,12 @@
     display: flex;
     align-items: center;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 0 !important;
+    width: 100% !important;
     z-index: 750;
     padding: 10px;
     box-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.5);
-    background-color: $--clr-black;
+    background-color: $--clr-white;
     .toggleBtn {
       max-height: 45px;
       max-width: 45px;
@@ -118,7 +111,7 @@
       cursor: pointer;
       transition: all 0.3s;
       svg {
-        color: $--clr-gray-1;
+        color: $--clr-gray-3;
         min-height: 45px;
         min-width: 45px;
         padding: 10px;
@@ -128,14 +121,14 @@
       &:hover {
         svg {
           background-color: $--clr-main-03;
-          color: $--clr-gray-1;
+          color: $--clr-black;
         }
       }
     }
     .toggleBtnActive {
       svg {
         background-color: $--clr-main-03;
-        color: $--clr-gray-1;
+        color: $--clr-black;
       }
     }
     img {
@@ -145,7 +138,7 @@
   }
   .content {
     margin-top: 65px;
-    background-color: $--clr-gray-1;
+    background-color: $--clr-white;
   }
 }
 

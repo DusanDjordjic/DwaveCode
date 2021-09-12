@@ -69,7 +69,7 @@
         transition: all 0.3s;
         border-radius: 10px;
         border-top-left-radius: 0px;
-        box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.1);
+
         &:hover {
           box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.25);
         }

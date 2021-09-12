@@ -1,0 +1,251 @@
+@import "../vars.scss";
+.container {
+  .Section__LayoutContainer {
+    margin: 0px 10px;
+    .Section__Layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-bottom: 100px;
+      section {
+        padding: 100px 0;
+      }
+    }
+  }
+}
+.main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .formSection {
+    h1 {
+      transform: scale(0.7);
+      margin-bottom: 30px;
+    }
+    .formWrapper {
+      background-color: $--clr-main-03;
+      padding: 30px;
+      border-radius: 15px;
+      .formControl {
+        margin: 20px 0;
+        label {
+          display: inline-block;
+          margin-bottom: 10px;
+        }
+        input {
+          min-width: 100%;
+          border-radius: 100px;
+          padding: 5px 15px;
+          border: 2px solid transparent;
+          transition: all 0.3s;
+          &:focus-within {
+            outline: none;
+            border: 2px solid $--clr-main;
+          }
+        }
+        button {
+          min-width: 100%;
+          cursor: pointer;
+          color: $--clr-black;
+          background-color: $--clr-white;
+          border-radius: 50px;
+          -webkit-box-shadow: 0px 10px 30px -6px rgba(255, 255, 255, 0.53);
+          -moz-box-shadow: 0px 10px 30px -6px rgba(255, 255, 255, 0.53);
+          box-shadow: 0px 10px 30px -6px rgba(255, 255, 255, 0.53);
+          font-weight: 500;
+          transition: all 0.3s;
+          padding: 7px 10px;
+          svg {
+            font-size: 1.3em;
+            min-height: 0px;
+            min-width: 0px;
+            transition: all 0.3s;
+          }
+          &:hover {
+            svg {
+              transform: translateX(5px);
+            }
+
+            filter: brightness(105%);
+          }
+        }
+      }
+    }
+  }
+  .addPostSection {
+    min-width: 100%;
+    .contentWrapper {
+      .gridTwo {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .gridFour {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .buttonWrapper {
+        display: flex;
+        align-items: center;
+        p {
+          font-weight: 400;
+          margin-left: 20px;
+          color: $--clr-black;
+          font-size: 1em;
+        }
+        button {
+          min-width: 0px !important;
+          background-image: $--gradient;
+          background-size: $--bg-size;
+          animation: $--gradient-animation;
+          border-radius: 50px;
+          font-weight: 500;
+          color: $--clr-gray-1;
+          -webkit-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
+          -moz-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
+          box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
+          font-weight: 500;
+          transition: all 0.3s;
+          padding: 7px 10px;
+          svg {
+            font-size: 1.3em;
+            min-height: 0px;
+            min-width: 0px;
+            transition: all 0.3s;
+          }
+          &:hover {
+            svg {
+              transform: translateX(5px);
+            }
+
+            filter: brightness(105%);
+          }
+        }
+      }
+      .chooseImageInput {
+        position: absolute;
+        left: -100vw;
+      }
+      .markDownBox {
+        min-height: 70vh;
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        p {
+          font-size: 1em;
+          font-weight: 400;
+          color: $--clr-black;
+        }
+        div {
+          min-height: calc(100% - 23px);
+          border-radius: 15px;
+          padding: 20px;
+          border: 2px solid $--clr-main;
+          min-width: 100%;
+
+          resize: none;
+          &:focus-within {
+            outline: none;
+          }
+        }
+      }
+      .formControl {
+        margin: 40px 0;
+        label {
+          color: $--clr-black;
+        }
+        input {
+          border: 2px solid transparent;
+          border-bottom: 2px solid $--clr-main;
+          padding: 5px 15px;
+
+          min-width: 100%;
+          transition: all 0.3s;
+          &:focus-within {
+            border-radius: 100px;
+            outline: none;
+            border: 2px solid $--clr-main;
+          }
+        }
+        textarea {
+          border-radius: 15px;
+          padding: 20px;
+          border: 2px solid $--clr-main;
+          min-width: 100%;
+          min-height: 70vh;
+          resize: none;
+          &:focus-within {
+            outline: none;
+          }
+        }
+        button {
+          min-width: 100%;
+          background-image: $--gradient;
+          background-size: $--bg-size;
+          animation: $--gradient-animation;
+          border-radius: 50px;
+          font-weight: 500;
+          color: $--clr-gray-1;
+          -webkit-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
+          -moz-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
+          box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
+          font-weight: 500;
+          transition: all 0.3s;
+          padding: 7px 10px;
+          svg {
+            font-size: 1.3em;
+            min-height: 0px;
+            min-width: 0px;
+            transition: all 0.3s;
+          }
+          &:hover {
+            svg {
+              transform: translateX(5px);
+            }
+
+            filter: brightness(105%);
+          }
+        }
+        #editorPick {
+          min-width: 0px;
+        }
+      }
+      .noDesign {
+        input {
+          border: none;
+          padding: 0px;
+          min-width: 0px;
+        }
+        label {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 600px) {
+  .main {
+    .addPostSection {
+      .contentWrapper {
+        .gridFour {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 992px) {
+  .main {
+    .addPostSection {
+      .contentWrapper {
+        .gridTwo {
+          grid-template-columns: 1fr 1fr;
+        }
+        .gridFour {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    }
+  }
+}

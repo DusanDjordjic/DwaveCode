@@ -1,7 +1,7 @@
 import styles from "./Footer.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import logoSrc from "../../../public/logo.svg";
+import logoSrc from "../../../public/logo-black.png";
 const Footer = () => {
   const disableLink = (e) => {
     e.preventDefault();

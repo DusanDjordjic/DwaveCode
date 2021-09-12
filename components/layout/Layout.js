@@ -174,7 +174,7 @@ const Layout = ({ children }) => {
           >
             <HiMenu />
           </div>
-          <Image src={logoSrc} />
+          {/* <Image src={logoSrc} /> */}
         </nav>
         <div className={styles.content}>{children}</div>
 

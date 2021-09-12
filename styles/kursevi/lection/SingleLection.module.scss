@@ -37,8 +37,7 @@
     background-image: $--gradient;
     background-size: $--bg-size;
     animation: $--gradient-animation;
-    border-radius: 10px;
-    border-top-left-radius: 0px;
+    border-radius: 50px;
     font-weight: 500;
     color: $--clr-gray-1;
     -webkit-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
@@ -61,9 +60,9 @@
   justify-content: center;
 
   .questionBox {
-    background-color: $--clr-gray-2;
-    border-radius: 10px;
-    border-top-left-radius: 0px;
+    background-color: $--clr-main-03;
+    border-radius: 15px;
+
     min-width: 100%;
     header {
       display: flex;
@@ -87,11 +86,10 @@
           cursor: pointer;
           margin: 10px 0;
           padding: 10px 20px;
-          color: $--clr-gray-3;
-          border: 3px solid rgba($--clr-gray-3, 1);
-          background-color: rgba($--clr-gray-1, 0.5);
-          border-radius: 10px;
-          border-top-left-radius: 0px;
+          color: $--clr-black;
+          border: 3px solid rgba($--clr-black, 1);
+          background-color: rgba($--clr-black, 0.1);
+          border-radius: 50px;
           transition: all 0.3s;
           user-select: none;
         }
@@ -126,8 +124,7 @@
           background-image: $--gradient;
           background-size: $--bg-size;
           animation: $--gradient-animation;
-          border-radius: 10px;
-          border-top-left-radius: 0px;
+          border-radius: 50px;
           font-weight: 500;
           color: $--clr-gray-1;
           -webkit-box-shadow: 0px 10px 10px -6px rgba(0, 151, 255, 0.53);
