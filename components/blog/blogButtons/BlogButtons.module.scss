@@ -27,26 +27,12 @@
       min-width: 20px;
       margin-left: 10px;
     }
+    &:hover {
+      filter: brightness(130%);
+    }
   }
 }
-.html {
-  &:hover {
-    background-color: rgba(250, 200, 152, 0.5);
-    box-shadow: 2px 5px 10px -5px rgba($color: #fac898, $alpha: 0.5);
-  }
-}
-.css {
-  &:hover {
-    background-color: rgba(77, 155, 250, 0.5);
-    box-shadow: 2px 5px 10px -5px rgba($color: #529ffb, $alpha: 0.5);
-  }
-}
-.js {
-  &:hover {
-    background-color: rgba(247, 236, 105, 0.5);
-    box-shadow: 2px 5px 10px -5px rgba($color: #f7ec69, $alpha: 0.5);
-  }
-}
+
 @media only screen and (min-width: 650px) {
   .wrapper {
     grid-template-columns: repeat(3, 1fr);

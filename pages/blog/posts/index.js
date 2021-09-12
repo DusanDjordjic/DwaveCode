@@ -93,7 +93,9 @@ export const getServerSideProps = async (context) => {
     // Fetch BlogPosts
     const response = await BlogPostModel.find({});
     let blogPosts = response;
-
+    blogPosts.sort((a, b) => {
+      return b.date - a.date;
+    });
     // Ako nema ni tag ni query vrati sve
     if (!query && !tag) {
       return {
@@ -154,7 +156,11 @@ export const getServerSideProps = async (context) => {
     // Ako ima query filtriraj po njemu
     if (query) {
       blogPosts = response.filter((post) => {
-        return post.title.includes(query);
+        return (
+          post.title.includes(query) ||
+          post.description.includes(query) ||
+          post.tags.includes(query)
+        );
       });
       // Vrati podatke na page
       // Ako je posle filtriranja po QUERY-ju prazan niz

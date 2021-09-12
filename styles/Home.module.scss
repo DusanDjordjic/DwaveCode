@@ -266,19 +266,14 @@
     gap: 30px;
     padding-right: 10px;
     .subRow {
-      position: sticky !important;
-      top: calc(-100vw + 60px);
       .cardsWrapper {
-        position: sticky !important;
-        top: 100px;
       }
       .card {
         margin-top: 30px;
         aspect-ratio: 1 / 1;
         border-radius: 15px;
         background-color: $--clr-main-03;
-        position: sticky !important;
-        top: 100px;
+
         div {
           z-index: 10;
           position: relative !important;

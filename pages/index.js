@@ -64,8 +64,8 @@ export default function Home() {
                   isDisabled={false}
                 />
                 <ButtonWhite
-                  text="Počni odmah"
-                  link="/kursevi/pocetna"
+                  text="O nama"
+                  link="/about"
                   fontSize={16}
                   isDisabled={false}
                 />

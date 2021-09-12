@@ -7,17 +7,17 @@ const BlogButtons = () => {
   return (
     <div className={styles.wrapper}>
       <Link href="/blog/posts?tag=html">
-        <button className={`${styles.button} ${styles.html}`}>
+        <button className={styles.button}>
           HTML <GoTools />
         </button>
       </Link>
       <Link href="/blog/posts?tag=css">
-        <button className={`${styles.button} ${styles.css}`}>
+        <button className={styles.button}>
           CSS <HiSparkles />
         </button>
       </Link>
       <Link href="/blog/posts?tag=javascript">
-        <button className={`${styles.button} ${styles.js}`}>
+        <button className={styles.button}>
           Java Script <FaBrain />
         </button>
       </Link>

@@ -4,8 +4,9 @@
   display: flex;
   font-weight: 300;
   justify-content: center;
-  background-color: $--clr-black;
-  color: rgba($color: $--clr-gray-1, $alpha: 1);
+  background-color: $--clr-white;
+  border-top: 1px solid rgba($--clr-gray-3, 0.2);
+  color: rgba($color: $--clr-black, $alpha: 1);
   .container {
     display: flex;
     flex-wrap: wrap;
@@ -52,10 +53,10 @@
       display: flex;
       align-items: center;
       p {
-        color: $--clr-gray-1;
+        color: $--clr-black;
         margin-left: 20px;
         font-size: 14px;
-        font-weight: 300;
+        font-weight: 400;
       }
     }
   }
