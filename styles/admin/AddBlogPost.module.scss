@@ -23,7 +23,7 @@
       margin-bottom: 30px;
     }
     .formWrapper {
-      background-color: $--clr-main-03;
+      background-color:$color-main-03;
       padding: 30px;
       border-radius: 15px;
       .formControl {
@@ -40,14 +40,14 @@
           transition: all 0.3s;
           &:focus-within {
             outline: none;
-            border: 2px solid $--clr-main;
+            border: 2px solid $color-main;
           }
         }
         button {
           min-width: 100%;
           cursor: pointer;
-          color: $--clr-black;
-          background-color: $--clr-white;
+          color: $color-dark;
+          background-color: $color-background;
           border-radius: 50px;
           -webkit-box-shadow: 0px 10px 30px -6px rgba(255, 255, 255, 0.53);
           -moz-box-shadow: 0px 10px 30px -6px rgba(255, 255, 255, 0.53);
@@ -91,17 +91,17 @@
         p {
           font-weight: 400;
           margin-left: 20px;
-          color: $--clr-black;
+          color:$color-dark;
           font-size: 1em;
         }
         button {
           min-width: 0px !important;
-          background-image: $--gradient;
-          background-size: $--bg-size;
-          animation: $--gradient-animation;
+          background-image: $gradient-background;
+          background-size:$size-background;
+          animation: $gradient-animation;
           border-radius: 50px;
           font-weight: 500;
-          color: $--clr-gray-1;
+          color: $color-light-1;
           -webkit-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
           -moz-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
           box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
@@ -135,13 +135,13 @@
         p {
           font-size: 1em;
           font-weight: 400;
-          color: $--clr-black;
+          color: $color-dark;
         }
         div {
           min-height: calc(100% - 23px);
           border-radius: 15px;
           padding: 20px;
-          border: 2px solid $--clr-main;
+          border: 2px solid $color-main;
           min-width: 100%;
 
           resize: none;
@@ -153,11 +153,11 @@
       .formControl {
         margin: 40px 0;
         label {
-          color: $--clr-black;
+          color: $color-dark;
         }
         input {
           border: 2px solid transparent;
-          border-bottom: 2px solid $--clr-main;
+          border-bottom: 2px solid $color-main;
           padding: 5px 15px;
 
           min-width: 100%;
@@ -165,13 +165,13 @@
           &:focus-within {
             border-radius: 100px;
             outline: none;
-            border: 2px solid $--clr-main;
+            border: 2px solid $color-main;
           }
         }
         textarea {
           border-radius: 15px;
           padding: 20px;
-          border: 2px solid $--clr-main;
+          border: 2px solid $color-main;
           min-width: 100%;
           min-height: 70vh;
           resize: none;
@@ -181,12 +181,12 @@
         }
         button {
           min-width: 100%;
-          background-image: $--gradient;
-          background-size: $--bg-size;
-          animation: $--gradient-animation;
+          background-image: $gradient-background;
+          background-size:$size-background;
+          animation: $gradient-animation;
           border-radius: 50px;
           font-weight: 500;
-          color: $--clr-gray-1;
+          color: $color-light-1;
           -webkit-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
           -moz-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
           box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
