@@ -1,50 +1,62 @@
-$--clr-black: #1c1c1c;
-$--clr-black-03: rgba(
-  $color: #1c1c1c,
-  $alpha: 0.3,
-);
-$--clr-black-08: rgba(
-  $color: #1c1c1c,
-  $alpha: 0.8,
-);
-$--clr-white: #ffffff;
-$--clr-gray-1: #f2f5ff;
-$--clr-gray-2: #e7ecfe;
-$--clr-gray-3: #6a8097;
-$--clr-gray-3-03: rgba(
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap");
+// colors
+$color-background: #ffffff;
+$color-light-1: #f2f5ff;
+$color-light-2: #e7ecfe;
+$color-text: #6a8097;
+$color-text-03: rgba(
   $color: #6a8097,
   $alpha: 0.3,
 );
-$--clr-blue-1: #191919;
+$color-dark: #1c1c1c;
+$color-dark-08: rgba(
+  $color: #1c1c1c,
+  $alpha: 0.8,
+);
+$color-dark-03: rgba(
+  $color: #1c1c1c,
+  $alpha: 0.3,
+);
 
-$--clr-main: #0097ff;
-$--clr-main-03-solid: #b2e0ff;
-$--clr-green: #0097ff;
-$--clr-secondary: #20f6ff;
-$--clr-wrong: #ff5e2d;
-$--clr-right: #12dd34;
-$--clr-main-03: rgba(
+$color-main: #0097ff;
+$color-secondary: #20f6ff;
+$color-error: #ff5e2d;
+$color-success: #12dd34;
+$color-main-03: rgba(
   $color: #0097ff,
   $alpha: 0.3,
 );
-$--clr-main-02: rgba(
+$color-main-02: rgba(
   $color: #0097ff,
   $alpha: 0.2,
 );
-$--clr-secondary-03: rgba(
+$color-secondary-03: rgba(
   $color: #20f6ff,
   $alpha: 0.3,
 );
-$clr: #080866;
-// $clr2: #f9fbfc;
-// $clr3: #446169;
-// $clr5: #20d1e7;
 
-$clr4: #006dc4;
-$--gradient: linear-gradient(
+$gradient-background: linear-gradient(
   70deg,
   rgb(32, 246, 255) 0%,
   rgb(0, 151, 255) 100%
 );
-$--bg-size: 300%;
-$--gradient-animation: bg-animation 10s infinite alternate;
+$size-background: 300%;
+$gradient-animation: bg-animation 10s infinite alternate;
+
+// fonts
+$main-font: "Poppins", sans-serif;
+$secondary-font: "Nanum Pen Script", cursive;
+// font size
+$font-size-normal: 16px;
+$font-size-md: $font-size-normal * 1.25;
+$font-size-lg: $font-size-normal * 1.5;
+$font-size-xl: $font-size-normal * 2;
+$font-size-xxl: $font-size-normal * 3;
+$font-size-sm: $font-size-normal * 0.85;
+// line height
+$base-line-height: 160%;
+// font weight
+$font-weight-normal: 500;
+$font-weight-heding-main: 800;
+$font-weight-heding-secundary: 700;

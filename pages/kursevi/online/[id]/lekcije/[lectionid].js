@@ -26,7 +26,14 @@ const Lection = ({
     array.pop();
     array.push(text);
     const link = array.join("/");
+
     router.push(link);
+    setQuestionIndex(0);
+    setSelectedAnswer(0);
+    setAnswerDescription("");
+    setIsSubmited(false);
+    setIsFinished(false);
+    setScore(0);
   };
 
   // Set state for questions
@@ -69,7 +76,7 @@ const Lection = ({
     setIsFinished(false);
     setScore(0);
   };
-  
+
   if (!currentLection) {
     return <h1>Loading</h1>;
   }

@@ -19,27 +19,27 @@
   blockquote {
     margin: 1.8em 0px 1.8em;
     padding: 10px 20px 10px 50px;
-    border-left: 5px solid $--clr-green;
-    background-color: rgba($color: $--clr-green, $alpha: 0.3);
+    border-left: 5px solid $color-main;
+    background-color: $color-main-03;
     p {
       margin: 0;
     }
   }
   pre {
-    background-color: rgba($color: $--clr-black, $alpha: 1);
+    background-color: $color-dark;
     padding: 10px;
     margin: 1.8em 0px 1.8em;
     border-radius: 10px;
     overflow: auto;
-    color: $--clr-gray-1;
+    color: $color-light-1;
     code {
       background-color: transparent;
     }
   }
   code {
     padding: 2px 4px;
-    color: $--clr-gray-1;
-    background-color: rgba($color: $--clr-gray-3, $alpha: 0.7);
+    color: $color-light-1;
+    background-color: rgba($color: $color-text, $alpha: 0.7);
     font-style: italic;
     font-size: 14px;
     border-radius: 3px;
@@ -49,22 +49,22 @@
     margin-bottom: 20px;
     li {
       margin-bottom: 0.8em;
-      color: $--clr-gray-3;
+      color: $color-text;
     }
   }
   strong {
-    color: $--clr-black;
+    color: $color-dark;
     font-weight: 600;
   }
   a {
-    border-bottom: 1px solid rgba($color: $--clr-black, $alpha: 0.3);
-    background-color: rgba($color: $--clr-green, $alpha: 0.3);
+    border-bottom: 1px solid rgba($color: $color-dark, $alpha: 0.3);
+    background-color: rgba($color: $color-main, $alpha: 0.3);
     line-height: 1;
     display: inline-block;
     transition: all 0.1s;
     &:hover {
-      border-bottom: 1px solid rgba($color: $--clr-black, $alpha: 0.7);
-      background-color: rgba($color: $--clr-green, $alpha: 0.7);
+      border-bottom: 1px solid rgba($color: $color-dark, $alpha: 0.7);
+      background-color: rgba($color: $color-main, $alpha: 0.7);
     }
   }
 }

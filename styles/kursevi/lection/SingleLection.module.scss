@@ -34,12 +34,12 @@
   button {
     font-size: 16px;
     cursor: pointer;
-    background-image: $--gradient;
-    background-size: $--bg-size;
-    animation: $--gradient-animation;
+    background-image: $gradient-background;
+    background-size: $size-background;
+    animation: $gradient-animation;
     border-radius: 50px;
     font-weight: 500;
-    color: $--clr-gray-1;
+    color: $color-light-1;
     -webkit-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
     -moz-box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
     box-shadow: 0px 10px 30px -6px rgba(0, 151, 255, 0.53);
@@ -60,7 +60,7 @@
   justify-content: center;
 
   .questionBox {
-    background-color: $--clr-main-03;
+    background-color: $color-light-1;
     border-radius: 15px;
 
     min-width: 100%;
@@ -71,7 +71,7 @@
       box-shadow: 0px 10px 20px -15px rgba(0, 0, 0, 0.5);
       padding: 20px;
       p {
-        color: $--clr-blue-1;
+        color: $color-dark;
         font-weight: 500;
       }
     }
@@ -86,32 +86,32 @@
           cursor: pointer;
           margin: 10px 0;
           padding: 10px 20px;
-          color: $--clr-black;
-          border: 3px solid rgba($--clr-black, 1);
-          background-color: rgba($--clr-black, 0.1);
+          color: $color-dark;
+          border: 3px solid rgba($color-dark, 1);
+          background-color: rgba($color-dark, 0.1);
           border-radius: 50px;
           transition: all 0.3s;
           user-select: none;
         }
         li.active {
-          border: 3px solid $--clr-main !important;
-          background-color: rgba($--clr-main, 0.3) !important;
+          border: 3px solid $color-main !important;
+          background-color: rgba($color-main, 0.3) !important;
         }
         li.wrong {
-          border: 3px solid $--clr-wrong;
-          background-color: rgba($--clr-wrong, 0.3);
+          border: 3px solid $color-error;
+          background-color: rgba($color-error, 0.3);
         }
         li.right {
-          border: 3px solid $--clr-right !important;
-          background-color: rgba($--clr-right, 0.3) !important;
+          border: 3px solid $color-success !important;
+          background-color: rgba($color-success, 0.3) !important;
         }
       }
     }
     footer {
       padding: 20px;
       .textWrapper {
-        border-top: 1px solid rgba($--clr-gray-3, 0.5);
-        border-bottom: 1px solid rgba($--clr-gray-3, 0.5);
+        border-top: 1px solid $color-text-03;
+        border-bottom: 1px solid $color-text-03;
         margin-bottom: 20px;
         padding: 20px 0;
       }
@@ -121,12 +121,12 @@
         .nextButton,
         .submitButton {
           cursor: pointer;
-          background-image: $--gradient;
-          background-size: $--bg-size;
-          animation: $--gradient-animation;
+          background-image: $gradient-background;
+          background-size: $size-background;
+          animation: $gradient-animation;
           border-radius: 50px;
           font-weight: 500;
-          color: $--clr-gray-1;
+          color: $color-light-1;
           -webkit-box-shadow: 0px 10px 10px -6px rgba(0, 151, 255, 0.53);
           -moz-box-shadow: 0px 10px 10px -6px rgba(0, 151, 255, 0.53);
           box-shadow: 0px 10px 10px -7px rgba(0, 151, 255, 0.53);

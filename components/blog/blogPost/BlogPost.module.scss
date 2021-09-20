@@ -1,14 +1,14 @@
 @import "../../../styles/vars.scss";
 // BLOG POST
 .blogPost {
-  border-radius: 10px;
+  border-radius: 15px;
   // box-shadow: 2px 2px 10px 0 rgba($color: #000000, $alpha: 0.1);
   position: relative;
   .blogPostImage {
     position: relative;
     cursor: pointer;
     .imageWrapper {
-      border-radius: 10px;
+      border-radius: 15px;
       overflow: hidden;
       div {
         position: relative !important;
@@ -19,7 +19,7 @@
         transition: all 0.3s;
         width: 100% !important;
         height: auto !important;
-        border-radius: 10px;
+        border-radius: 15px;
       }
     }
     &:hover {
@@ -35,7 +35,6 @@
       display: flex;
       align-items: flex-end;
       padding: 10px 20px;
-
       font-size: 12px;
       .wrapper {
         display: flex;
@@ -51,10 +50,11 @@
           width: 40px;
           height: 40px;
           border-radius: 100%;
-          border: 1px solid $--clr-gray-1 !important;
+          border: 1px solid $color-light-1 !important;
+          color: $color-light-1;
         }
         p {
-          color: $--clr-gray-1;
+          color: $color-light-1;
           font-size: 12px;
           margin-left: 10px;
         }
@@ -62,13 +62,14 @@
       .readTime {
         display: flex;
         align-items: center;
-        color: $--clr-gray-1;
+
         p {
-          color: $--clr-gray-1;
           font-size: 12px;
           margin-left: 10px;
+          color: $color-light-1;
         }
         svg {
+          color: $color-light-1;
           font-size: 12px;
           min-height: 20px;
           min-width: 20px;
@@ -89,7 +90,6 @@
     p {
       text-align: right;
       font-size: 0.8em;
-      color: $--clr-gray-3;
     }
 
     .blogPostDesc {
@@ -98,10 +98,7 @@
       p {
         font-size: 1em;
         text-align: justify;
-        color: $--clr-gray-3;
       }
     }
   }
-}
-@media only screen and(min-width: 430px) {
 }
