@@ -28,13 +28,12 @@
       font-weight: 700;
       color: transparent;
       background: none;
-      -webkit-text-stroke: 2px $--clr-main;
+      -webkit-text-stroke: 2px $color-main;
 
       &:nth-child(2) {
-        background-image: $--gradient;
-        background-size: $--bg-size;
+        background-image: $gradient-background;
+        background-size: $size-background;
         background-clip: text;
-
         animation: wave 4s ease-in-out infinite;
       }
     }
@@ -57,7 +56,7 @@
     grid-template-columns: 1fr;
     gap: 60px;
     span {
-      color: $--clr-main;
+      color: $color-main;
     }
   }
 }
@@ -69,7 +68,7 @@
     .textWrapper {
       margin-top: 60px;
       span {
-        color: $--clr-main;
+        color: $color-main;
       }
     }
   }

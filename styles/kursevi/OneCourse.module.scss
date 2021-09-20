@@ -55,8 +55,7 @@ section.introSection {
         position: relative !important;
         width: 100% !important;
         height: 100% !important;
-        border-radius: 10px;
-        border-top-left-radius: 0px;
+        border-radius: 15px;
       }
     }
   }
@@ -72,17 +71,17 @@ section.introSection {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      color: $--clr-gray-3;
+      color: $color-text;
       .keyInfoIconSpan {
         padding-right: 20px;
       }
       p {
-        color: $--clr-gray-3;
+        color: $color-text;
         display: flex;
         flex-wrap: wrap;
         span {
           min-width: 100%;
-          color: $--clr-black;
+          color: $color-dark;
           font-weight: 500;
         }
       }
@@ -93,7 +92,7 @@ section.introSection {
   position: relative;
   z-index: 10;
   min-width: 100%;
-  background-color: $--clr-main-03-solid;
+  background-color: $color-main;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,17 +109,17 @@ section.introSection {
         cursor: pointer;
         font-size: 16px;
         background-color: transparent;
-        color: $--clr-gray-3;
+        color: $color-light-1;
         transition: all 0.3s;
         font-weight: 500;
         border-bottom: 2px solid transparent;
         &:hover {
-          color: $--clr-black;
+          color: $color-dark;
         }
       }
       .active {
-        color: $--clr-black;
-        border-bottom: 2px solid $--clr-black;
+        color: $color-dark;
+        border-bottom: 2px solid $color-dark;
       }
     }
   }
@@ -152,18 +151,18 @@ section.contentSection {
           box-shadow: 5px 10px 20px -18px rgba(0, 0, 0, 0.5);
 
           .courseNameDiv {
-            background-image: $--gradient;
-            background-size: $--bg-size;
-            animation: $--gradient-animation;
+            background-image: $gradient-background;
+            background-size: $size-background;
+            animation: $gradient-animation;
             padding: 50px 20px;
             p {
-              color: $--clr-gray-1;
+              color: $color-light-1;
               font-size: 1em;
             }
             .courseName {
               font-size: 2em;
               font-weight: 700;
-              color: $--clr-gray-1;
+              color: $color-light-1;
               text-align: left;
             }
           }
@@ -195,12 +194,12 @@ section.contentSection {
         svg {
           box-sizing: content-box;
           padding: 10px;
-          background-image: $--gradient;
-          background-size: $--bg-size;
-          animation: $--gradient-animation;
+          background-image: $gradient-background;
+          background-size: $size-background;
+          animation: $gradient-animation;
           border-radius: 100px;
           font-weight: 500;
-          color: $--clr-gray-1;
+          color: $color-light-1;
           min-height: 20px;
           min-width: 20px;
           max-height: 30px;
@@ -228,7 +227,7 @@ section.contentSection {
           padding: 20px;
           border-radius: 10px;
           border-top-left-radius: 0px;
-          background-color: $--clr-main-03;
+          background-color: $color-main-03;
           box-shadow: 5px 10px 20px -18px rgba(0, 0, 0, 0.5);
           .comments {
             font-style: italic;
@@ -247,11 +246,11 @@ section.contentSection {
           min-height: 40px;
           max-width: 40px;
           max-height: 40px;
-          background-image: $--gradient;
-          background-size: $--bg-size;
-          animation: $--gradient-animation;
+          background-image: $gradient-background;
+          background-size: $size-background;
+          animation: $gradient-animation;
           border-radius: 100px;
-          color: $--clr-gray-1;
+          color: $color-light-1;
           transition: all 0.3s;
           svg {
             min-width: 30px;

@@ -1,24 +1,23 @@
 @import "../../styles/vars.scss";
 .card {
-  border-radius: 10px;
-  border-top-left-radius: 0px;
+  border-radius: 15px;
   overflow: hidden;
-  background-image: $--gradient;
-  background-size: $--bg-size;
-  animation: $--gradient-animation;
+  background-image:$gradient-background;
+  background-size: $size-background;
+  animation:$gradient-animation;
   box-shadow: 5px 20px 30px -18px rgba(0, 0, 0, 0.5);
   .imageWrapper {
     display: flex;
     justify-content: center;
     padding: 20px 0;
     img {
-      border: 3px solid $--clr-gray-1 !important;
+      border: 3px solid $color-light-1 !important;
       border-radius: 100%;
     }
   }
   .textWrapper {
     p {
-      color: $--clr-gray-1;
+      color: $color-light-1;
       text-align: center;
       padding: 0 20px;
     }
@@ -30,7 +29,7 @@
       margin-bottom: 10px;
     }
     .quoteWrapper {
-      border-top: 1px solid rgba($--clr-blue-1, 0.3);
+      border-top: 1px solid $color-main-03;
       padding: 20px;
       position: relative;
       .quote {
@@ -47,7 +46,7 @@
         font-weight: 700;
         font-size: 100px;
         line-height: 100px;
-        color: rgba($--clr-blue-1, 0.3);
+        color: $color-main-03;
       }
     }
   }

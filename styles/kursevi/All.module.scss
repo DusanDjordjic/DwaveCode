@@ -35,11 +35,11 @@
       }
       .card {
         min-height: 100%;
-        box-shadow: 0 0 10px 0 rgba($color: $--clr-black, $alpha: 0.25);
+        box-shadow: 0 0 10px 0 rgba($color: $color-dark, $alpha: 0.25);
         border-radius: 10px;
         border-top-left-radius: 0px;
         overflow: hidden;
-        background-color: $--clr-black;
+        background-color: $color-dark;
         .imageWrapper {
           position: relative;
           .imageGradient {
@@ -59,7 +59,7 @@
           padding-bottom: 42px;
           h3 {
             font-size: 2em;
-            color: $--clr-gray-1;
+            color: $color-light-1;
             font-weight: 500;
           }
           p {
@@ -68,11 +68,11 @@
           .descSubheader {
             margin-top: 20px;
             margin-bottom: 10px;
-            color: $--clr-gray-1;
+            color: $color-light-1;
             text-transform: uppercase;
           }
           .courseQuote {
-            color: $--clr-gray-1;
+            color: $color-light-1;
             margin-top: 17px;
             margin-bottom: 50px;
             font-style: italic;
@@ -92,7 +92,7 @@
           .shareButton {
             cursor: pointer;
             background-color: transparent;
-            color: $--clr-main;
+            color: $color-main;
             transition: all 0.3s;
             svg {
               min-height: 30px;

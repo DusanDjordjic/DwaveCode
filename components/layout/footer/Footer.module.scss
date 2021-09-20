@@ -4,9 +4,9 @@
   display: flex;
   font-weight: 300;
   justify-content: center;
-  background-color: $--clr-white;
-  border-top: 1px solid rgba($--clr-gray-3, 0.2);
-  color: rgba($color: $--clr-black, $alpha: 1);
+  background-color: $color-background;
+  border-top: 1px solid $color-text-03;
+  color: $color-dark;
   .container {
     display: flex;
     flex-wrap: wrap;
@@ -25,7 +25,7 @@
           font-size: 14px;
 
           &:first-of-type {
-            color: $--clr-gray-3;
+            color: $color-text;
             text-transform: uppercase;
             font-weight: 500;
             font-size: 16px;
@@ -39,11 +39,8 @@
           }
           .inactive {
             cursor: default;
-            color: $--clr-gray-3;
+            color: $color-text;
             text-decoration: line-through;
-            &:hover {
-              text-decoration: line-through;
-            }
           }
         }
       }
@@ -53,7 +50,7 @@
       display: flex;
       align-items: center;
       p {
-        color: $--clr-black;
+        color: $color-dark;
         margin-left: 20px;
         font-size: 14px;
         font-weight: 400;

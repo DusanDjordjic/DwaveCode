@@ -2,7 +2,6 @@
 .scribble {
   position: relative;
   display: inline-flex;
-
   svg {
     min-width: 50px;
     min-height: 50px;
@@ -12,6 +11,6 @@
     top: -30px;
     left: -30px;
     font-size: 30px;
-    font-family: "Nanum Pen Script", cursive;
+    font-family: $secondary-font;
   }
 }
